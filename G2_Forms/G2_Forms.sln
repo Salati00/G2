@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2_Forms", "G2_Forms\G2_Forms.csproj", "{59105801-207F-45E7-959B-B908F39BCEFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLayer", "LogicLayer\LogicLayer.csproj", "{A0167575-4E35-4BA0-8ACC-4F092467B78D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{59105801-207F-45E7-959B-B908F39BCEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59105801-207F-45E7-959B-B908F39BCEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59105801-207F-45E7-959B-B908F39BCEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0167575-4E35-4BA0-8ACC-4F092467B78D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0167575-4E35-4BA0-8ACC-4F092467B78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0167575-4E35-4BA0-8ACC-4F092467B78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0167575-4E35-4BA0-8ACC-4F092467B78D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
