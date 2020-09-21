@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using System.Diagnostics;
 
 namespace G2_Forms
 {
     public partial class Frm_Main : Form
     {
+        const int DEBUGMODE = 1;
+
         public Frm_Main()
         {
             InitializeComponent();
@@ -22,15 +25,22 @@ namespace G2_Forms
 
         private void Frm_Main_Load(object sender, EventArgs e)
         {
-            var client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
-            var database = client.GetDatabase("g2Database");
-            var dbList = client.ListDatabases().ToList();
+            SetDebug();
+            
+        }
 
-            Console.WriteLine("The list of databases on this server is: ");
-            foreach (var db in dbList)
-            {
-                MessageBox.Show(db.ToString());
-            }
+        //  Function to update whenever something for debug is added,
+        //  changes debug elements to active (DEBUGMODE == 1) or inactive (DEBUGMODE == 0)
+        private void SetDebug()
+        {
+            Btn_Test.Enabled = (DEBUGMODE == 1);
+            Btn_Test.Visible = (DEBUGMODE == 1);
+        }
+
+        private void Btn_Test_Click(object sender, EventArgs e)
+        {
+            Frm_Test f = new Frm_Test();
+            f.ShowDialog();
         }
     }
 }
