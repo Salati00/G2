@@ -22,7 +22,7 @@ namespace G2_Forms
 
         private void Btn_AddRow_Click(object sender, EventArgs e)
         {
-            UcTab_Main.AddRow(new object());
+            UcTab_Main.AddElement(new object());
         }
 
         private void Frm_Test_Load(object sender, EventArgs e)
