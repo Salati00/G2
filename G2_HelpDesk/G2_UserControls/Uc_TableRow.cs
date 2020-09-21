@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DisplayElements
+namespace G2_UserControls
 {
     public partial class Uc_TableRow : UserControl
     {

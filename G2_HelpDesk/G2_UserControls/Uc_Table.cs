@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DisplayElements
+namespace G2_UserControls
 {
-    public partial class Uc_Table: UserControl
+    public partial class Uc_Table : UserControl
     {
         private int x = 50;
         private int y = 50;

@@ -28,44 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UcTab_Main = new DisplayElements.Uc_Table();
             this.Btn_AddRow = new System.Windows.Forms.Button();
+            this.UcTab_Main = new G2_UserControls.Uc_Table();
             this.SuspendLayout();
-            // 
-            // UcTab_Main
-            // 
-            this.UcTab_Main.Location = new System.Drawing.Point(13, 13);
-            this.UcTab_Main.Name = "UcTab_Main";
-            this.UcTab_Main.Size = new System.Drawing.Size(622, 330);
-            this.UcTab_Main.TabIndex = 0;
             // 
             // Btn_AddRow
             // 
-            this.Btn_AddRow.Location = new System.Drawing.Point(43, 380);
+            this.Btn_AddRow.Location = new System.Drawing.Point(33, 415);
             this.Btn_AddRow.Name = "Btn_AddRow";
             this.Btn_AddRow.Size = new System.Drawing.Size(75, 23);
-            this.Btn_AddRow.TabIndex = 1;
+            this.Btn_AddRow.TabIndex = 2;
             this.Btn_AddRow.Text = "Add Row";
             this.Btn_AddRow.UseVisualStyleBackColor = true;
             this.Btn_AddRow.Click += new System.EventHandler(this.Btn_AddRow_Click);
+            // 
+            // UcTab_Main
+            // 
+            this.UcTab_Main.AutoScroll = true;
+            this.UcTab_Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UcTab_Main.Location = new System.Drawing.Point(33, 12);
+            this.UcTab_Main.Name = "UcTab_Main";
+            this.UcTab_Main.Size = new System.Drawing.Size(686, 379);
+            this.UcTab_Main.TabIndex = 3;
             // 
             // Frm_Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 535);
-            this.Controls.Add(this.Btn_AddRow);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.UcTab_Main);
+            this.Controls.Add(this.Btn_AddRow);
             this.Name = "Frm_Test";
-            this.Text = "TestForm";
-            this.Load += new System.EventHandler(this.TestForm_Load);
+            this.Text = "Frm_Test";
+            this.Load += new System.EventHandler(this.Frm_Test_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DisplayElements.Uc_Table UcTab_Main;
         private System.Windows.Forms.Button Btn_AddRow;
+        private G2_UserControls.Uc_Table UcTab_Main;
     }
 }

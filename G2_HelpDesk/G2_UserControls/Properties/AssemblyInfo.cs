@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("G2_Forms")]
+[assembly: AssemblyTitle("G2_UserControls")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("G2_Forms")]
+[assembly: AssemblyProduct("G2_UserControls")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("59105801-207f-45e7-959b-b908f39bcefe")]
+[assembly: Guid("23ac0745-96f1-4648-bcb5-ca30d2bead0c")]
 
 // Version information for an assembly consists of the following four values:
 //

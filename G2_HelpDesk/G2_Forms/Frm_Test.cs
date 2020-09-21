@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //
 using MongoDB.Driver;
-using MongoDB.Bson;
-using DisplayElements;
+using G2_UserControls;
 
 namespace G2_Forms
 {
@@ -19,10 +18,14 @@ namespace G2_Forms
         public Frm_Test()
         {
             InitializeComponent();
-            
         }
 
-        private void TestForm_Load(object sender, EventArgs e)
+        private void Btn_AddRow_Click(object sender, EventArgs e)
+        {
+            UcTab_Main.AddRow(new object());
+        }
+
+        private void Frm_Test_Load(object sender, EventArgs e)
         {
             var client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
             var database = client.GetDatabase("g2Database");
@@ -33,11 +36,6 @@ namespace G2_Forms
             {
                 MessageBox.Show(db.ToString());
             }
-        }
-
-        private void Btn_AddRow_Click(object sender, EventArgs e)
-        {
-            UcTab_Main.AddRow(new object());
         }
     }
 }

@@ -33,10 +33,10 @@
             // 
             // Btn_Test
             // 
-            this.Btn_Test.Location = new System.Drawing.Point(713, 133);
+            this.Btn_Test.Location = new System.Drawing.Point(697, 104);
             this.Btn_Test.Name = "Btn_Test";
             this.Btn_Test.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Test.TabIndex = 0;
+            this.Btn_Test.TabIndex = 1;
             this.Btn_Test.Text = "Open Test";
             this.Btn_Test.UseVisualStyleBackColor = true;
             this.Btn_Test.Click += new System.EventHandler(this.Btn_Test_Click);
@@ -49,7 +49,6 @@
             this.Controls.Add(this.Btn_Test);
             this.Name = "Frm_Main";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.ResumeLayout(false);
 
         }

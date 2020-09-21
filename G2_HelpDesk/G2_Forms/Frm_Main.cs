@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using MongoDB.Driver;
 using MongoDB.Bson;
 using System.Diagnostics;
@@ -26,7 +27,7 @@ namespace G2_Forms
         private void Frm_Main_Load(object sender, EventArgs e)
         {
             SetDebug();
-            
+
         }
 
         //  Function to update whenever something for debug is added,
@@ -42,5 +43,6 @@ namespace G2_Forms
             Frm_Test f = new Frm_Test();
             f.ShowDialog();
         }
+
     }
 }
