@@ -17,19 +17,14 @@ namespace G2_UserControls
         private int x = 50;
         private int y = 50;
 
-        //private System.Timers.Timer Tmr_Filter;
 
         private List<object> elementList;
-        //public List<object> ElementList { get => elementList; set => elementList = value; }
 
         public Uc_Table()
         {
             InitializeComponent();
             this.AutoScroll = true;
             this.BorderStyle = BorderStyle.FixedSingle;
-            //this.Tmr_Filter = new System.Timers.Timer();
-            //this.Tmr_Filter.Interval = 2000;
-            //Tmr_Filter.Elapsed += new ElapsedEventHandler(OnTimerTick);
 
             this.elementList = new List<object>();
         }
@@ -78,10 +73,6 @@ namespace G2_UserControls
             Tmr_Filter.Start();
         }
 
-        /*private void OnTimerTick(object source, ElapsedEventArgs e)
-        {
-            
-        }*/
 
         private void Tmr_Filter_Tick(object sender, EventArgs e)
         {
