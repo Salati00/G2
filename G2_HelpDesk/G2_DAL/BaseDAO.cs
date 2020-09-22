@@ -19,5 +19,7 @@ namespace G2_DAL
             database = client.GetDatabase("g2Database");
             IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>("Users");
         }
+
     }
+
 }
