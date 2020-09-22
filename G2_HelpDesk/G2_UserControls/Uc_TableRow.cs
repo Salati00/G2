@@ -12,9 +12,17 @@ namespace G2_UserControls
 {
     public partial class Uc_TableRow : UserControl
     {
-        public Uc_TableRow()
+        private object item;
+
+        public Uc_TableRow(object _item)
         {
             InitializeComponent();
+            item = _item;
+        }
+
+        public void Remove()
+        {
+            this.Parent.Controls.Remove(this);
         }
     }
 }
