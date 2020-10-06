@@ -42,7 +42,7 @@
             // Lbl_Status
             // 
             this.Lbl_Status.AutoSize = true;
-            this.Lbl_Status.Location = new System.Drawing.Point(495, 48);
+            this.Lbl_Status.Location = new System.Drawing.Point(507, 50);
             this.Lbl_Status.Name = "Lbl_Status";
             this.Lbl_Status.Size = new System.Drawing.Size(37, 13);
             this.Lbl_Status.TabIndex = 14;
@@ -51,7 +51,7 @@
             // Lbl_Date
             // 
             this.Lbl_Date.AutoSize = true;
-            this.Lbl_Date.Location = new System.Drawing.Point(375, 48);
+            this.Lbl_Date.Location = new System.Drawing.Point(387, 50);
             this.Lbl_Date.Name = "Lbl_Date";
             this.Lbl_Date.Size = new System.Drawing.Size(30, 13);
             this.Lbl_Date.TabIndex = 13;
@@ -60,7 +60,7 @@
             // Lbl_User
             // 
             this.Lbl_User.AutoSize = true;
-            this.Lbl_User.Location = new System.Drawing.Point(243, 48);
+            this.Lbl_User.Location = new System.Drawing.Point(255, 50);
             this.Lbl_User.Name = "Lbl_User";
             this.Lbl_User.Size = new System.Drawing.Size(29, 13);
             this.Lbl_User.TabIndex = 12;
@@ -69,7 +69,7 @@
             // Lbl_Subject
             // 
             this.Lbl_Subject.AutoSize = true;
-            this.Lbl_Subject.Location = new System.Drawing.Point(117, 48);
+            this.Lbl_Subject.Location = new System.Drawing.Point(129, 50);
             this.Lbl_Subject.Name = "Lbl_Subject";
             this.Lbl_Subject.Size = new System.Drawing.Size(43, 13);
             this.Lbl_Subject.TabIndex = 11;
@@ -78,7 +78,7 @@
             // Lbl_ID
             // 
             this.Lbl_ID.AutoSize = true;
-            this.Lbl_ID.Location = new System.Drawing.Point(46, 48);
+            this.Lbl_ID.Location = new System.Drawing.Point(50, 50);
             this.Lbl_ID.Name = "Lbl_ID";
             this.Lbl_ID.Size = new System.Drawing.Size(18, 13);
             this.Lbl_ID.TabIndex = 10;
@@ -99,6 +99,7 @@
             this.Btn_Add.Size = new System.Drawing.Size(75, 23);
             this.Btn_Add.TabIndex = 16;
             this.Btn_Add.UseVisualStyleBackColor = true;
+            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Tmr_Filter
             // 
@@ -117,7 +118,7 @@
             this.Controls.Add(this.Lbl_Subject);
             this.Controls.Add(this.Lbl_ID);
             this.Name = "Uc_Table";
-            this.Size = new System.Drawing.Size(686, 379);
+            this.Size = new System.Drawing.Size(726, 395);
             this.ResumeLayout(false);
             this.PerformLayout();
 
