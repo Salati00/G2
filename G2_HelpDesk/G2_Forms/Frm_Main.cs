@@ -44,5 +44,10 @@ namespace G2_Forms
             f.ShowDialog();
         }
 
+        private void btn_Overview_Click(object sender, EventArgs e)
+        {
+            Overview overview = new Overview();
+            overview.ShowDialog();
+        }
     }
 }
