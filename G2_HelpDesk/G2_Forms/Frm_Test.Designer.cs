@@ -34,9 +34,10 @@
             // 
             // Btn_AddRow
             // 
-            this.Btn_AddRow.Location = new System.Drawing.Point(33, 415);
+            this.Btn_AddRow.Location = new System.Drawing.Point(44, 511);
+            this.Btn_AddRow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Btn_AddRow.Name = "Btn_AddRow";
-            this.Btn_AddRow.Size = new System.Drawing.Size(75, 23);
+            this.Btn_AddRow.Size = new System.Drawing.Size(100, 28);
             this.Btn_AddRow.TabIndex = 2;
             this.Btn_AddRow.Text = "Add Row";
             this.Btn_AddRow.UseVisualStyleBackColor = true;
@@ -46,18 +47,21 @@
             // 
             this.UcTab_Main.AutoScroll = true;
             this.UcTab_Main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UcTab_Main.Location = new System.Drawing.Point(33, 12);
+            this.UcTab_Main.Location = new System.Drawing.Point(44, 15);
+            this.UcTab_Main.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.UcTab_Main.Name = "UcTab_Main";
-            this.UcTab_Main.Size = new System.Drawing.Size(686, 379);
+            this.UcTab_Main.Size = new System.Drawing.Size(914, 466);
             this.UcTab_Main.TabIndex = 3;
+            this.UcTab_Main.Load += new System.EventHandler(this.UcTab_Main_Load);
             // 
             // Frm_Test
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.UcTab_Main);
             this.Controls.Add(this.Btn_AddRow);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Frm_Test";
             this.Text = "Frm_Test";
             this.Load += new System.EventHandler(this.Frm_Test_Load);
