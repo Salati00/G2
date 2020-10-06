@@ -43,11 +43,5 @@ namespace G2_Forms
             Frm_Test f = new Frm_Test();
             f.ShowDialog();
         }
-
-        private void btn_Overview_Click(object sender, EventArgs e)
-        {
-            Overview overview = new Overview();
-            overview.ShowDialog();
-        }
     }
 }
