@@ -16,7 +16,7 @@ namespace G2_UserControls
     {
         private int x = 50;
         private int y = 50;
-
+        private const int DELTA_Y = 35;
 
         private List<object> elementList;
 
@@ -39,26 +39,36 @@ namespace G2_UserControls
 
             foreach (var item in elementList)
             {
-                AddRow(item);
+                AddRow((List<object>)item);
             }
         }
 
-        private void AddRow(object item)
+        private void AddRow(List<object> item)
         {
+            if(item.Count == 0)
+            {
+                
+                item.Add("ID");
+                item.Add("Subject");
+                item.Add("User");
+                item.Add("Date");
+                item.Add("Status");
+            }
+
             Uc_TableRow r = new Uc_TableRow(item);
             r.Top = y;
             r.Left = x;
 
             this.Controls.Add(r);
 
-            y += 35;
+            y += DELTA_Y;
         }
 
         //Public methods
-        public void AddElement(object item)
+        public void AddElement(List<object> item)
         {
             elementList.Add(item);
-            AddRow(elementList.Last<object>());
+            AddRow((List<object>)elementList.Last<object>());
         }
 
 
@@ -82,6 +92,11 @@ namespace G2_UserControls
 
             MessageBox.Show("Retrieve data again");
             this.UpdateTable();
+        }
+
+        private void Btn_Add_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

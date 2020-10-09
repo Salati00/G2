@@ -43,6 +43,5 @@ namespace G2_Forms
             Frm_Test f = new Frm_Test();
             f.ShowDialog();
         }
-
     }
 }
