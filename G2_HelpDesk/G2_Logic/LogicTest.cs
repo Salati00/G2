@@ -11,9 +11,9 @@ namespace G2_Logic
     {
         BaseDAO testdb = new BaseDAO();
 
-        public void GetDbList()
+        public void AddUser(string name, string surname)
         {
-            testdb.TestingDAO();
+            testdb.DbAddUser(name, surname);
         }
     }
 }
