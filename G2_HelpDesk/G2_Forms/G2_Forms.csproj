@@ -121,6 +121,12 @@
     <Compile Include="Frm_Test.Designer.cs">
       <DependentUpon>Frm_Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Overview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Test.resx">
       <DependentUpon>Frm_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Overview.resx">
       <DependentUpon>Overview.cs</DependentUpon>
