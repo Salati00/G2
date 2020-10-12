@@ -16,6 +16,10 @@ namespace G2_UserControls
         private int x, y;
         private const int DELTA_X = 120;
 
+        /// <summary>
+        /// Takes one object and interprets it as a list to populate the fields to be displayed
+        /// </summary>
+        /// <param name="Items">List of objects to be displayed</param>
         public Uc_TableRow(object Items)
         {
             InitializeComponent();
@@ -24,6 +28,7 @@ namespace G2_UserControls
             CreateFields();
         }
 
+        //Private Methods
         private void CreateFields()
         {
             for (int i = 0; i < items.Count(); i++)
@@ -40,6 +45,7 @@ namespace G2_UserControls
             }
         }
 
+        //Public Methods
         public void Remove()
         {
             this.Parent.Controls.Remove(this);

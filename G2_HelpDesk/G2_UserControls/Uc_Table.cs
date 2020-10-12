@@ -26,7 +26,7 @@ namespace G2_UserControls
         /// <summary>
         /// Takes list of strings as headers for the table to be displayed
         /// </summary>
-        /// <param name="Headers"></param>
+        /// <param name="Headers">List of strings to be displayed as headers</param>
         public Uc_Table(List<string> Headers)
         {
             InitializeComponent();
@@ -76,19 +76,7 @@ namespace G2_UserControls
                 H_X += H_DELTA_X;
             }
         }
-
-        public void UpdateTable()
-        {
-            this.Controls.OfType<Uc_TableRow>().ToList().ForEach(x => { x.Remove(); });
-            y = 50;
-            x = 50;
-
-            foreach (var item in elementList)
-            {
-                AddRow((List<object>)item);
-            }
-        }
-
+        
         private void AddRow(List<object> item)
         {
             if(item.Count == 0)
@@ -110,12 +98,29 @@ namespace G2_UserControls
         }
 
         //Public methods
+        /// <summary>
+        /// Adds one entry to the table
+        /// </summary>
+        /// <param name="item">List of objects to be displayed in table as entries</param>
         public void AddElement(List<object> item)
         {
             elementList.Add(item);
             AddRow((List<object>)elementList.Last<object>());
         }
+        /// <summary>
+        /// Forces Update of displayed elements
+        /// </summary>
+        public void UpdateTable()
+        {
+            this.Controls.OfType<Uc_TableRow>().ToList().ForEach(x => { x.Remove(); });
+            y = 50;
+            x = 50;
 
+            foreach (var item in elementList)
+            {
+                AddRow((List<object>)item);
+            }
+        }
 
         //Events
         private void Txt_Filter_TextChanged(object sender, EventArgs e)
