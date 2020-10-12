@@ -15,11 +15,31 @@ namespace G2_UserControls
     public partial class Uc_Table : UserControl
     {
         private int x = 50;
-        private int y = 50;
+        private int y = 70 ;
         private const int DELTA_Y = 35;
 
-        private List<object> elementList;
+        private const int H_Y = 50;
+        private int H_X = 50;
+        private const int H_DELTA_X = 120;
 
+        private List<object> elementList;
+        /// <summary>
+        /// Takes list of strings as headers for the table to be displayed
+        /// </summary>
+        /// <param name="Headers"></param>
+        public Uc_Table(List<string> Headers)
+        {
+            InitializeComponent();
+            this.AutoScroll = true;
+            this.BorderStyle = BorderStyle.FixedSingle;
+
+            this.elementList = new List<object>();
+
+            CreateFields(Headers);
+        }
+        /// <summary>
+        /// FOR TESTING PURPOSES
+        /// </summary>
         public Uc_Table()
         {
             InitializeComponent();
@@ -27,10 +47,36 @@ namespace G2_UserControls
             this.BorderStyle = BorderStyle.FixedSingle;
 
             this.elementList = new List<object>();
+
+            CreateFields(null);
         }
 
-        
         //Private methods
+        private void CreateFields(List<string> Headers)
+        {
+            if(Headers == null)
+            {
+                Headers = new List<string>();
+                Headers.Add("ID");
+                Headers.Add("Subject");
+                Headers.Add("User");
+                Headers.Add("Date");
+                Headers.Add("Status");
+            }
+            for (int i = 0; i < Headers.Count(); i++)
+            {
+                Label l = new Label();
+                l.Text = Headers[i];
+                l.Visible = true;
+                l.Show();
+                l.Top = H_Y;
+                l.Left = H_X;
+                this.Controls.Add(l);
+
+                H_X += H_DELTA_X;
+            }
+        }
+
         public void UpdateTable()
         {
             this.Controls.OfType<Uc_TableRow>().ToList().ForEach(x => { x.Remove(); });
@@ -47,7 +93,6 @@ namespace G2_UserControls
         {
             if(item.Count == 0)
             {
-                
                 item.Add("ID");
                 item.Add("Subject");
                 item.Add("User");

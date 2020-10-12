@@ -51,7 +51,6 @@
             this.btn_Overview.TabIndex = 2;
             this.btn_Overview.Text = "Overview";
             this.btn_Overview.UseVisualStyleBackColor = true;
-            this.btn_Overview.Click += new System.EventHandler(this.btn_Overview_Click);
             // 
             // Frm_Main
             // 

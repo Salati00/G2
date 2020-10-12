@@ -29,60 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Lbl_Status = new System.Windows.Forms.Label();
-            this.Lbl_Date = new System.Windows.Forms.Label();
-            this.Lbl_User = new System.Windows.Forms.Label();
-            this.Lbl_Subject = new System.Windows.Forms.Label();
-            this.Lbl_ID = new System.Windows.Forms.Label();
             this.Txt_Filter = new System.Windows.Forms.TextBox();
             this.Btn_Add = new System.Windows.Forms.Button();
             this.Tmr_Filter = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            // 
-            // Lbl_Status
-            // 
-            this.Lbl_Status.AutoSize = true;
-            this.Lbl_Status.Location = new System.Drawing.Point(507, 50);
-            this.Lbl_Status.Name = "Lbl_Status";
-            this.Lbl_Status.Size = new System.Drawing.Size(37, 13);
-            this.Lbl_Status.TabIndex = 14;
-            this.Lbl_Status.Text = "Status";
-            // 
-            // Lbl_Date
-            // 
-            this.Lbl_Date.AutoSize = true;
-            this.Lbl_Date.Location = new System.Drawing.Point(387, 50);
-            this.Lbl_Date.Name = "Lbl_Date";
-            this.Lbl_Date.Size = new System.Drawing.Size(30, 13);
-            this.Lbl_Date.TabIndex = 13;
-            this.Lbl_Date.Text = "Date";
-            // 
-            // Lbl_User
-            // 
-            this.Lbl_User.AutoSize = true;
-            this.Lbl_User.Location = new System.Drawing.Point(255, 50);
-            this.Lbl_User.Name = "Lbl_User";
-            this.Lbl_User.Size = new System.Drawing.Size(29, 13);
-            this.Lbl_User.TabIndex = 12;
-            this.Lbl_User.Text = "User";
-            // 
-            // Lbl_Subject
-            // 
-            this.Lbl_Subject.AutoSize = true;
-            this.Lbl_Subject.Location = new System.Drawing.Point(129, 50);
-            this.Lbl_Subject.Name = "Lbl_Subject";
-            this.Lbl_Subject.Size = new System.Drawing.Size(43, 13);
-            this.Lbl_Subject.TabIndex = 11;
-            this.Lbl_Subject.Text = "Subject";
-            // 
-            // Lbl_ID
-            // 
-            this.Lbl_ID.AutoSize = true;
-            this.Lbl_ID.Location = new System.Drawing.Point(50, 50);
-            this.Lbl_ID.Name = "Lbl_ID";
-            this.Lbl_ID.Size = new System.Drawing.Size(18, 13);
-            this.Lbl_ID.TabIndex = 10;
-            this.Lbl_ID.Text = "ID";
             // 
             // Txt_Filter
             // 
@@ -94,10 +44,11 @@
             // 
             // Btn_Add
             // 
-            this.Btn_Add.Location = new System.Drawing.Point(568, 10);
+            this.Btn_Add.Location = new System.Drawing.Point(583, 10);
             this.Btn_Add.Name = "Btn_Add";
-            this.Btn_Add.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Add.Size = new System.Drawing.Size(103, 23);
             this.Btn_Add.TabIndex = 16;
+            this.Btn_Add.Text = "Add new to db";
             this.Btn_Add.UseVisualStyleBackColor = true;
             this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
@@ -112,11 +63,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Btn_Add);
             this.Controls.Add(this.Txt_Filter);
-            this.Controls.Add(this.Lbl_Status);
-            this.Controls.Add(this.Lbl_Date);
-            this.Controls.Add(this.Lbl_User);
-            this.Controls.Add(this.Lbl_Subject);
-            this.Controls.Add(this.Lbl_ID);
             this.Name = "Uc_Table";
             this.Size = new System.Drawing.Size(726, 395);
             this.ResumeLayout(false);
@@ -125,12 +71,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label Lbl_Status;
-        private System.Windows.Forms.Label Lbl_Date;
-        private System.Windows.Forms.Label Lbl_User;
-        private System.Windows.Forms.Label Lbl_Subject;
-        private System.Windows.Forms.Label Lbl_ID;
         private System.Windows.Forms.TextBox Txt_Filter;
         private System.Windows.Forms.Button Btn_Add;
         private System.Windows.Forms.Timer Tmr_Filter;
