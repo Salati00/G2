@@ -16,5 +16,10 @@ namespace G2_Forms
         {
             InitializeComponent();
         }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
