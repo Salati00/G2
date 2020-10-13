@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2_DAL", "G2_DAL\G2_DAL.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2_Logic", "G2_Logic\G2_Logic.csproj", "{B68DC039-5DAE-4AA2-B39D-0A40DE54ECD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2_Model", "G2_Model\G2_Model.csproj", "{F3DF4C27-0990-4ADA-9B9B-1B6615D0F84A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B68DC039-5DAE-4AA2-B39D-0A40DE54ECD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B68DC039-5DAE-4AA2-B39D-0A40DE54ECD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B68DC039-5DAE-4AA2-B39D-0A40DE54ECD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3DF4C27-0990-4ADA-9B9B-1B6615D0F84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3DF4C27-0990-4ADA-9B9B-1B6615D0F84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3DF4C27-0990-4ADA-9B9B-1B6615D0F84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3DF4C27-0990-4ADA-9B9B-1B6615D0F84A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

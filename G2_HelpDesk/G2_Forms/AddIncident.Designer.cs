@@ -36,13 +36,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbDateReport = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -116,13 +118,14 @@
             this.textBox1.Size = new System.Drawing.Size(221, 140);
             this.textBox1.TabIndex = 7;
             // 
-            // comboBox1
+            // cbDateReport
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(302, 174);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(221, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cbDateReport.FormattingEnabled = true;
+            this.cbDateReport.Location = new System.Drawing.Point(302, 174);
+            this.cbDateReport.Name = "cbDateReport";
+            this.cbDateReport.Size = new System.Drawing.Size(221, 21);
+            this.cbDateReport.TabIndex = 8;
+            this.cbDateReport.Text = "Select date";
             // 
             // comboBox2
             // 
@@ -131,6 +134,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(221, 21);
             this.comboBox2.TabIndex = 9;
+            this.comboBox2.Text = "Select type";
             // 
             // comboBox3
             // 
@@ -172,18 +176,39 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Create new incident ticket";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(302, 562);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(102, 46);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "CANCEL";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(410, 562);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(113, 46);
+            this.btnSubmit.TabIndex = 16;
+            this.btnSubmit.Text = "SUBMIT";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            // 
             // AddIncident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 666);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbDateReport);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -209,12 +234,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbDateReport;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSubmit;
     }
 }
