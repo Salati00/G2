@@ -14,7 +14,7 @@ namespace G2_UserControls
 {
     public partial class Uc_Table : UserControl
     {
-        private int x = 50;
+        private int x = 30;
         private int y = 70 ;
         private const int DELTA_Y = 35;
 

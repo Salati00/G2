@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel.Design;
 
 namespace G2_UserControls
 {
@@ -16,15 +17,17 @@ namespace G2_UserControls
         private int x, y;
         private const int DELTA_X = 120;
 
+        private Uc_Table Creator;
         /// <summary>
         /// Takes one object and interprets it as a list to populate the fields to be displayed
         /// </summary>
         /// <param name="Items">List of objects to be displayed</param>
-        public Uc_TableRow(object Items)
+        public Uc_TableRow(object Items, Uc_Table Table)
         {
             InitializeComponent();
             items = (List<object>)Items;
             x = 20; y = 20;
+            Creator = Table;
             CreateFields();
         }
 
@@ -43,8 +46,22 @@ namespace G2_UserControls
 
                 x += DELTA_X;
             }
+            /*Button BtnRemove = new Button();
+            BtnRemove.Top = y;
+            BtnRemove.Left = x;
+            BtnRemove.Text = "X";
+            BtnRemove.Height = 30;
+            BtnRemove.Width = 30;
+            BtnRemove.Show();
+            BtnRemove.Click += RemoveClick;
+            this.Controls.Add(BtnRemove);*/
         }
+        /*
+        private void RemoveClick(object sender, EventArgs e)
+        {
 
+        }
+        */
         //Public Methods
         public void Remove()
         {
