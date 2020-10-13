@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace G2_Model
 {
-    class Program
+    public enum TicketTypes
     {
-        static void Main(string[] args)
-        {
-        }
+        Empty,
+        Technical
     }
 }
