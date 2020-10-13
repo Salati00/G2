@@ -42,6 +42,8 @@
             this.txt_phoneNumber = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.CreateNewUser_btn = new System.Windows.Forms.Button();
+            this.txt_repeatPassword = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -88,7 +90,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(242, 262);
+            this.label5.Location = new System.Drawing.Point(242, 292);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 20);
             this.label5.TabIndex = 4;
@@ -98,7 +100,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(242, 307);
+            this.label6.Location = new System.Drawing.Point(242, 337);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 20);
             this.label6.TabIndex = 5;
@@ -116,42 +118,42 @@
             // 
             // txt_firstname
             // 
-            this.txt_firstname.Location = new System.Drawing.Point(368, 93);
+            this.txt_firstname.Location = new System.Drawing.Point(383, 95);
             this.txt_firstname.Name = "txt_firstname";
             this.txt_firstname.Size = new System.Drawing.Size(213, 20);
             this.txt_firstname.TabIndex = 7;
             // 
             // txt_lastname
             // 
-            this.txt_lastname.Location = new System.Drawing.Point(368, 137);
+            this.txt_lastname.Location = new System.Drawing.Point(383, 139);
             this.txt_lastname.Name = "txt_lastname";
             this.txt_lastname.Size = new System.Drawing.Size(213, 20);
             this.txt_lastname.TabIndex = 8;
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(368, 181);
+            this.txt_username.Location = new System.Drawing.Point(383, 183);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(213, 20);
             this.txt_username.TabIndex = 9;
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(368, 217);
+            this.txt_password.Location = new System.Drawing.Point(383, 219);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(213, 20);
             this.txt_password.TabIndex = 10;
             // 
             // txt_phoneNumber
             // 
-            this.txt_phoneNumber.Location = new System.Drawing.Point(368, 309);
+            this.txt_phoneNumber.Location = new System.Drawing.Point(392, 339);
             this.txt_phoneNumber.Name = "txt_phoneNumber";
             this.txt_phoneNumber.Size = new System.Drawing.Size(213, 20);
             this.txt_phoneNumber.TabIndex = 11;
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(368, 262);
+            this.txt_email.Location = new System.Drawing.Point(392, 292);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(213, 20);
             this.txt_email.TabIndex = 12;
@@ -166,11 +168,30 @@
             this.CreateNewUser_btn.UseVisualStyleBackColor = true;
             this.CreateNewUser_btn.Click += new System.EventHandler(this.CreateNewUser_btn_Click);
             // 
+            // txt_repeatPassword
+            // 
+            this.txt_repeatPassword.Location = new System.Drawing.Point(383, 256);
+            this.txt_repeatPassword.Name = "txt_repeatPassword";
+            this.txt_repeatPassword.Size = new System.Drawing.Size(213, 20);
+            this.txt_repeatPassword.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.Location = new System.Drawing.Point(242, 256);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(139, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Repeat Password:";
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_repeatPassword);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.CreateNewUser_btn);
             this.Controls.Add(this.txt_email);
             this.Controls.Add(this.txt_phoneNumber);
@@ -208,5 +229,7 @@
         private System.Windows.Forms.TextBox txt_phoneNumber;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Button CreateNewUser_btn;
+        private System.Windows.Forms.TextBox txt_repeatPassword;
+        private System.Windows.Forms.Label label8;
     }
 }

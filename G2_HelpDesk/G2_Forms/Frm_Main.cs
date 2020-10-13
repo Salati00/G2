@@ -55,5 +55,11 @@ namespace G2_Forms
             AddIncident incident = new AddIncident();
             incident.ShowDialog();
         }
+
+        private void btn_AddUser_Click(object sender, EventArgs e)
+        {
+            AddUser user = new AddUser();
+            user.ShowDialog();
+        }
     }
 }

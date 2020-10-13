@@ -31,6 +31,7 @@
             this.Btn_Test = new System.Windows.Forms.Button();
             this.btn_Overview = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_AddUser = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Btn_Test
@@ -65,11 +66,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btn_AddUser
+            // 
+            this.btn_AddUser.Location = new System.Drawing.Point(12, 81);
+            this.btn_AddUser.Name = "btn_AddUser";
+            this.btn_AddUser.Size = new System.Drawing.Size(75, 23);
+            this.btn_AddUser.TabIndex = 4;
+            this.btn_AddUser.Text = "AddUser";
+            this.btn_AddUser.UseVisualStyleBackColor = true;
+            this.btn_AddUser.Click += new System.EventHandler(this.btn_AddUser_Click);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_AddUser);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Overview);
             this.Controls.Add(this.Btn_Test);
@@ -84,6 +96,7 @@
         private System.Windows.Forms.Button Btn_Test;
         private System.Windows.Forms.Button btn_Overview;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_AddUser;
     }
 }
 
