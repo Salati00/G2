@@ -17,7 +17,7 @@ namespace G2_Forms
             InitializeComponent();
         }
 
-        private void LoginPage_Load(object sender, EventArgs e)
+        private void Login_Btn_Click(object sender, EventArgs e)
         {
 
         }
