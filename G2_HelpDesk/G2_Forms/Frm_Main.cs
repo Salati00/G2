@@ -49,5 +49,10 @@ namespace G2_Forms
             Overview o = new Overview();
             o.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
