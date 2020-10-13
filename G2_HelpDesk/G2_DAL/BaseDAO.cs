@@ -33,6 +33,7 @@ namespace G2_DAL
             var document = new BsonDocument { { "Name", name }, { "Surname", surname } };
             collection.InsertOne(document);
         }
+
     }
 
 }

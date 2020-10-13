@@ -52,7 +52,8 @@ namespace G2_Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AddIncident incident = new AddIncident();
+            incident.ShowDialog();
         }
     }
 }
