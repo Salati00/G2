@@ -16,5 +16,10 @@ namespace G2_Forms
         {
             InitializeComponent();
         }
+
+        private void CreateNewUser_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
