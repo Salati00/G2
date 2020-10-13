@@ -37,7 +37,6 @@ namespace G2_Forms
             else
             {
                 User newUser = new User(firstname, lastname, username, password, phonenumber, email);
-
             }
               
         }
