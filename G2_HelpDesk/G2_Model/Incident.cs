@@ -8,11 +8,11 @@ namespace G2_Model
 {
     public class Incident
     {
-        DateTime dateReportd;
-        string subject;
-        enum Type { Technical }
+        public DateTime dateReportd;
+        public string subject;
+        public enum Type { Technical }
         //User user;
-        enum Priority { Urgent, Normal}
-        string description;
+        public enum Priority { Urgent, Normal}
+        public string description;
     }
 }
