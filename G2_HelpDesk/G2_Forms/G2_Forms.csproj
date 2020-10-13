@@ -195,6 +195,10 @@
       <Project>{b68dc039-5dae-4aa2-b39d-0a40de54ecd2}</Project>
       <Name>G2_Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\G2_Model\G2_Model.csproj">
+      <Project>{f3df4c27-0990-4ada-9b9b-1b6615d0f84a}</Project>
+      <Name>G2_Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\G2_UserControls\G2_UserControls.csproj">
       <Project>{23ac0745-96f1-4648-bcb5-ca30d2bead0c}</Project>
       <Name>G2_UserControls</Name>

@@ -37,10 +37,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbDateReport = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.cbUser = new System.Windows.Forms.ComboBox();
+            this.cbPriority = new System.Windows.Forms.ComboBox();
+            this.cbDeadline = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -127,38 +127,38 @@
             this.cbDateReport.TabIndex = 8;
             this.cbDateReport.Text = "Select date";
             // 
-            // comboBox2
+            // cbType
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(302, 252);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(221, 21);
-            this.comboBox2.TabIndex = 9;
-            this.comboBox2.Text = "Select type";
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Location = new System.Drawing.Point(302, 252);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(221, 21);
+            this.cbType.TabIndex = 9;
+            this.cbType.Text = "Select type";
             // 
-            // comboBox3
+            // cbUser
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(302, 289);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(221, 21);
-            this.comboBox3.TabIndex = 10;
+            this.cbUser.FormattingEnabled = true;
+            this.cbUser.Location = new System.Drawing.Point(302, 289);
+            this.cbUser.Name = "cbUser";
+            this.cbUser.Size = new System.Drawing.Size(221, 21);
+            this.cbUser.TabIndex = 10;
             // 
-            // comboBox4
+            // cbPriority
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(302, 325);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(221, 21);
-            this.comboBox4.TabIndex = 11;
+            this.cbPriority.FormattingEnabled = true;
+            this.cbPriority.Location = new System.Drawing.Point(302, 325);
+            this.cbPriority.Name = "cbPriority";
+            this.cbPriority.Size = new System.Drawing.Size(221, 21);
+            this.cbPriority.TabIndex = 11;
             // 
-            // comboBox5
+            // cbDeadline
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(302, 361);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(221, 21);
-            this.comboBox5.TabIndex = 12;
+            this.cbDeadline.FormattingEnabled = true;
+            this.cbDeadline.Location = new System.Drawing.Point(302, 361);
+            this.cbDeadline.Name = "cbDeadline";
+            this.cbDeadline.Size = new System.Drawing.Size(221, 21);
+            this.cbDeadline.TabIndex = 12;
             // 
             // textBox2
             // 
@@ -204,10 +204,10 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cbDeadline);
+            this.Controls.Add(this.cbPriority);
+            this.Controls.Add(this.cbUser);
+            this.Controls.Add(this.cbType);
             this.Controls.Add(this.cbDateReport);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label7);
@@ -235,10 +235,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox cbDateReport;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cbType;
+        private System.Windows.Forms.ComboBox cbUser;
+        private System.Windows.Forms.ComboBox cbPriority;
+        private System.Windows.Forms.ComboBox cbDeadline;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCancel;
