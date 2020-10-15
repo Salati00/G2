@@ -24,8 +24,9 @@ namespace G2_Forms
             cbDeadline.Items.Add(2);
             cbDeadline.Items.Add(3);
             cbDeadline.Items.Add(4);
-            cbType.DataSource = Enum.GetValues(typeof(Incident.Type));
-            cbPriority.DataSource = Enum.GetValues(typeof(Incident.Priority));
+            //enums were changed look at the Incident model again
+            //cbType.DataSource = Enum.GetValues(typeof(Incident.Type));
+            //cbPriority.DataSource = Enum.GetValues(typeof(Incident.Priority));
 
 
         }
