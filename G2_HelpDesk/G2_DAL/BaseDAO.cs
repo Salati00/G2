@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using G2_Model;
 
 namespace G2_DAL
 {
@@ -27,11 +28,16 @@ namespace G2_DAL
             database.GetCollection<T>(typeof(T).Name).FindOneAndDelete(filter);
         }
 
-        public void DbAddUser(string name, string surname)
+        public void DbAddUser(string firstname, string lastname, string username, string password, int phonenumber, string email)
         {
             TestingDAO();
-            var document = new BsonDocument { { "Name", name }, { "Surname", surname } };
+            var document = new BsonDocument { { "Firstname", firstname }, { "Lastname", lastname }, { "Username", username}, { "Password", password}, { "PhoneNumber", phonenumber},{ "Email", email} };
             collection.InsertOne(document);
+        }
+        public async Task DbGetAllUsers()
+        {
+            var list = await collection.Find(new BsonDocument()).ToListAsync();
+            List<User> users = new List<User>();
         }
 
     }
