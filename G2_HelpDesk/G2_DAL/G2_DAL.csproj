@@ -116,9 +116,6 @@
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\G2_Model\G2_Model.csproj">
       <Project>{f3df4c27-0990-4ada-9b9b-1b6615d0f84a}</Project>
       <Name>G2_Model</Name>
