@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using G2_Model;
 
 
 namespace G2_DAL
