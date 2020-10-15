@@ -16,7 +16,7 @@ namespace G2_Forms
         static void Main()
         {
             LogicTest service = new LogicTest();
-            service.AddUser("Mahmud", "Abbas");
+            //service.AddUser("Mahmud", "Abbas");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_Main());
