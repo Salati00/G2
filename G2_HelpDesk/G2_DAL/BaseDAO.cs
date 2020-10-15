@@ -30,14 +30,9 @@ namespace G2_DAL
 
         public void DbAddUser(User user)
         {
-<<<<<<< Updated upstream
             var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username}, { "Password", user.Password}, { "PhoneNumber", user.PhoneNumber},{ "Email", user.Email} };
             ConnUser();
             collection.InsertOne(document);
-=======
-            ConnUser();
-            var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username }, { "Password", user.Password }, { "PhoneNumber", user.PhoneNumber }, { "Email", user.Email } };
->>>>>>> Stashed changes
         }
         public List<User> DbGetAllUsers()
         {
