@@ -30,14 +30,30 @@ namespace G2_DAL
 
         public void DbAddUser(User user)
         {
+<<<<<<< Updated upstream
             var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username}, { "Password", user.Password}, { "PhoneNumber", user.PhoneNumber},{ "Email", user.Email} };
             ConnUser();
             collection.InsertOne(document);
+=======
+            ConnUser();
+            var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username }, { "Password", user.Password }, { "PhoneNumber", user.PhoneNumber }, { "Email", user.Email } };
+>>>>>>> Stashed changes
         }
-        public async Task DbGetAllUsers()
+        public List<User> DbGetAllUsers()
         {
-            var list = await collection.Find(new BsonDocument()).ToListAsync();
             List<User> users = new List<User>();
+            User user;
+            foreach (BsonDocument collection in database.ListCollectionsAsync().Result.ToListAsync<BsonDocument>().Result)
+            {
+                user = new User(
+                    collection["Fistname"].AsString,
+                    collection["Lastname"].AsString,
+                    collection["Username"].AsString, collection["Password"].AsString,
+                    (int)(collection["PhoneNumber"]),
+                    collection["Email"].AsString);
+                users.Add(user);
+            }
+            return users;
         }
 
     }

@@ -16,5 +16,9 @@ namespace G2_Logic
         {
             testdb.DbAddUser(user);
         }
+        public List<User> GetAllUsers()
+        {
+            return testdb.DbGetAllUsers();
+        }
     }
 }
