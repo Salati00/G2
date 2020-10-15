@@ -65,5 +65,15 @@
       <DependentUpon>Uc_TableRow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\G2_Logic\G2_Logic.csproj">
+      <Project>{b68dc039-5dae-4aa2-b39d-0a40de54ecd2}</Project>
+      <Name>G2_Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\G2_Model\G2_Model.csproj">
+      <Project>{f3df4c27-0990-4ada-9b9b-1b6615d0f84a}</Project>
+      <Name>G2_Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

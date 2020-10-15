@@ -122,6 +122,11 @@ namespace G2_UserControls
             }
         }
 
+        public Uc_Table UserMode()
+        {
+            return this;
+        }
+
         //Events
         private void Txt_Filter_TextChanged(object sender, EventArgs e)
         {
