@@ -30,13 +30,8 @@ namespace G2_DAL
 
         public void DbAddUser(User user)
         {
-<<<<<<< Updated upstream
-            TestingDAO();
             var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username}, { "Password", user.Password}, { "PhoneNumber", user.PhoneNumber},{ "Email", user.Email} };
-=======
             ConnUser();
-            var document = new BsonDocument { { "Firstname", firstname }, { "Lastname", lastname }, { "Username", username}, { "Password", password}, { "PhoneNumber", phonenumber},{ "Email", email} };
->>>>>>> Stashed changes
             collection.InsertOne(document);
         }
         public async Task DbGetAllUsers()
