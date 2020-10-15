@@ -18,6 +18,7 @@ namespace G2_Forms
         public AddIncident()
         {
             Incident incident = new Incident();
+            
             InitializeComponent();
             cbDeadline.Items.Add(1);
             cbDeadline.Items.Add(2);
