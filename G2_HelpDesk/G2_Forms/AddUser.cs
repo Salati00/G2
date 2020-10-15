@@ -20,6 +20,8 @@ namespace G2_Forms
             InitializeComponent();
         }
 
+        LogicTest AddUserLogic = new LogicTest();
+
         private void CreateNewUser_btn_Click(object sender, EventArgs e)
         {
             string firstname = txt_firstname.Text;
@@ -37,6 +39,8 @@ namespace G2_Forms
             else
             {
                 User newUser = new User(firstname, lastname, username, password, phonenumber, email);
+                
+                AddUserLogic.AddUser(newUser);
             }
               
         }
