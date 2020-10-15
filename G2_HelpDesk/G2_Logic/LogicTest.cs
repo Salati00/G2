@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using G2_DAL;
+using G2_Model;
 
 namespace G2_Logic
 {
@@ -11,9 +12,9 @@ namespace G2_Logic
     {
         BaseDAO testdb = new BaseDAO();
 
-        public void AddUser(string name, string surname)
+        public void AddUser(User user)
         {
-            testdb.DbAddUser(name, surname);
+            testdb.DbAddUser(user);
         }
     }
 }

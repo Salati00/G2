@@ -28,10 +28,10 @@ namespace G2_DAL
             database.GetCollection<T>(typeof(T).Name).FindOneAndDelete(filter);
         }
 
-        public void DbAddUser(string firstname, string lastname, string username, string password, int phonenumber, string email)
+        public void DbAddUser(User user)
         {
             TestingDAO();
-            var document = new BsonDocument { { "Firstname", firstname }, { "Lastname", lastname }, { "Username", username}, { "Password", password}, { "PhoneNumber", phonenumber},{ "Email", email} };
+            var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username}, { "Password", user.Password}, { "PhoneNumber", user.PhoneNumber},{ "Email", user.Email} };
             collection.InsertOne(document);
         }
         public async Task DbGetAllUsers()
