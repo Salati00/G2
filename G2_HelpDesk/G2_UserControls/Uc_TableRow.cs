@@ -17,17 +17,15 @@ namespace G2_UserControls
         private int x, y;
         private const int DELTA_X = 120;
 
-        private Uc_Table Creator;
         /// <summary>
         /// Takes one object and interprets it as a list to populate the fields to be displayed
         /// </summary>
         /// <param name="Items">List of objects to be displayed</param>
-        public Uc_TableRow(object Items, Uc_Table Table)
+        public Uc_TableRow(object Items)
         {
             InitializeComponent();
             items = (List<object>)Items;
             x = 20; y = 20;
-            Creator = Table;
             CreateFields();
         }
 
