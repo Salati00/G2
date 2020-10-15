@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
-using G2_Model;
+
 
 namespace G2_DAL
 {
@@ -20,7 +20,7 @@ namespace G2_DAL
             database = client.GetDatabase("g2Database");
             collection = database.GetCollection<BsonDocument>("Users");
         }
-        public void Delete<T>(T item) where T : class, new()
+        public void Delete<T>(T item) where T : class, new() //DOES NOT FUNCTION YET
         {
             //WorkAround for DeleteOne parameter
             ObjectFilterDefinition<T> filter = new ObjectFilterDefinition<T>(item);
