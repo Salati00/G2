@@ -14,7 +14,7 @@ namespace G2_DAL
         IMongoClient client;
         IMongoDatabase database;
         IMongoCollection<BsonDocument> collection;
-        public void TestingDAO()
+        public void ConnUser()
         {
             client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
             database = client.GetDatabase("g2Database");
@@ -30,8 +30,13 @@ namespace G2_DAL
 
         public void DbAddUser(User user)
         {
+<<<<<<< Updated upstream
             TestingDAO();
             var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username}, { "Password", user.Password}, { "PhoneNumber", user.PhoneNumber},{ "Email", user.Email} };
+=======
+            ConnUser();
+            var document = new BsonDocument { { "Firstname", firstname }, { "Lastname", lastname }, { "Username", username}, { "Password", password}, { "PhoneNumber", phonenumber},{ "Email", email} };
+>>>>>>> Stashed changes
             collection.InsertOne(document);
         }
         public async Task DbGetAllUsers()
