@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Design;
+using G2_Model;
 
 namespace G2_UserControls
 {
@@ -21,10 +22,10 @@ namespace G2_UserControls
         /// Takes one object and interprets it as a list to populate the fields to be displayed
         /// </summary>
         /// <param name="Items">List of objects to be displayed</param>
-        public Uc_TableRow(object Items)
+        public Uc_TableRow(IListable Items)
         {
             InitializeComponent();
-            items = (List<object>)Items;
+            items = Items.ToList();
             x = 20; y = 20;
             CreateFields();
         }

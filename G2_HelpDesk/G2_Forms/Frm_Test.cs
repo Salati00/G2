@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //
 using MongoDB.Driver;
 using G2_UserControls;
+using G2_Model;
 
 namespace G2_Forms
 {
@@ -22,7 +23,7 @@ namespace G2_Forms
 
         private void Btn_AddRow_Click(object sender, EventArgs e)
         {
-            UcTab_Main.AddElement(new List<object>());
+            UcTab_Main.AddElement(new User("Giorgio","Salati","salati00","password","+393454455410","salati00.giorgio@gmail.com"));
         }
 
         private void Frm_Test_Load(object sender, EventArgs e)

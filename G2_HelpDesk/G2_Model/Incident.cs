@@ -32,5 +32,18 @@ namespace G2_Model
 
             return lst;
         }
+
+        public List<object> ToList()
+        {
+            List<object> lst = new List<object>();
+
+            lst.Add(ReportDate.ToString());
+            lst.Add(Subject.ToString());
+            lst.Add(Type.ToString());
+            lst.Add(Priority.ToString());
+            lst.Add(Description.ToString());
+
+            return lst;
+        }
     }
 }

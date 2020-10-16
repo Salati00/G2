@@ -29,7 +29,7 @@ namespace G2_Forms
             string username = txt_lastname.Text;
             string password = txt_password.Text;
             string repeatPasss = txt_repeatPassword.Text;
-            int phonenumber = int.Parse(txt_phoneNumber.Text);
+            string phonenumber = txt_phoneNumber.Text;
             string email = txt_email.Text;
 
             if(password != repeatPasss)

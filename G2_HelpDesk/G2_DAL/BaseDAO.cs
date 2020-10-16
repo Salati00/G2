@@ -26,7 +26,8 @@ namespace G2_DAL
             //WorkAround for DeleteOne parameter
             //ObjectFilterDefinition<User> filter = new User();
             // Remove the object.
-            database.GetCollection<User>(typeof(User).Name).FindOneAndDelete(filter);
+            /*
+            database.GetCollection<User>(typeof(User).Name).FindOneAndDelete(filter);*/
         }
 
         public void DbAddUser(User user)
@@ -44,8 +45,9 @@ namespace G2_DAL
                 user = new User(
                     collection["Fistname"].AsString,
                     collection["Lastname"].AsString,
-                    collection["Username"].AsString, collection["Password"].AsString,
-                    (int)(collection["PhoneNumber"]),
+                    collection["Username"].AsString,
+                    collection["Password"].AsString,
+                    collection["PhoneNumber"].AsString,
                     collection["Email"].AsString);
                 users.Add(user);
             }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //using System.Timers;
 using System.Runtime.CompilerServices;
+using G2_Model;
 
 namespace G2_UserControls
 {
@@ -22,7 +23,8 @@ namespace G2_UserControls
         private int H_X = 50;
         private const int H_DELTA_X = 120;
 
-        private List<object> elementList;
+
+        private List<IListable> elementList;
         /// <summary>
         /// Takes list of strings as headers for the table to be displayed
         /// </summary>
@@ -33,7 +35,7 @@ namespace G2_UserControls
             this.AutoScroll = true;
             this.BorderStyle = BorderStyle.FixedSingle;
 
-            this.elementList = new List<object>();
+            this.elementList = new List<IListable>();
 
             CreateFields(Headers);
         }
@@ -46,7 +48,7 @@ namespace G2_UserControls
             this.AutoScroll = true;
             this.BorderStyle = BorderStyle.FixedSingle;
 
-            this.elementList = new List<object>();
+            this.elementList = new List<IListable>();
 
             CreateFields(null);
         }
@@ -77,18 +79,9 @@ namespace G2_UserControls
             }
         }
         
-        private void AddRow(List<object> item)
+        private void AddRow(IListable item)
         {
-            if(item.Count == 0)
-            {
-                item.Add("ID");
-                item.Add("Subject");
-                item.Add("User");
-                item.Add("Date");
-                item.Add("Status");
-            }
-
-            Uc_TableRow r = new Uc_TableRow(item);
+            Uc_TableRow r = new Uc_TableRow(((IListable)item));
             r.Top = y;
             r.Left = x;
 
@@ -102,10 +95,10 @@ namespace G2_UserControls
         /// Adds one entry to the table
         /// </summary>
         /// <param name="item">List of objects to be displayed in table as entries</param>
-        public void AddElement(List<object> item)
+        public void AddElement(IListable item)
         {
             elementList.Add(item);
-            AddRow((List<object>)elementList.Last<object>());
+            AddRow(elementList.Last());
         }
         /// <summary>
         /// Forces Update of displayed elements
@@ -118,7 +111,7 @@ namespace G2_UserControls
 
             foreach (var item in elementList)
             {
-                AddRow((List<object>)item);
+                AddRow(item);
             }
         }
 
