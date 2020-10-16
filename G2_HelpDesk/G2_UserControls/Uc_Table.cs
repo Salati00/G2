@@ -126,7 +126,6 @@ namespace G2_UserControls
             Tmr_Filter.Enabled = false;
             Tmr_Filter.Stop();
 
-
             Tmr_Filter.Enabled = true;
             Tmr_Filter.Start();
         }
