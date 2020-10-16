@@ -23,8 +23,8 @@ namespace G2_UserControls
         private int H_X = 50;
         private const int H_DELTA_X = 120;
 
+        private List<object> elementList;
 
-        private List<IListable> elementList;
         /// <summary>
         /// Takes list of strings as headers for the table to be displayed
         /// </summary>
@@ -35,7 +35,7 @@ namespace G2_UserControls
             this.AutoScroll = true;
             this.BorderStyle = BorderStyle.FixedSingle;
 
-            this.elementList = new List<IListable>();
+            this.elementList = new List<object>();
 
             CreateFields(Headers);
         }
@@ -48,7 +48,7 @@ namespace G2_UserControls
             this.AutoScroll = true;
             this.BorderStyle = BorderStyle.FixedSingle;
 
-            this.elementList = new List<IListable>();
+            this.elementList = new List<object>();
 
             CreateFields(null);
         }
@@ -79,9 +79,9 @@ namespace G2_UserControls
             }
         }
         
-        private void AddRow(IListable item)
+        private void AddRow(List<object> item)
         {
-            Uc_TableRow r = new Uc_TableRow(((IListable)item));
+            Uc_TableRow r = new Uc_TableRow(item);
             r.Top = y;
             r.Left = x;
 
@@ -95,10 +95,10 @@ namespace G2_UserControls
         /// Adds one entry to the table
         /// </summary>
         /// <param name="item">List of objects to be displayed in table as entries</param>
-        public void AddElement(IListable item)
+        public void AddElement(List<object> item)
         {
             elementList.Add(item);
-            AddRow(elementList.Last());
+            AddRow((List<object>)elementList.Last());
         }
         /// <summary>
         /// Forces Update of displayed elements
@@ -111,7 +111,7 @@ namespace G2_UserControls
 
             foreach (var item in elementList)
             {
-                AddRow(item);
+                AddRow((List<object>)item);
             }
         }
 

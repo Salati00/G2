@@ -22,7 +22,7 @@ namespace G2_UserControls
         /// Takes one object and interprets it as a list to populate the fields to be displayed
         /// </summary>
         /// <param name="Items">List of objects to be displayed</param>
-        public Uc_TableRow(IListable Items)
+        public Uc_TableRow(List<object> Items)
         {
             InitializeComponent();
             items = Items.ToList();
