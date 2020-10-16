@@ -36,5 +36,10 @@ namespace G2_Forms
         {
             this.Close();
         }
+
+        private void AddIncident_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
