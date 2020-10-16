@@ -14,25 +14,31 @@ namespace G2_DAL
     {
         IMongoClient client;
         IMongoDatabase database;
-        IMongoCollection<BsonDocument> collection;
+        IMongoCollection<BsonDocument> collectionUser;
         public void ConnUser()
         {
             client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
             database = client.GetDatabase("g2Database");
-            collection = database.GetCollection<BsonDocument>("Users");
+            collectionUser = database.GetCollection<BsonDocument>("Users");
         }
         public void DeleteUser(int id) //not tested
         {
-            collection.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("_id", id));
+            collectionUser.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("_id", id));
         }
 
         public void DbAddUser(User user)
         {
-            var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username}, { "Password", user.Password}, { "PhoneNumber", user.PhoneNumber},{ "Email", user.Email} };
+            var document = new BsonDocument { 
+                { "Firstname", user.Firstname }, 
+                { "Lastname", user.Lastname }, 
+                { "Username", user.Username}, 
+                { "Password", user.Password}, 
+                { "PhoneNumber", user.PhoneNumber},
+                { "Email", user.Email} };
             ConnUser();
-            collection.InsertOne(document);
+            collectionUser.InsertOne(document);
         }
-        public List<User> DbGetAllUsers()
+        public List<User> DbGetAllUsers() //not tested
         {
             List<User> users = new List<User>();
             User user;
