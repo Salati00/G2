@@ -10,8 +10,6 @@ using G2_Model;
 
 namespace G2_DAL
 {
-    //Users need ID to delete one?
-    //
     public class UserDAO
     {
         IMongoClient client;
@@ -23,12 +21,9 @@ namespace G2_DAL
             database = client.GetDatabase("g2Database");
             collection = database.GetCollection<BsonDocument>("Users");
         }
-        public void Delete<User>(User user) //DOES NOT WORK AS YET
+        public void DeleteUser(int id) //not tested
         {
-            //WorkAround for DeleteOne parameter
-            //ObjectFilterDefinition<User> filter = new User();
-            // Remove the object.
-            //database.GetCollection<User>(typeof(User).Name).FindOneAndDelete(filter);
+            collection.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("_id", id));
         }
 
         public void DbAddUser(User user)
@@ -44,10 +39,12 @@ namespace G2_DAL
             foreach (BsonDocument collection in database.ListCollectionsAsync().Result.ToListAsync<BsonDocument>().Result)
             {
                 user = new User(
+                    (int)collection["_id"],
                     collection["Fistname"].AsString,
                     collection["Lastname"].AsString,
-                    collection["Username"].AsString, collection["Password"].AsString,
-                    (int)(collection["PhoneNumber"]),
+                    collection["Username"].AsString, 
+                    collection["Password"].AsString,
+                    collection["PhoneNumber"].AsString,
                     collection["Email"].AsString);
                 users.Add(user);
             }
