@@ -219,6 +219,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddIncident";
             this.Text = "AddIncident";
+            this.Load += new System.EventHandler(this.AddIncident_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
