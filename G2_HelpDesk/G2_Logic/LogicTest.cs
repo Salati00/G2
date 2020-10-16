@@ -10,7 +10,7 @@ namespace G2_Logic
 {
     public class LogicTest
     {
-        BaseDAO testdb = new BaseDAO();
+        UserDAO testdb = new UserDAO();
 
         public void AddUser(User user)
         {
