@@ -21,10 +21,10 @@ namespace G2_DAL
             database = client.GetDatabase("g2Database");
             collection = database.GetCollection<BsonDocument>("Users");
         }
-        public void Delete<User>(User item) //DOES NOT WORK AS YET
+        public void Delete<User>(User user) //DOES NOT WORK AS YET
         {
             //WorkAround for DeleteOne parameter
-            ObjectFilterDefinition<User> filter = new User(item);
+            //ObjectFilterDefinition<User> filter = new User();
             // Remove the object.
             database.GetCollection<User>(typeof(User).Name).FindOneAndDelete(filter);
         }
