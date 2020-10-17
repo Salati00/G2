@@ -28,11 +28,11 @@ namespace G2_DAL
 
         public void DbAddUser(User user)
         {
-            var document = new BsonDocument { 
-                { "Firstname", user.Firstname }, 
-                { "Lastname", user.Lastname }, 
-                { "Username", user.Username}, 
-                { "Password", user.Password}, 
+            var document = new BsonDocument {
+                { "Firstname", user.Firstname },
+                { "Lastname", user.Lastname },
+                { "Username", user.Username},
+                { "Password", user.Password},
                 { "PhoneNumber", user.PhoneNumber},
                 { "Email", user.Email} };
             ConnUser();
@@ -48,7 +48,7 @@ namespace G2_DAL
                     (int)collection["_id"],
                     collection["Fistname"].AsString,
                     collection["Lastname"].AsString,
-                    collection["Username"].AsString, 
+                    collection["Username"].AsString,
                     collection["Password"].AsString,
                     collection["PhoneNumber"].AsString,
                     collection["Email"].AsString);
@@ -56,7 +56,34 @@ namespace G2_DAL
             }
             return users;
         }
-
+        public async Task<bool> UsernameExists(string username) //not tested
+        {
+            var filter = Builders<BsonDocument>.Filter.Eq("Username", username);
+            var result = await collectionUser.Find(filter).FirstOrDefaultAsync();
+            if (result > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public async Task<User> LoginUser(string username, string password) //not tested
+        {
+            var filterUser = Builders<BsonDocument>.Filter.Eq("Username", username);
+            var filterPass = Builders<BsonDocument>.Filter.Eq("Password", password);
+            var filter = Builders<BsonDocument>.Filter.And(filterUser, filterPass);
+            var result = await collectionUser.Find(filter).FirstOrDefaultAsync();
+            if(result > 0)
+            {
+                return new User(
+                    (int)result["_id"],
+                    result["Fistname"].AsString,
+                    result["Lastname"].AsString,
+                    result["Username"].AsString,
+                    result["Password"].AsString,
+                    result["PhoneNumber"].AsString,
+                    result["Email"].AsString);
+            }
+            return null;
+        }
     }
-
 }
