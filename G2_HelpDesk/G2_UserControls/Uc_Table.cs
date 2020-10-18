@@ -115,8 +115,9 @@ namespace G2_UserControls
             }
         }
 
-        public Uc_Table UserMode()
+        public Uc_Table SetMode(int type)
         {
+
             return this;
         }
 

@@ -12,9 +12,15 @@ namespace G2_Forms
 {
     public partial class Frm_DataList : Form
     {
-        public Frm_DataList()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="type">0 = Ticket, 1 = User</param>
+        public Frm_DataList(int type)
         {
             InitializeComponent();
+
+            Uc_TableMain.SetMode(type);
         }
     }
 }
