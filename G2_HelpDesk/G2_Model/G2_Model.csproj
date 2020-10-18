@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IListable.cs" />
-    <Compile Include="Incident.cs" />
+    <Compile Include="Ticket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketPriority.cs" />
     <Compile Include="TicketTypes.cs" />

@@ -11,7 +11,7 @@ namespace G2_DAL
 {
     public class IncidentDAO : BaseDAO
     {
-        public void DbAddIncident(Incident incident)
+        public void DbAddIncident(Ticket incident)
         {
             var document = new BsonDocument {
                 { "ReportDate", incident.ReportDate },
@@ -19,7 +19,7 @@ namespace G2_DAL
                 { "Type", incident.Type},
                 { "Priority", incident.Priority},
                 { "Description", incident.Description},
-                { "User_id", incident.user._id} };
+                { "User_id", incident.User._id} };
             collectionUser.InsertOne(document);
         }
     }
