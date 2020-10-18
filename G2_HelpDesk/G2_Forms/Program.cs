@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using G2_Logic;
+using G2_Model;
 
 namespace G2_Forms
 {
@@ -15,8 +16,6 @@ namespace G2_Forms
         [STAThread]
         static void Main()
         {
-            LogicTest service = new LogicTest();
-            //service.AddUser("Mahmud", "Abbas");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_Main());

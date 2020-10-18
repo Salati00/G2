@@ -50,7 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(242, 93);
+            this.label1.Location = new System.Drawing.Point(210, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 20);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(242, 137);
+            this.label2.Location = new System.Drawing.Point(210, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 20);
             this.label2.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(242, 179);
+            this.label3.Location = new System.Drawing.Point(210, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(242, 217);
+            this.label4.Location = new System.Drawing.Point(210, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 20);
             this.label4.TabIndex = 3;
@@ -90,7 +90,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(242, 292);
+            this.label5.Location = new System.Drawing.Point(210, 290);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 20);
             this.label5.TabIndex = 4;
@@ -100,7 +100,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(242, 337);
+            this.label6.Location = new System.Drawing.Point(210, 335);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 20);
             this.label6.TabIndex = 5;
@@ -118,42 +118,42 @@
             // 
             // txt_firstname
             // 
-            this.txt_firstname.Location = new System.Drawing.Point(383, 95);
+            this.txt_firstname.Location = new System.Drawing.Point(424, 93);
             this.txt_firstname.Name = "txt_firstname";
             this.txt_firstname.Size = new System.Drawing.Size(213, 20);
             this.txt_firstname.TabIndex = 7;
             // 
             // txt_lastname
             // 
-            this.txt_lastname.Location = new System.Drawing.Point(383, 139);
+            this.txt_lastname.Location = new System.Drawing.Point(424, 137);
             this.txt_lastname.Name = "txt_lastname";
             this.txt_lastname.Size = new System.Drawing.Size(213, 20);
             this.txt_lastname.TabIndex = 8;
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(383, 183);
+            this.txt_username.Location = new System.Drawing.Point(424, 181);
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(213, 20);
             this.txt_username.TabIndex = 9;
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(383, 219);
+            this.txt_password.Location = new System.Drawing.Point(424, 217);
             this.txt_password.Name = "txt_password";
             this.txt_password.Size = new System.Drawing.Size(213, 20);
             this.txt_password.TabIndex = 10;
             // 
             // txt_phoneNumber
             // 
-            this.txt_phoneNumber.Location = new System.Drawing.Point(392, 339);
+            this.txt_phoneNumber.Location = new System.Drawing.Point(433, 337);
             this.txt_phoneNumber.Name = "txt_phoneNumber";
             this.txt_phoneNumber.Size = new System.Drawing.Size(213, 20);
             this.txt_phoneNumber.TabIndex = 11;
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(392, 292);
+            this.txt_email.Location = new System.Drawing.Point(433, 290);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(213, 20);
             this.txt_email.TabIndex = 12;
@@ -170,7 +170,7 @@
             // 
             // txt_repeatPassword
             // 
-            this.txt_repeatPassword.Location = new System.Drawing.Point(383, 256);
+            this.txt_repeatPassword.Location = new System.Drawing.Point(424, 254);
             this.txt_repeatPassword.Name = "txt_repeatPassword";
             this.txt_repeatPassword.Size = new System.Drawing.Size(213, 20);
             this.txt_repeatPassword.TabIndex = 15;
@@ -179,7 +179,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label8.Location = new System.Drawing.Point(242, 256);
+            this.label8.Location = new System.Drawing.Point(210, 254);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(139, 20);
             this.label8.TabIndex = 14;
@@ -207,7 +207,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddUser";
-            this.Text = "AddUser";
+            this.Text = "-";
             this.ResumeLayout(false);
             this.PerformLayout();
 

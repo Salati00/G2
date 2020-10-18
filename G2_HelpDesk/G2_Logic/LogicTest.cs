@@ -10,15 +10,27 @@ namespace G2_Logic
 {
     public class LogicTest
     {
-        UserDAO testdb = new UserDAO();
+        UserDAO db = new UserDAO();
 
+        public LogicTest()
+        {
+            db.ConnUser();
+        }
         public void AddUser(User user)
         {
-            testdb.DbAddUser(user);
+            db.DbAddUser(user);
         }
-        public List<User> GetAllUsers()
+        //public List<User> GetAllUsers()
+        //{
+        //    return db.DbGetAllUsers();
+        //}
+        public User LoginUser(string username, string password)
         {
-            return testdb.DbGetAllUsers();
+            return db.DbLoginUser(username, password);
+        }
+        public bool UsernameExists(string username)
+        {
+            return db.DbUsernameExists(username);
         }
     }
 }

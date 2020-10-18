@@ -10,50 +10,79 @@ using G2_Model;
 
 namespace G2_DAL
 {
-    //Users need ID to delete one?
-    //
     public class UserDAO
     {
         IMongoClient client;
         IMongoDatabase database;
-        IMongoCollection<BsonDocument> collection;
+        IMongoCollection<BsonDocument> collectionUser;
         public void ConnUser()
         {
             client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
             database = client.GetDatabase("g2Database");
-            collection = database.GetCollection<BsonDocument>("Users");
+            collectionUser = database.GetCollection<BsonDocument>("Users");
         }
-        public void Delete<User>(User user) //DOES NOT WORK AS YET
+        public void DeleteUser(int id) //not tested
         {
-            //WorkAround for DeleteOne parameter
-            //ObjectFilterDefinition<User> filter = new User();
-            // Remove the object.
-            //database.GetCollection<User>(typeof(User).Name).FindOneAndDelete(filter);
+            collectionUser.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("_id", id));
         }
 
         public void DbAddUser(User user)
         {
-            var document = new BsonDocument { { "Firstname", user.Firstname }, { "Lastname", user.Lastname }, { "Username", user.Username}, { "Password", user.Password}, { "PhoneNumber", user.PhoneNumber},{ "Email", user.Email} };
-            ConnUser();
-            collection.InsertOne(document);
+            var document = new BsonDocument {
+                { "Firstname", user.Firstname },
+                { "Lastname", user.Lastname },
+                { "Username", user.Username},
+                { "Password", user.Password},
+                { "PhoneNumber", user.PhoneNumber},
+                { "Email", user.Email} };
+            collectionUser.InsertOne(document);
         }
-        public List<User> DbGetAllUsers()
+        //public List<User> DbGetAllUsers() //not tested
+        //{
+        //    List<User> users = new List<User>();
+        //    User user;
+        //    foreach (BsonDocument doc in collectionUser.FindAll())
+        //    {
+        //        user = new User(
+        //            doc["_id"].ToString(),
+        //            doc["Fistname"].AsString,
+        //            doc["Lastname"].AsString,
+        //            doc["Username"].AsString,
+        //            doc["Password"].AsString,
+        //            doc["PhoneNumber"].AsString,
+        //            doc["Email"].AsString);
+        //        users.Add(user);
+        //    }
+        //    return users;
+        //}
+        public bool DbUsernameExists(string username)
         {
-            List<User> users = new List<User>();
-            User user;
-            foreach (BsonDocument collection in database.ListCollectionsAsync().Result.ToListAsync<BsonDocument>().Result)
+            var filter = Builders<BsonDocument>.Filter.Eq("Username", username);
+            var result = collectionUser.Find(filter).FirstOrDefault();
+            if (result > 0)
             {
-                user = new User(
-                    collection["Fistname"].AsString,
-                    collection["Lastname"].AsString,
-                    collection["Username"].AsString, collection["Password"].AsString,
-                    (int)(collection["PhoneNumber"]),
-                    collection["Email"].AsString);
-                users.Add(user);
+                return true;
             }
-            return users;
+            return false;
         }
-
+        public User DbLoginUser(string username, string password)
+        {
+            var filterUser = Builders<BsonDocument>.Filter.Eq("Username", username);
+            var filterPass = Builders<BsonDocument>.Filter.Eq("Password", password);
+            var filter = Builders<BsonDocument>.Filter.And(filterUser, filterPass);
+            var result = collectionUser.Find(filter).FirstOrDefault();
+            if(result > 0)
+            {
+                return new User(
+                    result["_id"].ToString(),
+                    result["Firstname"].AsString,
+                    result["Lastname"].AsString,
+                    result["Username"].AsString,
+                    result["Password"].AsString,
+                    result["PhoneNumber"].AsString,
+                    result["Email"].AsString);
+            }
+            return null;
+        }
     }
-
 }
