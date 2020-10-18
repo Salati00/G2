@@ -20,10 +20,10 @@ namespace G2_Logic
         {
             db.DbAddUser(user);
         }
-        //public List<User> GetAllUsers()
-        //{
-        //    return db.DbGetAllUsers();
-        //}
+        public List<User> GetAllUsers()
+        {
+            return db.DbGetAllUsers();
+        }
         public User LoginUser(string username, string password)
         {
             return db.DbLoginUser(username, password);

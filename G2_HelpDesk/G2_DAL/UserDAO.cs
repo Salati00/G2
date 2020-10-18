@@ -10,20 +10,11 @@ using G2_Model;
 
 namespace G2_DAL
 {
-    public class UserDAO
+    public class UserDAO : BaseDAO
     {
-        IMongoClient client;
-        IMongoDatabase database;
-        IMongoCollection<BsonDocument> collectionUser;
-        public void ConnUser()
+        public void DeleteUser(User user) //not tested
         {
-            client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
-            database = client.GetDatabase("g2Database");
-            collectionUser = database.GetCollection<BsonDocument>("Users");
-        }
-        public void DeleteUser(int id) //not tested
-        {
-            collectionUser.DeleteOneAsync(Builders<BsonDocument>.Filter.Eq("_id", id));
+            collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
         }
 
         public void DbAddUser(User user)
@@ -37,24 +28,25 @@ namespace G2_DAL
                 { "Email", user.Email} };
             collectionUser.InsertOne(document);
         }
-        //public List<User> DbGetAllUsers() //not tested
-        //{
-        //    List<User> users = new List<User>();
-        //    User user;
-        //    foreach (BsonDocument doc in collectionUser.FindAll())
-        //    {
-        //        user = new User(
-        //            doc["_id"].ToString(),
-        //            doc["Fistname"].AsString,
-        //            doc["Lastname"].AsString,
-        //            doc["Username"].AsString,
-        //            doc["Password"].AsString,
-        //            doc["PhoneNumber"].AsString,
-        //            doc["Email"].AsString);
-        //        users.Add(user);
-        //    }
-        //    return users;
-        //}
+        public List<User> DbGetAllUsers()
+        {
+            List<User> users = new List<User>();
+            User user;
+            var docs = collectionUser.Find(Builders<BsonDocument>.Filter.Empty).ToList();
+            foreach (BsonDocument doc in docs)
+            {
+                user = new User(
+                    doc.GetValue("_id", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Firstname", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Lastname", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Username", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Password", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("PhoneNumber", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Email", new BsonString(string.Empty)).ToString());
+                users.Add(user);
+            }
+            return users;
+        }
         public bool DbUsernameExists(string username)
         {
             var filter = Builders<BsonDocument>.Filter.Eq("Username", username);
@@ -74,13 +66,13 @@ namespace G2_DAL
             if(result > 0)
             {
                 return new User(
-                    result["_id"].ToString(),
-                    result["Firstname"].AsString,
-                    result["Lastname"].AsString,
-                    result["Username"].AsString,
-                    result["Password"].AsString,
-                    result["PhoneNumber"].AsString,
-                    result["Email"].AsString);
+                    result.GetValue("_id", new BsonString(string.Empty)).ToString(),
+                    result.GetValue("Firstname", new BsonString(string.Empty)).ToString(),
+                    result.GetValue("Lastname", new BsonString(string.Empty)).ToString(),
+                    result.GetValue("Username", new BsonString(string.Empty)).ToString(),
+                    result.GetValue("Password", new BsonString(string.Empty)).ToString(),
+                    result.GetValue("PhoneNumber", new BsonString(string.Empty)).ToString(),
+                    result.GetValue("Email", new BsonString(string.Empty)).ToString());
             }
             return null;
         }
