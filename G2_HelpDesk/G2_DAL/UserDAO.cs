@@ -35,48 +35,47 @@ namespace G2_DAL
                 { "Password", user.Password},
                 { "PhoneNumber", user.PhoneNumber},
                 { "Email", user.Email} };
-            ConnUser();
             collectionUser.InsertOne(document);
         }
-        public List<User> DbGetAllUsers() //not tested
-        {
-            List<User> users = new List<User>();
-            User user;
-            foreach (BsonDocument collection in database.ListCollectionsAsync().Result.ToListAsync<BsonDocument>().Result)
-            {
-                user = new User(
-                    (int)collection["_id"],
-                    collection["Fistname"].AsString,
-                    collection["Lastname"].AsString,
-                    collection["Username"].AsString,
-                    collection["Password"].AsString,
-                    collection["PhoneNumber"].AsString,
-                    collection["Email"].AsString);
-                users.Add(user);
-            }
-            return users;
-        }
-        public async Task<bool> UsernameExists(string username) //not tested
+        //public List<User> DbGetAllUsers() //not tested
+        //{
+        //    List<User> users = new List<User>();
+        //    User user;
+        //    foreach (BsonDocument doc in collectionUser.FindAll())
+        //    {
+        //        user = new User(
+        //            doc["_id"].ToString(),
+        //            doc["Fistname"].AsString,
+        //            doc["Lastname"].AsString,
+        //            doc["Username"].AsString,
+        //            doc["Password"].AsString,
+        //            doc["PhoneNumber"].AsString,
+        //            doc["Email"].AsString);
+        //        users.Add(user);
+        //    }
+        //    return users;
+        //}
+        public bool DbUsernameExists(string username)
         {
             var filter = Builders<BsonDocument>.Filter.Eq("Username", username);
-            var result = await collectionUser.Find(filter).FirstOrDefaultAsync();
+            var result = collectionUser.Find(filter).FirstOrDefault();
             if (result > 0)
             {
                 return true;
             }
             return false;
         }
-        public async Task<User> LoginUser(string username, string password) //not tested
+        public User DbLoginUser(string username, string password)
         {
             var filterUser = Builders<BsonDocument>.Filter.Eq("Username", username);
             var filterPass = Builders<BsonDocument>.Filter.Eq("Password", password);
             var filter = Builders<BsonDocument>.Filter.And(filterUser, filterPass);
-            var result = await collectionUser.Find(filter).FirstOrDefaultAsync();
+            var result = collectionUser.Find(filter).FirstOrDefault();
             if(result > 0)
             {
                 return new User(
-                    (int)result["_id"],
-                    result["Fistname"].AsString,
+                    result["_id"].ToString(),
+                    result["Firstname"].AsString,
                     result["Lastname"].AsString,
                     result["Username"].AsString,
                     result["Password"].AsString,
