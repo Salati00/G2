@@ -17,8 +17,6 @@ namespace G2_Forms
         static void Main()
         {
             LogicTest service = new LogicTest();
-            List<User> users = new List<User>();
-            users = service.GetAllUsers();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_Main());
