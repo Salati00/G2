@@ -18,7 +18,7 @@ namespace G2_Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Main());
+            Application.Run(new LoginPage());
         }
 
     }
