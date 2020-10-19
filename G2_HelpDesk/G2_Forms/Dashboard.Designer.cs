@@ -67,7 +67,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(254, 143);
+            this.button2.Location = new System.Drawing.Point(254, 146);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(269, 73);
             this.button2.TabIndex = 3;
@@ -76,9 +76,9 @@
             // 
             // btn_account
             // 
-            this.btn_account.Location = new System.Drawing.Point(726, 33);
+            this.btn_account.Location = new System.Drawing.Point(723, 33);
             this.btn_account.Name = "btn_account";
-            this.btn_account.Size = new System.Drawing.Size(72, 26);
+            this.btn_account.Size = new System.Drawing.Size(75, 23);
             this.btn_account.TabIndex = 4;
             this.btn_account.Text = "Account";
             this.btn_account.UseVisualStyleBackColor = true;

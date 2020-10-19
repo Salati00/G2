@@ -41,7 +41,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_editAccount = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_deleteAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_firstname
@@ -155,21 +155,21 @@
             this.btn_editAccount.Text = "Edit";
             this.btn_editAccount.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_deleteAccount
             // 
-            this.button1.Location = new System.Drawing.Point(291, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_deleteAccount.Location = new System.Drawing.Point(291, 383);
+            this.btn_deleteAccount.Name = "btn_deleteAccount";
+            this.btn_deleteAccount.Size = new System.Drawing.Size(75, 23);
+            this.btn_deleteAccount.TabIndex = 13;
+            this.btn_deleteAccount.Text = "Delete";
+            this.btn_deleteAccount.UseVisualStyleBackColor = true;
             // 
             // AccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_deleteAccount);
             this.Controls.Add(this.btn_editAccount);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -206,6 +206,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_editAccount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_deleteAccount;
     }
 }
