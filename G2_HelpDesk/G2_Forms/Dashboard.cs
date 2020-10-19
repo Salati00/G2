@@ -37,5 +37,13 @@ namespace G2_Forms
             newUser.ShowDialog();
             this.Close();
         }
+
+        private void btn_account_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AccountInfo account = new AccountInfo(admin);
+            account.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -58,8 +58,8 @@ namespace G2_Forms
 
         private void btn_AddUser_Click(object sender, EventArgs e)
         {
-            AddUser user = new AddUser();
-            user.ShowDialog();
+           // AddUser user = new AddUser();
+           // user.ShowDialog();
         }
 
         private void btn_Loginpage_Click(object sender, EventArgs e)
