@@ -8,6 +8,7 @@ namespace G2_Model
 {
     public class Ticket : IListable
     {
+        private string _id;
         private DateTime reportDate;
         private string subject;
         private TicketTypes type;
@@ -15,6 +16,18 @@ namespace G2_Model
         private string description;
         private User user;
 
+        public Ticket() { }
+        public Ticket(string _id, DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, User user)
+        {
+            this._Id = _id;
+            this.ReportDate = reportDate;
+            this.Subject = subject;
+            this.Type = type;
+            this.Priority = priority;
+            this.Description = description;
+            this.User = user;
+        }
+        public string _Id { get => _id; set => _id = value; }
         public DateTime ReportDate { get => reportDate; set => reportDate = value; }
         public string Subject { get => subject; set => subject = value; }
         public TicketTypes Type { get => type; set => type = value; }

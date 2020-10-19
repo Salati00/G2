@@ -20,7 +20,7 @@ namespace G2_Forms
             InitializeComponent();
         }
 
-        LogicTest AddUserLogic = new LogicTest();
+        UserLogic AddUserLogic = new UserLogic();
 
         private void CreateNewUser_btn_Click(object sender, EventArgs e)
         {

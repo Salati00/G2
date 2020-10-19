@@ -12,10 +12,6 @@ namespace G2_DAL
 {
     public class UserDAO : BaseDAO
     {
-        public void DeleteUser(User user) //not tested
-        {
-            collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
-        }
 
         public void DbAddUser(User user)
         {
@@ -28,22 +24,17 @@ namespace G2_DAL
                 { "Email", user.Email} };
             collectionUser.InsertOne(document);
         }
+        public void DbDeleteUser(User user) //not tested
+        {
+            collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
+        }
         public List<User> DbGetAllUsers()
         {
             List<User> users = new List<User>();
-            User user;
             var docs = collectionUser.Find(Builders<BsonDocument>.Filter.Empty).ToList();
             foreach (BsonDocument doc in docs)
             {
-                user = new User(
-                    doc.GetValue("_id", new BsonString(string.Empty)).ToString(),
-                    doc.GetValue("Firstname", new BsonString(string.Empty)).ToString(),
-                    doc.GetValue("Lastname", new BsonString(string.Empty)).ToString(),
-                    doc.GetValue("Username", new BsonString(string.Empty)).ToString(),
-                    doc.GetValue("Password", new BsonString(string.Empty)).ToString(),
-                    doc.GetValue("PhoneNumber", new BsonString(string.Empty)).ToString(),
-                    doc.GetValue("Email", new BsonString(string.Empty)).ToString());
-                users.Add(user);
+                users.Add(GetUser(doc));
             }
             return users;
         }

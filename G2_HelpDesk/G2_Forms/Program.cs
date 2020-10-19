@@ -16,7 +16,6 @@ namespace G2_Forms
         [STAThread]
         static void Main()
         {
-            LogicTest service = new LogicTest();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_Main());

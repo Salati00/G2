@@ -11,16 +11,33 @@ namespace G2_DAL
 {
     public class BaseDAO
     {
-        protected IMongoClient client;
-        protected IMongoDatabase database;
-        protected IMongoCollection<BsonDocument> collectionUser;
-        protected IMongoCollection<BsonDocument> collectionIncident;
-        public void ConnUser()
+        protected static IMongoClient client;
+        protected static IMongoDatabase database;
+        protected static IMongoCollection<BsonDocument> collectionUser;
+        protected static IMongoCollection<BsonDocument> collectionTicket;
+        protected static bool ConnectionEstablished = false; //Makes sure the ConnUser doesn't run more than once
+        public void ConnString()
         {
-            client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
-            database = client.GetDatabase("g2Database");
-            collectionUser = database.GetCollection<BsonDocument>("Users");
-            collectionIncident = database.GetCollection<BsonDocument>("Incidents");
+            if (!ConnectionEstablished)
+            {
+                client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
+                database = client.GetDatabase("g2Database");
+                collectionUser = database.GetCollection<BsonDocument>("Users");
+                collectionTicket = database.GetCollection<BsonDocument>("Tickets");
+                ConnectionEstablished = true;
+            }
+        }
+        public User GetUser(BsonDocument doc)
+        {
+            User user = new User(
+                    doc.GetValue("_id", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Firstname", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Lastname", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Username", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Password", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("PhoneNumber", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Email", new BsonString(string.Empty)).ToString());
+            return user;
         }
     }
 }

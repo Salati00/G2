@@ -8,13 +8,12 @@ using G2_Model;
 
 namespace G2_Logic
 {
-    public class LogicTest
+    public class UserLogic
     {
         UserDAO db = new UserDAO();
-
-        public LogicTest()
+        public UserLogic()
         {
-            db.ConnUser();
+            db.ConnString();
         }
         public void AddUser(User user)
         {
@@ -31,6 +30,10 @@ namespace G2_Logic
         public bool UsernameExists(string username)
         {
             return db.DbUsernameExists(username);
+        }
+        public void DeleteUser(User user)
+        {
+            db.DbDeleteUser(user);
         }
     }
 }

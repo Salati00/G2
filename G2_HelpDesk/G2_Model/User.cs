@@ -37,6 +37,8 @@ namespace G2_Model
             this.PhoneNumber = phonenumber;
             this.Email = email;
         }
+        public User()
+        { }
 
         /// <summary>
         /// Method to get a list from the current object
