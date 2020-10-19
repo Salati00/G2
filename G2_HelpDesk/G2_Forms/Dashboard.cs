@@ -16,16 +16,16 @@ namespace G2_Forms
         public Dashboard(User admin)
         {
             InitializeComponent();
+            lbl_Username.Text = admin.Firstname + " " + admin.Lastname;
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btb_Logout_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            LoginPage Logout = new LoginPage();
+            Logout.ShowDialog();
+            this.Close();
         }
     }
 }
