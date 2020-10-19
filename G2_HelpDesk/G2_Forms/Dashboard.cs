@@ -13,9 +13,11 @@ namespace G2_Forms
 {
     public partial class Dashboard : Form
     {
+        User admin;
         public Dashboard(User admin)
         {
             InitializeComponent();
+            this.admin = admin;
             lbl_Username.Text = admin.Firstname + " " + admin.Lastname;
         }
 
@@ -25,6 +27,14 @@ namespace G2_Forms
             this.Hide();
             LoginPage Logout = new LoginPage();
             Logout.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_CreateUser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddUser newUser = new AddUser(admin);
+            newUser.ShowDialog();
             this.Close();
         }
     }

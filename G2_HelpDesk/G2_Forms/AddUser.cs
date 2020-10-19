@@ -15,7 +15,7 @@ namespace G2_Forms
 {
     public partial class AddUser : Form
     {
-        public AddUser()
+        public AddUser(User admin)
         {
             InitializeComponent();
         }

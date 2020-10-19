@@ -90,6 +90,7 @@
             this.btn_CreateUser.TabIndex = 5;
             this.btn_CreateUser.Text = "Create User";
             this.btn_CreateUser.UseVisualStyleBackColor = true;
+            this.btn_CreateUser.Click += new System.EventHandler(this.btn_CreateUser_Click);
             // 
             // Dashboard
             // 
