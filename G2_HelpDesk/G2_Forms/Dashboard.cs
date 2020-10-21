@@ -45,5 +45,12 @@ namespace G2_Forms
             account.ShowDialog();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddIncident addIncident = new AddIncident();
+            addIncident.ShowDialog();
+            this.Close();
+        }
     }
 }

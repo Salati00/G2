@@ -41,10 +41,12 @@
             this.cbUser = new System.Windows.Forms.ComboBox();
             this.cbPriority = new System.Windows.Forms.ComboBox();
             this.cbDeadline = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSubject = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -160,17 +162,17 @@
             this.cbDeadline.Size = new System.Drawing.Size(221, 21);
             this.cbDeadline.TabIndex = 12;
             // 
-            // textBox2
+            // txtSubject
             // 
-            this.textBox2.Location = new System.Drawing.Point(302, 211);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(221, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtSubject.Location = new System.Drawing.Point(302, 211);
+            this.txtSubject.Name = "txtSubject";
+            this.txtSubject.Size = new System.Drawing.Size(221, 20);
+            this.txtSubject.TabIndex = 13;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 51);
+            this.label8.Location = new System.Drawing.Point(12, 40);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(130, 13);
             this.label8.TabIndex = 14;
@@ -194,16 +196,35 @@
             this.btnSubmit.TabIndex = 16;
             this.btnSubmit.Text = "SUBMIT";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(166, 139);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Incident ID:";
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(302, 132);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(221, 20);
+            this.txtID.TabIndex = 18;
             // 
             // AddIncident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 666);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSubject);
             this.Controls.Add(this.cbDeadline);
             this.Controls.Add(this.cbPriority);
             this.Controls.Add(this.cbUser);
@@ -240,9 +261,11 @@
         private System.Windows.Forms.ComboBox cbUser;
         private System.Windows.Forms.ComboBox cbPriority;
         private System.Windows.Forms.ComboBox cbDeadline;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

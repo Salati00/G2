@@ -24,9 +24,8 @@ namespace G2_Forms
             cbDeadline.Items.Add(2);
             cbDeadline.Items.Add(3);
             cbDeadline.Items.Add(4);
-            //enums were changed look at the Incident model again
-            //cbType.DataSource = Enum.GetValues(typeof(Incident.Type));
-            //cbPriority.DataSource = Enum.GetValues(typeof(Incident.Priority));
+            cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
+            cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
 
 
         }
@@ -40,6 +39,14 @@ namespace G2_Forms
         private void AddIncident_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string id = txtID.Text;
+            DateTime date = DateTime.Now;
+            string subject = txtSubject.Text;
+            //TicketTypes type = cbType.SelectedItem.GetType;
         }
     }
 }
