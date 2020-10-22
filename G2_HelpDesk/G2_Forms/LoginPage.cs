@@ -43,5 +43,10 @@ namespace G2_Forms
 
             }
         }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

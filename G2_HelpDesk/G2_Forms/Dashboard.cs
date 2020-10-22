@@ -48,9 +48,9 @@ namespace G2_Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddIncident addIncident = new AddIncident();
-            addIncident.ShowDialog();
-            this.Close();
+            Ticket ticket = new Ticket();
+            ticket.ShowDialog();
+            this.Hide();
         }
     }
 }
