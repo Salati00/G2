@@ -27,9 +27,9 @@ namespace G2_DAL
                 ConnectionEstablished = true;
             }
         }
-        public User GetUser(BsonDocument doc)
+        public Admin GetUser(BsonDocument doc)
         {
-            User user = new User(
+            Admin user = new Admin(
                     doc.GetValue("_id", new BsonString(string.Empty)).ToString(),
                     doc.GetValue("Firstname", new BsonString(string.Empty)).ToString(),
                     doc.GetValue("Lastname", new BsonString(string.Empty)).ToString(),

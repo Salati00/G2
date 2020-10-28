@@ -31,7 +31,7 @@ namespace G2_DAL
             var result = collectionTicket.Aggregate<BsonDocument>(pipeline).ToList(); ;
             foreach (BsonDocument doc in result)
             {
-                User user = new User();
+                Admin user = new Admin();
                 BsonArray userDocs = doc.GetValue("User").AsBsonArray;
                 foreach (BsonDocument userDoc in userDocs)
                 {

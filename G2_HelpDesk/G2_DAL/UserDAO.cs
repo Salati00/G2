@@ -13,7 +13,7 @@ namespace G2_DAL
     public class UserDAO : BaseDAO
     {
 
-        public void DbAddUser(User user)
+        public void DbAddUser(Admin user)
         {
             var document = new BsonDocument {
                 { "Firstname", user.Firstname },
@@ -24,13 +24,13 @@ namespace G2_DAL
                 { "Email", user.Email} };
             collectionUser.InsertOne(document);
         }
-        public void DbDeleteUser(User user) //not tested
+        public void DbDeleteUser(Admin user) //not tested
         {
             collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
         }
-        public List<User> DbGetAllUsers()
+        public List<Admin> DbGetAllUsers()
         {
-            List<User> users = new List<User>();
+            List<Admin> users = new List<Admin>();
             var docs = collectionUser.Find(Builders<BsonDocument>.Filter.Empty).ToList();
             foreach (BsonDocument doc in docs)
             {
@@ -48,7 +48,7 @@ namespace G2_DAL
             }
             return false;
         }
-        public User DbLoginUser(string username, string password)
+        public Admin DbLoginUser(string username, string password)
         {
             var filterUser = Builders<BsonDocument>.Filter.Eq("Username", username);
             var filterPass = Builders<BsonDocument>.Filter.Eq("Password", password);
@@ -56,7 +56,7 @@ namespace G2_DAL
             var result = collectionUser.Find(filter).FirstOrDefault();
             if(result > 0)
             {
-                return new User(
+                return new Admin(
                     result.GetValue("_id", new BsonString(string.Empty)).ToString(),
                     result.GetValue("Firstname", new BsonString(string.Empty)).ToString(),
                     result.GetValue("Lastname", new BsonString(string.Empty)).ToString(),
