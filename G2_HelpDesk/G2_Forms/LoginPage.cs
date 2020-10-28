@@ -27,7 +27,7 @@ namespace G2_Forms
             string username = txt_username.Text;
             string password = txt_password.Text;
 
-            User UserLogin = user.LoginUser(username, password);
+            Admin UserLogin = user.LoginUser(username, password);
 
             if(UserLogin == null)
             {

@@ -15,15 +15,15 @@ namespace G2_Logic
         {
             db.ConnString();
         }
-        public void AddUser(User user)
+        public void AddUser(Admin user)
         {
             db.DbAddUser(user);
         }
-        public List<User> GetAllUsers()
+        public List<Admin> GetAllUsers()
         {
             return db.DbGetAllUsers();
         }
-        public User LoginUser(string username, string password)
+        public Admin LoginUser(string username, string password)
         {
             return db.DbLoginUser(username, password);
         }
@@ -31,7 +31,7 @@ namespace G2_Logic
         {
             return db.DbUsernameExists(username);
         }
-        public void DeleteUser(User user)
+        public void DeleteUser(Admin user)
         {
             db.DbDeleteUser(user);
         }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace G2_Model
 {
-    public class User : IListable
+    public class Admin : IListable
     {
         public string _id { get; set; }
         public string Firstname { get; set; }
@@ -18,7 +18,7 @@ namespace G2_Model
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
 
-        public User(string firstname, string lastname, string username, string password, string phonenumber, string email)
+        public Admin(string firstname, string lastname, string username, string password, string phonenumber, string email)
         {
             this.Firstname = firstname;
             this.Lastname = lastname;
@@ -27,7 +27,7 @@ namespace G2_Model
             this.PhoneNumber = phonenumber;
             this.Email = email;
         }
-        public User(string id, string firstname, string lastname, string username, string password, string phonenumber, string email)
+        public Admin(string id, string firstname, string lastname, string username, string password, string phonenumber, string email)
         {
             this._id = id;
             this.Firstname = firstname;
@@ -37,7 +37,7 @@ namespace G2_Model
             this.PhoneNumber = phonenumber;
             this.Email = email;
         }
-        public User()
+        public Admin()
         { }
 
         /// <summary>
@@ -49,12 +49,12 @@ namespace G2_Model
         {
             List<object> lst = new List<object>();
 
-            lst.Add((((User)model).Firstname != null) ? Firstname.ToString() : null);
-            lst.Add((((User)model).Lastname != null) ? Lastname.ToString() : null);
-            lst.Add((((User)model).Username != null) ? Username.ToString() : null);
-            lst.Add((((User)model).Password != null) ? Password.ToString() : null);
-            lst.Add((((User)model).PhoneNumber != null) ? PhoneNumber.ToString() : null);
-            lst.Add((((User)model).Email != null) ? Email.ToString() : null);
+            lst.Add((((Admin)model).Firstname != null) ? Firstname.ToString() : null);
+            lst.Add((((Admin)model).Lastname != null) ? Lastname.ToString() : null);
+            lst.Add((((Admin)model).Username != null) ? Username.ToString() : null);
+            lst.Add((((Admin)model).Password != null) ? Password.ToString() : null);
+            lst.Add((((Admin)model).PhoneNumber != null) ? PhoneNumber.ToString() : null);
+            lst.Add((((Admin)model).Email != null) ? Email.ToString() : null);
 
             return lst;
         }

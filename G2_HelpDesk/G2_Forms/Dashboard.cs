@@ -13,8 +13,8 @@ namespace G2_Forms
 {
     public partial class Dashboard : Form
     {
-        User admin;
-        public Dashboard(User admin)
+        Admin admin;
+        public Dashboard(Admin admin)
         {
             InitializeComponent();
             this.admin = admin;

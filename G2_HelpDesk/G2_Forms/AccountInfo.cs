@@ -13,8 +13,8 @@ namespace G2_Forms
 {
     public partial class AccountInfo : Form
     {
-        User admin;
-        public AccountInfo(User admin)
+        Admin admin;
+        public AccountInfo(Admin admin)
         {
             InitializeComponent();
             this.admin = admin;
