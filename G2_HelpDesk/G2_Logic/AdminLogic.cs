@@ -8,10 +8,10 @@ using G2_Model;
 
 namespace G2_Logic
 {
-    public class UserLogic
+    public class AdminLogic
     {
         UserDAO db = new UserDAO();
-        public UserLogic()
+        public AdminLogic()
         {
             db.ConnString();
         }

@@ -46,7 +46,7 @@
             this.lblRepeatPassword = new System.Windows.Forms.Label();
             this.cBoxType = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBoxBranch = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -214,13 +214,13 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "comboBox";
             // 
-            // comboBox1
+            // cBoxBranch
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(428, 204);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 21);
-            this.comboBox1.TabIndex = 18;
+            this.cBoxBranch.FormattingEnabled = true;
+            this.cBoxBranch.Location = new System.Drawing.Point(428, 204);
+            this.cBoxBranch.Name = "cBoxBranch";
+            this.cBoxBranch.Size = new System.Drawing.Size(213, 21);
+            this.cBoxBranch.TabIndex = 18;
             // 
             // label3
             // 
@@ -238,7 +238,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cBoxBranch);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cBoxType);
             this.Controls.Add(this.txt_repeatPassword);
@@ -284,7 +284,7 @@
         private System.Windows.Forms.Label lblRepeatPassword;
         private System.Windows.Forms.ComboBox cBoxType;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBoxBranch;
         private System.Windows.Forms.Label label3;
     }
 }

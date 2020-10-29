@@ -14,7 +14,7 @@ namespace G2_Forms
 {
     public partial class LoginPage : Form
     {
-        UserLogic user = new UserLogic();
+        AdminLogic user = new AdminLogic();
 
         public LoginPage()
         {
