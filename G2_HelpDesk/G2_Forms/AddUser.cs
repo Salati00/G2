@@ -61,6 +61,7 @@ namespace G2_Forms
                 {
                     Branch branch  = (Branch)cBoxBranch.SelectedValue;
                     Employee employee = new Employee(firstname, lastname, phonenumber,email, branch);
+
                 }
             }
               
