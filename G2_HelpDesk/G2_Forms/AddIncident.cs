@@ -42,10 +42,19 @@ namespace G2_Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            TicketDAO ticketDao = new TicketDAO();
+
             string id = txtID.Text;
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
-            //TicketTypes type = cbType.SelectedItem.GetType(typeof());
+            TicketTypes type = (TicketTypes)cbType.SelectedItem;
+            Admin user = (Admin)cbUser.SelectedItem;
+            TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
+            string deadline = txtDeadline.Text;
+            string description = txtDescription.Text;
+
+         
+
         }
     }
 }
