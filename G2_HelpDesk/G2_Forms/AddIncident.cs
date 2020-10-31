@@ -21,6 +21,7 @@ namespace G2_Forms
         {
             Ticket incident = new Ticket();
 
+
             InitializeComponent();
             
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
