@@ -35,18 +35,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.cbDateReport = new System.Windows.Forms.ComboBox();
             this.cbType = new System.Windows.Forms.ComboBox();
             this.cbUser = new System.Windows.Forms.ComboBox();
             this.cbPriority = new System.Windows.Forms.ComboBox();
-            this.cbDeadline = new System.Windows.Forms.ComboBox();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.txtDeadline = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -112,13 +112,13 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Description: ";
             // 
-            // textBox1
+            // txtDescription
             // 
-            this.textBox1.Location = new System.Drawing.Point(302, 396);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 140);
-            this.textBox1.TabIndex = 7;
+            this.txtDescription.Location = new System.Drawing.Point(302, 396);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(221, 140);
+            this.txtDescription.TabIndex = 7;
             // 
             // cbDateReport
             // 
@@ -153,14 +153,6 @@
             this.cbPriority.Name = "cbPriority";
             this.cbPriority.Size = new System.Drawing.Size(221, 21);
             this.cbPriority.TabIndex = 11;
-            // 
-            // cbDeadline
-            // 
-            this.cbDeadline.FormattingEnabled = true;
-            this.cbDeadline.Location = new System.Drawing.Point(302, 361);
-            this.cbDeadline.Name = "cbDeadline";
-            this.cbDeadline.Size = new System.Drawing.Size(221, 21);
-            this.cbDeadline.TabIndex = 12;
             // 
             // txtSubject
             // 
@@ -214,23 +206,30 @@
             this.txtID.Size = new System.Drawing.Size(221, 20);
             this.txtID.TabIndex = 18;
             // 
+            // txtDeadline
+            // 
+            this.txtDeadline.Location = new System.Drawing.Point(302, 361);
+            this.txtDeadline.Name = "txtDeadline";
+            this.txtDeadline.Size = new System.Drawing.Size(221, 20);
+            this.txtDeadline.TabIndex = 19;
+            // 
             // AddIncident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(772, 666);
+            this.Controls.Add(this.txtDeadline);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtSubject);
-            this.Controls.Add(this.cbDeadline);
             this.Controls.Add(this.cbPriority);
             this.Controls.Add(this.cbUser);
             this.Controls.Add(this.cbType);
             this.Controls.Add(this.cbDateReport);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -255,17 +254,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.ComboBox cbDateReport;
         private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.ComboBox cbUser;
         private System.Windows.Forms.ComboBox cbPriority;
-        private System.Windows.Forms.ComboBox cbDeadline;
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtDeadline;
     }
 }
