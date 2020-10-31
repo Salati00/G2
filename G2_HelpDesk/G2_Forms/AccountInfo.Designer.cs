@@ -41,7 +41,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_editAccount = new System.Windows.Forms.Button();
-            this.btn_deleteAccount = new System.Windows.Forms.Button();
+            this.Btn_Confirm = new System.Windows.Forms.Button();
+            this.btn_Dashboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_firstname
@@ -154,22 +155,35 @@
             this.btn_editAccount.TabIndex = 12;
             this.btn_editAccount.Text = "Edit";
             this.btn_editAccount.UseVisualStyleBackColor = true;
+            this.btn_editAccount.Click += new System.EventHandler(this.Btn_editAccount_Click);
             // 
-            // btn_deleteAccount
+            // Btn_Confirm
             // 
-            this.btn_deleteAccount.Location = new System.Drawing.Point(291, 383);
-            this.btn_deleteAccount.Name = "btn_deleteAccount";
-            this.btn_deleteAccount.Size = new System.Drawing.Size(75, 23);
-            this.btn_deleteAccount.TabIndex = 13;
-            this.btn_deleteAccount.Text = "Delete";
-            this.btn_deleteAccount.UseVisualStyleBackColor = true;
+            this.Btn_Confirm.Location = new System.Drawing.Point(291, 383);
+            this.Btn_Confirm.Name = "Btn_Confirm";
+            this.Btn_Confirm.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Confirm.TabIndex = 13;
+            this.Btn_Confirm.Text = "Confirm";
+            this.Btn_Confirm.UseVisualStyleBackColor = true;
+            this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
+            // 
+            // btn_Dashboard
+            // 
+            this.btn_Dashboard.Location = new System.Drawing.Point(701, 12);
+            this.btn_Dashboard.Name = "btn_Dashboard";
+            this.btn_Dashboard.Size = new System.Drawing.Size(75, 23);
+            this.btn_Dashboard.TabIndex = 14;
+            this.btn_Dashboard.Text = "Dashboard";
+            this.btn_Dashboard.UseVisualStyleBackColor = true;
+            this.btn_Dashboard.Click += new System.EventHandler(this.Btn_Dashboard_Click);
             // 
             // AccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_deleteAccount);
+            this.Controls.Add(this.btn_Dashboard);
+            this.Controls.Add(this.Btn_Confirm);
             this.Controls.Add(this.btn_editAccount);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -206,6 +220,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_editAccount;
-        private System.Windows.Forms.Button btn_deleteAccount;
+        private System.Windows.Forms.Button Btn_Confirm;
+        private System.Windows.Forms.Button btn_Dashboard;
     }
 }

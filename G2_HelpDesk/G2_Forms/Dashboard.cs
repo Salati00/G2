@@ -48,9 +48,18 @@ namespace G2_Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Ticket ticket = new Ticket();
             ticket.ShowDialog();
             this.Hide();
+        }
+
+        private void btb_EmployeeList_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EmployeeList employees = new EmployeeList(admin);
+            employees.ShowDialog();
+            this.Close();
         }
     }
 }

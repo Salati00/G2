@@ -34,7 +34,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btn_account = new System.Windows.Forms.Button();
             this.btn_CreateUser = new System.Windows.Forms.Button();
-            this.btb_UserManagement = new System.Windows.Forms.Button();
+            this.btb_EmployeeList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Username
@@ -95,21 +95,22 @@
             this.btn_CreateUser.UseVisualStyleBackColor = true;
             this.btn_CreateUser.Click += new System.EventHandler(this.btn_CreateUser_Click);
             // 
-            // btb_UserManagement
+            // btb_EmployeeList
             // 
-            this.btb_UserManagement.Location = new System.Drawing.Point(254, 349);
-            this.btb_UserManagement.Name = "btb_UserManagement";
-            this.btb_UserManagement.Size = new System.Drawing.Size(269, 73);
-            this.btb_UserManagement.TabIndex = 6;
-            this.btb_UserManagement.Text = "User Management";
-            this.btb_UserManagement.UseVisualStyleBackColor = true;
+            this.btb_EmployeeList.Location = new System.Drawing.Point(254, 349);
+            this.btb_EmployeeList.Name = "btb_EmployeeList";
+            this.btb_EmployeeList.Size = new System.Drawing.Size(269, 73);
+            this.btb_EmployeeList.TabIndex = 6;
+            this.btb_EmployeeList.Text = "Employee Management";
+            this.btb_EmployeeList.UseVisualStyleBackColor = true;
+            this.btb_EmployeeList.Click += new System.EventHandler(this.btb_EmployeeList_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btb_UserManagement);
+            this.Controls.Add(this.btb_EmployeeList);
             this.Controls.Add(this.btn_CreateUser);
             this.Controls.Add(this.btn_account);
             this.Controls.Add(this.button2);
@@ -131,6 +132,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_account;
         private System.Windows.Forms.Button btn_CreateUser;
-        private System.Windows.Forms.Button btb_UserManagement;
+        private System.Windows.Forms.Button btb_EmployeeList;
     }
 }

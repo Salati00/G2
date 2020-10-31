@@ -15,8 +15,10 @@ namespace G2_Forms
 {
     public partial class AddUser : Form
     {
+        Admin admin;
         public AddUser(Admin admin)
         {
+            this.admin = admin;
             InitializeComponent();
             PopulateCombobox();
 
@@ -64,32 +66,45 @@ namespace G2_Forms
 
                 }
             }
-              
         }
-
-
 
         private void cBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cBoxType.GetItemText(cBoxType.SelectedItem) == UserType.Admin.ToString())
             {
-                txt_username.Show();
-                txt_password.Show();
-                lblUsername.Show();
-                lblPassword.Show();
-                txt_repeatPassword.Show();
-                lblRepeatPassword.Show();
-                
+                ShowInfo();
             }
             else
             {
-                txt_username.Hide();
-                txt_password.Hide();
-                lblUsername.Hide();
-                lblPassword.Hide();
-                txt_repeatPassword.Hide();
-                lblRepeatPassword.Hide();
+                HideInfo();
             }
+            
+        }
+        private void HideInfo()
+        {
+            txt_username.Hide();
+            txt_password.Hide();
+            lblUsername.Hide();
+            lblPassword.Hide();
+            txt_repeatPassword.Hide();
+            lblRepeatPassword.Hide();
+        }
+        private void ShowInfo()
+        {
+            txt_username.Show();
+            txt_password.Show();
+            lblUsername.Show();
+            lblPassword.Show();
+            txt_repeatPassword.Show();
+            lblRepeatPassword.Show();
+        }
+
+        private void Btn_Dashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard(admin);
+            dashboard.ShowDialog();
+            this.Close();
         }
     }
 }
