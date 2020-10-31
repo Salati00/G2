@@ -246,6 +246,10 @@
     <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\G2_DAL\G2_DAL.csproj">
+      <Project>{ebf19a7c-d896-4f8e-ae60-d354b06c13a4}</Project>
+      <Name>G2_DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\G2_Logic\G2_Logic.csproj">
       <Project>{b68dc039-5dae-4aa2-b39d-0a40de54ecd2}</Project>
       <Name>G2_Logic</Name>

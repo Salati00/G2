@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using G2_Model;
+using G2_DAL;
+
 
 
 
@@ -18,16 +20,12 @@ namespace G2_Forms
         public AddIncident()
         {
             Ticket incident = new Ticket();
-            
+
             InitializeComponent();
-            cbDeadline.Items.Add(1);
-            cbDeadline.Items.Add(2);
-            cbDeadline.Items.Add(3);
-            cbDeadline.Items.Add(4);
+            
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
-
-
+            
         }
 
 
@@ -46,7 +44,7 @@ namespace G2_Forms
             string id = txtID.Text;
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
-            //TicketTypes type = cbType.SelectedItem.GetType;
+            //TicketTypes type = cbType.SelectedItem.GetType(typeof());
         }
     }
 }
