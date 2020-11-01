@@ -53,7 +53,8 @@ namespace G2_Forms
             string deadline = txtDeadline.Text;
             string description = txtDescription.Text;
 
-         
+            G2_Model.Ticket ticket = new G2_Model.Ticket(id, date, subject, type, priority, description, user);
+            ticketDao.DbAddTicket(ticket);
 
         }
     }
