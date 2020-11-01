@@ -7,33 +7,31 @@ using System.Threading.Tasks;
 
 namespace G2_Model
 {
-    public class Employee
+    public class Employee : Person
     {
-        public string _id { get; set; }
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Email { get; set; }
+        
         public Branch Branch { get; set; }
 
-        public Employee(string firstname, string lastname, string phonenumber, string email, Branch branch)
+        public Employee(string firstname, string lastname, string phonenumber, string email, Branch branch) : base(firstname, lastname, phonenumber, email)
         {
-            this.Firstname = firstname;
-            this.Lastname = lastname;
-            this.PhoneNumber = phonenumber;
-            this.Email = email;
             this.Branch = branch;
         }
-        public Employee(string id, string firstname, string lastname, string phonenumber, string email, Branch branch)
+        public Employee(string id, string firstname, string lastname, string phonenumber, string email, Branch branch) : base(id, firstname, lastname, phonenumber, email)
         {
-            this._id = id;
-            this.Firstname = firstname;
-            this.Lastname = lastname;
-            this.PhoneNumber = phonenumber;
-            this.Email = email;
             this.Branch = branch;
         }
 
+        public Employee()
+        {
+        }
+
+        public override List<object> ToList()
+        {
+            List<object> lst = base.ToList();
+            lst.Add(Branch.ToString());
+
+            return lst;
+        }
     }
 }
  

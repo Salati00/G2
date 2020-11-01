@@ -8,7 +8,6 @@ namespace G2_Model
 {
     public interface IListable
     {
-        List<object> ToList(IListable model);
         List<object> ToList();
     }
 }

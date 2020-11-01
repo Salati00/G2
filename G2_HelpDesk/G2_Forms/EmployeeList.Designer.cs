@@ -35,9 +35,10 @@
             // 
             this.UC_employeeList.AutoScroll = true;
             this.UC_employeeList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UC_employeeList.Location = new System.Drawing.Point(32, 31);
+            this.UC_employeeList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UC_employeeList.Location = new System.Drawing.Point(0, 0);
             this.UC_employeeList.Name = "UC_employeeList";
-            this.UC_employeeList.Size = new System.Drawing.Size(726, 395);
+            this.UC_employeeList.Size = new System.Drawing.Size(800, 450);
             this.UC_employeeList.TabIndex = 0;
             // 
             // EmployeeList
