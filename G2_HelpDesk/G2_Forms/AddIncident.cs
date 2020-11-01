@@ -19,9 +19,8 @@ namespace G2_Forms
     {
         public AddIncident()
         {
+
             Ticket incident = new Ticket();
-
-
             InitializeComponent();
             
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
@@ -53,8 +52,13 @@ namespace G2_Forms
             string deadline = txtDeadline.Text;
             string description = txtDescription.Text;
 
-            G2_Model.Ticket ticket = new G2_Model.Ticket(id, date, subject, type, priority, description, user);
+            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user);
             ticketDao.DbAddTicket(ticket);
+
+        }
+
+        private void cbDateReport_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

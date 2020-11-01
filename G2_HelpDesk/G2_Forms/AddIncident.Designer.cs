@@ -128,6 +128,7 @@
             this.cbDateReport.Size = new System.Drawing.Size(221, 21);
             this.cbDateReport.TabIndex = 8;
             this.cbDateReport.Text = "Select date";
+            this.cbDateReport.SelectedIndexChanged += new System.EventHandler(this.cbDateReport_SelectedIndexChanged);
             // 
             // cbType
             // 

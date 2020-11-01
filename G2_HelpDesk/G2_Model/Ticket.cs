@@ -27,6 +27,15 @@ namespace G2_Model
             this.Description = description;
             this.User = user;
         }
+        public Ticket(DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Admin user)
+        {
+            this.ReportDate = reportDate;
+            this.Subject = subject;
+            this.Type = type;
+            this.Priority = priority;
+            this.Description = description;
+            this.User = user;
+        }
         public string _Id { get => _id; set => _id = value; }
         public DateTime ReportDate { get => reportDate; set => reportDate = value; }
         public string Subject { get => subject; set => subject = value; }
