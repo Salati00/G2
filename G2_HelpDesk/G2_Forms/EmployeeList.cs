@@ -26,12 +26,15 @@ namespace G2_Forms
         private void EmployeeList_Load(object sender, EventArgs e)
         {
             List<string> Headers = new List<string>();
+            Headers.Add("Name");
+            Headers.Add("Surname");
+            Headers.Add("Phone Number");
+            Headers.Add("E-Mail");
+            Headers.Add("UserName");
+            Headers.Add("Password");
 
-            //UC_employeeList = new Uc_Table();
-            userDB.DbGetAllUsers().ForEach(x => {
-                UC_employeeList.AddElement(x.ToList());
-                }
-            );
+            UC_employeeList.SetHeaders(Headers);
+            userDB.DbGetAllUsers().ForEach(x => UC_employeeList.AddElement(x.ToList()));
         }
     }
 }

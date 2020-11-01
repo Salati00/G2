@@ -20,10 +20,11 @@ namespace G2_UserControls
         private const int DELTA_Y = 35;
 
         private const int H_Y = 50;
-        private int H_X = 50;
+        private const int H_X = 50;
         private const int H_DELTA_X = 120;
 
         private List<object> elementList;
+        private Type type;
 
         /// <summary>
         /// Takes list of strings as headers for the table to be displayed
@@ -38,19 +39,21 @@ namespace G2_UserControls
             this.elementList = new List<object>();
 
             SetHeaders(Headers);
+            this.AutoSize = true;
         }
         /// <summary>
         /// FOR TESTING PURPOSES
         /// </summary>
-        public Uc_Table()
+        public Uc_Table(Type type = null)
         {
+            this.type = type;
+
             InitializeComponent();
             this.AutoScroll = true;
             this.BorderStyle = BorderStyle.FixedSingle;
-
             this.elementList = new List<object>();
 
-            SetHeaders(null);
+            //SetHeaders(null);
         }
 
         //Private methods
@@ -81,12 +84,20 @@ namespace G2_UserControls
         public void UpdateTable()
         {
             this.Controls.OfType<Uc_TableRow>().ToList().ForEach(x => { x.Remove(); });
-            y = 50;
-            x = 50;
+            y = 70;
+            x = 30;
 
             foreach (var item in elementList)
             {
-                AddRow((List<object>)item);
+                if(this.type == typeof(Person))
+                {
+                    if(Txt_Filter.Text == "" || ((List<object>)item)[3].ToString().Contains(Txt_Filter.Text))
+                        AddRow((List<object>)item);
+                }
+                else
+                {
+                    AddRow((List<object>)item);
+                }
             }
         }
 
@@ -101,6 +112,7 @@ namespace G2_UserControls
                 Headers.Add("Date");
                 Headers.Add("Status");
             }
+            int newX = H_X;
             for (int i = 0; i < Headers.Count(); i++)
             {
                 Label l = new Label();
@@ -108,10 +120,10 @@ namespace G2_UserControls
                 l.Visible = true;
                 l.Show();
                 l.Top = H_Y;
-                l.Left = H_X;
+                l.Left = newX;
                 this.Controls.Add(l);
 
-                H_X += H_DELTA_X;
+                newX += H_DELTA_X;
             }
         }
 
@@ -138,7 +150,7 @@ namespace G2_UserControls
             ((Timer)sender).Enabled = false;
             
 
-            MessageBox.Show("Retrieve data again");
+            //MessageBox.Show("Retrieve data again");
             this.UpdateTable();
         }
 

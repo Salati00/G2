@@ -1,4 +1,5 @@
-﻿namespace G2_Forms
+﻿using G2_Model;
+namespace G2_Forms
 {
     partial class EmployeeList
     {
@@ -28,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.UC_employeeList = new G2_UserControls.Uc_Table();
+            this.UC_employeeList = new G2_UserControls.Uc_Table(typeof(Person));
             this.SuspendLayout();
             // 
             // UC_employeeList

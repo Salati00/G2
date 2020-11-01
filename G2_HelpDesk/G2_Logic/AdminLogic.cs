@@ -19,7 +19,7 @@ namespace G2_Logic
         {
             db.DbAddUser(user);
         }
-        public List<Admin> GetAllUsers()
+        public List<Person> GetAllUsers()
         {
             return db.DbGetAllUsers();
         }

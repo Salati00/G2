@@ -28,6 +28,7 @@ namespace G2_UserControls
             items = Items.ToList();
             x = 20; y = 20;
             CreateFields();
+            this.AutoSize = true;
         }
 
         //Private Methods
@@ -45,22 +46,8 @@ namespace G2_UserControls
 
                 x += DELTA_X;
             }
-            /*Button BtnRemove = new Button();
-            BtnRemove.Top = y;
-            BtnRemove.Left = x;
-            BtnRemove.Text = "X";
-            BtnRemove.Height = 30;
-            BtnRemove.Width = 30;
-            BtnRemove.Show();
-            BtnRemove.Click += RemoveClick;
-            this.Controls.Add(BtnRemove);*/
         }
-        /*
-        private void RemoveClick(object sender, EventArgs e)
-        {
 
-        }
-        */
         //Public Methods
         public void Remove()
         {

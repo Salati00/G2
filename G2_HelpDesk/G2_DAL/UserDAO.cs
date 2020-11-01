@@ -28,9 +28,9 @@ namespace G2_DAL
         {
             collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
         }
-        public List<Admin> DbGetAllUsers()
+        public List<Person> DbGetAllUsers()
         {
-            List<Admin> users = new List<Admin>();
+            List<Person> users = new List<Person>();
             var docs = collectionUser.Find(Builders<BsonDocument>.Filter.Empty).ToList();
             foreach (BsonDocument doc in docs)
             {
