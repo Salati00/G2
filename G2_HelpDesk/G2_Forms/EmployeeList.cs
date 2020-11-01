@@ -27,8 +27,11 @@ namespace G2_Forms
         {
             List<string> Headers = new List<string>();
 
-            UC_employeeList = new Uc_Table();
-            userDB.DbGetAllUsers().ForEach(x => UC_employeeList.AddElement(x.ToList()));
+            //UC_employeeList = new Uc_Table();
+            userDB.DbGetAllUsers().ForEach(x => {
+                UC_employeeList.AddElement(x.ToList());
+                }
+            );
         }
     }
 }

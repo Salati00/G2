@@ -9,7 +9,6 @@ namespace G2_Model
 {
     public class Employee : Person
     {
-        
         public Branch Branch { get; set; }
 
         public Employee(string firstname, string lastname, string phonenumber, string email, Branch branch) : base(firstname, lastname, phonenumber, email)

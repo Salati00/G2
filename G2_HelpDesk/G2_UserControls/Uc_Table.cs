@@ -37,7 +37,7 @@ namespace G2_UserControls
 
             this.elementList = new List<object>();
 
-            CreateFields(Headers);
+            SetHeaders(Headers);
         }
         /// <summary>
         /// FOR TESTING PURPOSES
@@ -50,35 +50,10 @@ namespace G2_UserControls
 
             this.elementList = new List<object>();
 
-            CreateFields(null);
+            SetHeaders(null);
         }
 
         //Private methods
-        private void CreateFields(List<string> Headers)
-        {
-            if(Headers == null)
-            {
-                Headers = new List<string>();
-                Headers.Add("ID");
-                Headers.Add("Subject");
-                Headers.Add("User");
-                Headers.Add("Date");
-                Headers.Add("Status");
-            }
-            for (int i = 0; i < Headers.Count(); i++)
-            {
-                Label l = new Label();
-                l.Text = Headers[i];
-                l.Visible = true;
-                l.Show();
-                l.Top = H_Y;
-                l.Left = H_X;
-                this.Controls.Add(l);
-
-                H_X += H_DELTA_X;
-            }
-        }
-        
         private void AddRow(List<object> item)
         {
             Uc_TableRow r = new Uc_TableRow(item);
@@ -112,6 +87,31 @@ namespace G2_UserControls
             foreach (var item in elementList)
             {
                 AddRow((List<object>)item);
+            }
+        }
+
+        public void SetHeaders(List<string> Headers)
+        {
+            if (Headers == null)
+            {
+                Headers = new List<string>();
+                Headers.Add("ID");
+                Headers.Add("Subject");
+                Headers.Add("User");
+                Headers.Add("Date");
+                Headers.Add("Status");
+            }
+            for (int i = 0; i < Headers.Count(); i++)
+            {
+                Label l = new Label();
+                l.Text = Headers[i];
+                l.Visible = true;
+                l.Show();
+                l.Top = H_Y;
+                l.Left = H_X;
+                this.Controls.Add(l);
+
+                H_X += H_DELTA_X;
             }
         }
 

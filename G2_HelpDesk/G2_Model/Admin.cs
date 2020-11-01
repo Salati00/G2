@@ -38,8 +38,8 @@ namespace G2_Model
         public override List<object> ToList()
         {
             List<object> lst = base.ToList();
-            lst.Add(PhoneNumber.ToString());
-            lst.Add(Email.ToString());
+            lst.Add(Username.ToString());
+            lst.Add(Password.ToString());
 
             return lst;
         }
