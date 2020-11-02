@@ -22,7 +22,7 @@ namespace G2_Forms
 
         private void Btn_AddRow_Click(object sender, EventArgs e)
         {
-            UcTab_Main.AddElement((new Admin("Giorgio","Salati","salati00","password","+393454455410","salati00.giorgio@gmail.com")).ToList());
+            UcTab_Main.AddElement((new Admin("Giorgio","Salati","salati00","password","+393454455410","salati00.giorgio@gmail.com")));
         }
 
         private void Frm_Test_Load(object sender, EventArgs e)

@@ -66,7 +66,7 @@ namespace G2_Forms
         }
 
         //Private methods
-        private void AddRow(List<object> item)
+        private void AddRow(IListable item)
         {
             Uc_TableRow r;
             if(type == typeof(Person)){
@@ -95,10 +95,10 @@ namespace G2_Forms
         /// Adds one entry to the table
         /// </summary>
         /// <param name="item">List of objects to be displayed in table as entries</param>
-        public void AddElement(List<object> item)
+        public void AddElement(IListable item)
         {
             elementList.Add(item);
-            AddRow((List<object>)elementList.Last());
+            AddRow((IListable)elementList.Last());
         }
         /// <summary>
         /// Forces Update of displayed elements
@@ -114,11 +114,11 @@ namespace G2_Forms
                 if(this.type == typeof(Person))
                 {
                     if(Txt_Filter.Text == "" || ((List<object>)item)[3].ToString().Contains(Txt_Filter.Text))
-                        AddRow((List<object>)item);
+                        AddRow((IListable)item);
                 }
                 else
                 {
-                    AddRow((List<object>)item);
+                    AddRow((IListable)item);
                 }
             }
         }

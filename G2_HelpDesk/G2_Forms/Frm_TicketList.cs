@@ -45,7 +45,7 @@ namespace G2_Forms
             Uc_Menu.Window = this;
             Uc_List.SetHeaders(Headers);
             Uc_List.SetMode(typeof(Person));
-            ticketDB.GetAllTickets().ForEach(x => Uc_List.AddElement(x.ToList()));
+            ticketDB.GetAllTickets().ForEach(x => Uc_List.AddElement(x));
         }
     }
 }

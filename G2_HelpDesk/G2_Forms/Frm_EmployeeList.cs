@@ -47,7 +47,7 @@ namespace G2_Forms
             Uc_Menu.Window = this;
             Uc_List.SetHeaders(Headers);
             Uc_List.SetMode(typeof(Person));
-            userDB.GetAllUsers().ForEach(x => Uc_List.AddElement(x.ToList()));
+            userDB.GetAllUsers().ForEach(x => Uc_List.AddElement((IListable)x));
         }
     }
 }
