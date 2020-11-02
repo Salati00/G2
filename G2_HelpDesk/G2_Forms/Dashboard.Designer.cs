@@ -30,10 +30,8 @@
         {
             this.lbl_Username = new System.Windows.Forms.Label();
             this.btb_Logout = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Btn_IncidentList = new System.Windows.Forms.Button();
             this.btn_account = new System.Windows.Forms.Button();
-            this.btn_CreateUser = new System.Windows.Forms.Button();
             this.btb_EmployeeList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,25 +54,15 @@
             this.btb_Logout.UseVisualStyleBackColor = true;
             this.btb_Logout.Click += new System.EventHandler(this.btb_Logout_Click);
             // 
-            // button1
+            // Btn_IncidentList
             // 
-            this.button1.Location = new System.Drawing.Point(254, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(269, 73);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Ticket";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(254, 146);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(269, 73);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "View Current Incidents";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Btn_IncidentList.Location = new System.Drawing.Point(254, 83);
+            this.Btn_IncidentList.Name = "Btn_IncidentList";
+            this.Btn_IncidentList.Size = new System.Drawing.Size(269, 73);
+            this.Btn_IncidentList.TabIndex = 3;
+            this.Btn_IncidentList.Text = "View Current Incidents";
+            this.Btn_IncidentList.UseVisualStyleBackColor = true;
+            this.Btn_IncidentList.Click += new System.EventHandler(this.Btn_IncidentList_Click);
             // 
             // btn_account
             // 
@@ -86,19 +74,9 @@
             this.btn_account.UseVisualStyleBackColor = true;
             this.btn_account.Click += new System.EventHandler(this.btn_account_Click);
             // 
-            // btn_CreateUser
-            // 
-            this.btn_CreateUser.Location = new System.Drawing.Point(254, 254);
-            this.btn_CreateUser.Name = "btn_CreateUser";
-            this.btn_CreateUser.Size = new System.Drawing.Size(269, 73);
-            this.btn_CreateUser.TabIndex = 5;
-            this.btn_CreateUser.Text = "Create User";
-            this.btn_CreateUser.UseVisualStyleBackColor = true;
-            this.btn_CreateUser.Click += new System.EventHandler(this.btn_CreateUser_Click);
-            // 
             // btb_EmployeeList
             // 
-            this.btb_EmployeeList.Location = new System.Drawing.Point(254, 349);
+            this.btb_EmployeeList.Location = new System.Drawing.Point(254, 225);
             this.btb_EmployeeList.Name = "btb_EmployeeList";
             this.btb_EmployeeList.Size = new System.Drawing.Size(269, 73);
             this.btb_EmployeeList.TabIndex = 6;
@@ -112,10 +90,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btb_EmployeeList);
-            this.Controls.Add(this.btn_CreateUser);
             this.Controls.Add(this.btn_account);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Btn_IncidentList);
             this.Controls.Add(this.btb_Logout);
             this.Controls.Add(this.lbl_Username);
             this.Name = "Dashboard";
@@ -130,10 +106,8 @@
 
         private System.Windows.Forms.Label lbl_Username;
         private System.Windows.Forms.Button btb_Logout;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Btn_IncidentList;
         private System.Windows.Forms.Button btn_account;
-        private System.Windows.Forms.Button btn_CreateUser;
         private System.Windows.Forms.Button btb_EmployeeList;
     }
 }
