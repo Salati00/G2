@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace G2_Forms
 {
-    public partial class FrmComponent_MenuBar : UserControl
+    public partial class Uc_MenuBar : UserControl
     {
         private Form window;
         private Form target = null;
 
 
-        public FrmComponent_MenuBar()
+        public Uc_MenuBar()
         {
             InitializeComponent();
         }

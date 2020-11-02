@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.Btn_AddRow = new System.Windows.Forms.Button();
-            this.UcTab_Main = new G2_UserControls.Uc_Table();
+            this.UcTab_Main = new Uc_Table();
             this.SuspendLayout();
             // 
             // Btn_AddRow
@@ -70,6 +70,6 @@
         #endregion
 
         private System.Windows.Forms.Button Btn_AddRow;
-        private G2_UserControls.Uc_Table UcTab_Main;
+        private Uc_Table UcTab_Main;
     }
 }

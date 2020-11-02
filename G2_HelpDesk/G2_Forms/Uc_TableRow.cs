@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.ComponentModel.Design;
 using G2_Model;
 
-namespace G2_UserControls
+namespace G2_Forms
 {
     public partial class Uc_TableRow : UserControl
     {
@@ -19,16 +19,6 @@ namespace G2_UserControls
         private const int DELTA_X = 120;
         private bool editable;
 
-        private Button BtnEdit;
-
-        public Button GetButton
-        {
-            get { return BtnEdit; }
-        }
-        public List<object> GetItems
-        {
-            get { return items; }
-        }
         /// <summary>
         /// Takes one object and interprets it as a list to populate the fields to be displayed
         /// </summary>
@@ -59,15 +49,23 @@ namespace G2_UserControls
 
                 x += DELTA_X;
             }
+            if (editable)
+            {
+                Button b = new Button();
+                b.Text = "Edit";
+                b.Visible = true;
+                b.Show();
+                b.Top = y;
+                b.Left = x;
+                b.Click += B_Click;
+                this.Controls.Add(b);
+            }
+        }
 
-            Button b = new Button();
-            b.Text = "Edit";
-            b.Visible = true;
-            b.Show();
-            b.Top = y;
-            b.Left = x;
-            this.Controls.Add(b);
-            BtnEdit = b;
+        private void B_Click(object sender, EventArgs e)
+        {
+            Form newForm = new Form();
+            newForm.ShowDialog();
         }
 
         //Public Methods

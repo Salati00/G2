@@ -193,11 +193,23 @@
     <Compile Include="Ticket.Designer.cs">
       <DependentUpon>Ticket.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmComponent_MenuBar.cs">
+    <Compile Include="Uc_MenuBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FrmComponent_MenuBar.Designer.cs">
-      <DependentUpon>FrmComponent_MenuBar.cs</DependentUpon>
+    <Compile Include="Uc_MenuBar.Designer.cs">
+      <DependentUpon>Uc_MenuBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uc_Table.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_Table.Designer.cs">
+      <DependentUpon>Uc_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uc_TableRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Uc_TableRow.Designer.cs">
+      <DependentUpon>Uc_TableRow.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
@@ -242,8 +254,14 @@
     <EmbeddedResource Include="Ticket.resx">
       <DependentUpon>Ticket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmComponent_MenuBar.resx">
-      <DependentUpon>FrmComponent_MenuBar.cs</DependentUpon>
+    <EmbeddedResource Include="Uc_MenuBar.resx">
+      <DependentUpon>Uc_MenuBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc_Table.resx">
+      <DependentUpon>Uc_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uc_TableRow.resx">
+      <DependentUpon>Uc_TableRow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -277,10 +295,6 @@
     <ProjectReference Include="..\G2_Model\G2_Model.csproj">
       <Project>{f3df4c27-0990-4ada-9b9b-1b6615d0f84a}</Project>
       <Name>G2_Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\G2_UserControls\G2_UserControls.csproj">
-      <Project>{23ac0745-96f1-4648-bcb5-ca30d2bead0c}</Project>
-      <Name>G2_UserControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

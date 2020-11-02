@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Uc_List = new G2_UserControls.Uc_Table();
-            this.Uc_Menu = new G2_Forms.FrmComponent_MenuBar();
+            this.Uc_List = new Uc_Table();
+            this.Uc_Menu = new G2_Forms.Uc_MenuBar();
             this.SuspendLayout();
             // 
             // Uc_List
@@ -56,6 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Uc_Menu);
             this.Controls.Add(this.Uc_List);
@@ -69,7 +70,7 @@
 
         #endregion
 
-        private G2_UserControls.Uc_Table Uc_List;
-        private FrmComponent_MenuBar Uc_Menu;
+        private Uc_Table Uc_List;
+        private Uc_MenuBar Uc_Menu;
     }
 }
