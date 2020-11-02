@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2_Forms", "G2_Forms\G2_Forms.csproj", "{B083AF76-8AA1-4926-B20F-B1B4DC20FC54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2_Ui", "G2_Forms\G2_Ui.csproj", "{B083AF76-8AA1-4926-B20F-B1B4DC20FC54}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2_DAL", "G2_DAL\G2_DAL.csproj", "{EBF19A7C-D896-4F8E-AE60-D354B06C13A4}"
 EndProject
