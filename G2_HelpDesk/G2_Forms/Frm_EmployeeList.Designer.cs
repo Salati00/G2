@@ -29,8 +29,8 @@ namespace G2_Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.Uc_List = new G2_UserControls.Uc_Table();
-            this.Uc_Menu = new FrmComponent_MenuBar();
+            this.Uc_List = new Uc_Table();
+            this.Uc_Menu = new Uc_MenuBar();
             this.SuspendLayout();
             // 
             // Uc_List
@@ -70,7 +70,7 @@ namespace G2_Forms
 
         #endregion
 
-        private G2_UserControls.Uc_Table Uc_List;
-        private FrmComponent_MenuBar Uc_Menu;
+        private Uc_Table Uc_List;
+        private Uc_MenuBar Uc_Menu;
     }
 }

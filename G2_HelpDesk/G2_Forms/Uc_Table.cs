@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Runtime.CompilerServices;
 using G2_Model;
 
-namespace G2_UserControls
+namespace G2_Forms
 {
     public partial class Uc_Table : UserControl
     {
@@ -71,7 +71,6 @@ namespace G2_UserControls
             Uc_TableRow r;
             if(type == typeof(Person)){
                 r = new Uc_TableRow(item, true);
-                r.GetButton.Click += GetButton_Click;
             }
             else
             {

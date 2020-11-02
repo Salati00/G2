@@ -8,8 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using G2_Model;
-using G2_UserControls;
 using G2_Logic;
 
 namespace G2_Forms

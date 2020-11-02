@@ -1,6 +1,6 @@
 ﻿namespace G2_Forms
 {
-    partial class FrmComponent_MenuBar
+    partial class Uc_MenuBar
     {
         /// <summary> 
         /// Required designer variable.
