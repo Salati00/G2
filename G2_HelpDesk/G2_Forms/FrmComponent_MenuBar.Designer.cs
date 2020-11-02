@@ -33,6 +33,8 @@
             this.Btn_Tickets = new System.Windows.Forms.Button();
             this.Lbl_NoDesk = new System.Windows.Forms.Label();
             this.Lbl_Licensed = new System.Windows.Forms.Label();
+            this.PicBox_Logo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_DashBoard
@@ -85,11 +87,23 @@
             this.Lbl_Licensed.TabIndex = 4;
             this.Lbl_Licensed.Text = "Licensed to: Garden Group";
             // 
+            // PicBox_Logo
+            // 
+            this.PicBox_Logo.ErrorImage = global::G2_Forms.Properties.Resources.logo;
+            this.PicBox_Logo.Image = global::G2_Forms.Properties.Resources.logo;
+            this.PicBox_Logo.Location = new System.Drawing.Point(3, 4);
+            this.PicBox_Logo.Name = "PicBox_Logo";
+            this.PicBox_Logo.Size = new System.Drawing.Size(100, 38);
+            this.PicBox_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicBox_Logo.TabIndex = 5;
+            this.PicBox_Logo.TabStop = false;
+            // 
             // FrmComponent_MenuBar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.Controls.Add(this.PicBox_Logo);
             this.Controls.Add(this.Lbl_Licensed);
             this.Controls.Add(this.Lbl_NoDesk);
             this.Controls.Add(this.Btn_Tickets);
@@ -97,6 +111,7 @@
             this.Controls.Add(this.Btn_DashBoard);
             this.Name = "FrmComponent_MenuBar";
             this.Size = new System.Drawing.Size(800, 74);
+            ((System.ComponentModel.ISupportInitialize)(this.PicBox_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,5 +124,6 @@
         private System.Windows.Forms.Button Btn_Tickets;
         private System.Windows.Forms.Label Lbl_NoDesk;
         private System.Windows.Forms.Label Lbl_Licensed;
+        private System.Windows.Forms.PictureBox PicBox_Logo;
     }
 }
