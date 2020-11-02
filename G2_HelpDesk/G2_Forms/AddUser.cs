@@ -59,9 +59,10 @@ namespace G2_Forms
                 }
                 else
                 {
-                    Branch branch  = (Branch)cBoxBranch.SelectedValue;
+                    Branch branch;
+                    Enum.TryParse<Branch>(cBoxBranch.SelectedValue.ToString(), out branch);
                     Employee employee = new Employee(firstname, lastname, phonenumber,email, branch);
-
+                    //AddAdminLogic.AddUser(employee);
                 }
             }
         }

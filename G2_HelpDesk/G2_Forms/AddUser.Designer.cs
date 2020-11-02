@@ -211,9 +211,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label9.Location = new System.Drawing.Point(209, 280);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 20);
+            this.label9.Size = new System.Drawing.Size(42, 20);
             this.label9.TabIndex = 17;
-            this.label9.Text = "comboBox";
+            this.label9.Text = "Role";
             // 
             // cBoxBranch
             // 
