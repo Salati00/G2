@@ -50,7 +50,6 @@
             this.Uc_Menu.Name = "Uc_Menu";
             this.Uc_Menu.Size = new System.Drawing.Size(800, 74);
             this.Uc_Menu.TabIndex = 3;
-            this.Uc_Menu.Window = null;
             // 
             // Frm_TicketList
             // 

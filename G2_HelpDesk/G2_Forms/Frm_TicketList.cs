@@ -15,6 +15,8 @@ namespace G2_Forms
         public Frm_TicketList()
         {
             InitializeComponent();
+
+            Uc_Menu.Window = this;
         }
     }
 }
