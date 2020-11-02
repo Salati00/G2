@@ -13,13 +13,12 @@ namespace G2_Forms
     public partial class FrmComponent_MenuBar : UserControl
     {
         private Form window;
-        private Form target;
+        private Form target = null;
 
 
         public FrmComponent_MenuBar()
         {
             InitializeComponent();
-            target = Dashboard.GetInstance();
         }
 
         public Form Window
@@ -34,6 +33,8 @@ namespace G2_Forms
 
         private void Window_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (target == null)
+                target = Dashboard.GetInstance();
             target.Show();
         }
 

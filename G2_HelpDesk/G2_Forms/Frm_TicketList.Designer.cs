@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Uc_Menu = new G2_Forms.FrmComponent_MenuBar();
             this.Uc_List = new G2_UserControls.Uc_Table();
+            this.Uc_Menu = new G2_Forms.FrmComponent_MenuBar();
             this.SuspendLayout();
-            // 
-            // Uc_Menu
-            // 
-            this.Uc_Menu.AutoSize = true;
-            this.Uc_Menu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Uc_Menu.Location = new System.Drawing.Point(0, 0);
-            this.Uc_Menu.Name = "Uc_Menu";
-            this.Uc_Menu.Size = new System.Drawing.Size(800, 74);
-            this.Uc_Menu.TabIndex = 3;
-            //this.Uc_Menu.Window = null;
             // 
             // Uc_List
             // 
@@ -51,6 +41,16 @@
             this.Uc_List.Name = "Uc_List";
             this.Uc_List.Size = new System.Drawing.Size(800, 375);
             this.Uc_List.TabIndex = 2;
+            // 
+            // Uc_Menu
+            // 
+            this.Uc_Menu.AutoSize = true;
+            this.Uc_Menu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Uc_Menu.Location = new System.Drawing.Point(0, 0);
+            this.Uc_Menu.Name = "Uc_Menu";
+            this.Uc_Menu.Size = new System.Drawing.Size(800, 74);
+            this.Uc_Menu.TabIndex = 3;
+            this.Uc_Menu.Window = null;
             // 
             // Frm_TicketList
             // 
@@ -68,7 +68,7 @@
 
         #endregion
 
-        private FrmComponent_MenuBar Uc_Menu;
         private G2_UserControls.Uc_Table Uc_List;
+        private FrmComponent_MenuBar Uc_Menu;
     }
 }
