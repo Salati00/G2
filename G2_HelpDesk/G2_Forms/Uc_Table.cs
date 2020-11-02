@@ -69,7 +69,8 @@ namespace G2_Forms
         private void AddRow(IListable item)
         {
             Uc_TableRow r;
-            if(type == typeof(Person)){
+            if(type == typeof(Person))
+            {
                 r = new Uc_TableRow(item, true);
             }
             else
