@@ -37,6 +37,18 @@ namespace G2_Logic
         {
             db.DbDeleteUser(user);
         }
+        public int GetAmountOfTickets(Person person)
+        {
+            TicketLogic ticketDB = new TicketLogic();
+            List<Ticket> tickets = ticketDB.GetAllTickets();
+            int count = 0;
+            foreach (var item in tickets)
+            {
+                if (item.User._id == person._id)
+                    count++;
+            }
+            return count;
+        }
 
         private static String sha256_hash(String value)
         {

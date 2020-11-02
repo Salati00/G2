@@ -41,8 +41,8 @@ namespace G2_Forms
             Headers.Add("Surname");
             Headers.Add("Phone Number");
             Headers.Add("E-Mail");
-            Headers.Add("UserName");
-            Headers.Add("Password Hash");
+            Headers.Add("Number of tickets");
+            //Headers.Add("Password Hash");
 
             Uc_Menu.Window = this;
             Uc_List.SetHeaders(Headers);

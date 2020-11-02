@@ -7,7 +7,7 @@ using MongoDB.Driver;
 using MongoDB.Bson;
 using G2_Model;
 using System.Security.Cryptography;
-
+using System.Runtime.InteropServices;
 
 namespace G2_DAL
 {

@@ -46,5 +46,10 @@ namespace G2_Model
 
             return lst;
         }
+
+        public virtual string GetFullName()
+        {
+            return this.Firstname + " " + this.Lastname;
+        }
     }
 }
