@@ -29,11 +29,10 @@ namespace G2_Forms
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
             foreach (Person employee in employees)
             {
-                cbUser.Items.Add(employee.Firstname +" "+ employee.Lastname);
+                cbUser.Items.Add(employee._id);
             }
 
         }
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -55,8 +54,7 @@ namespace G2_Forms
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
             TicketTypes type = (TicketTypes)cbType.SelectedItem;
-            Admin user = (Admin)cbUser.SelectedItem;
-
+            Admin user = (Admin)cbUser.SelectedValue;
             
 
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
@@ -69,5 +67,9 @@ namespace G2_Forms
 
         }
 
+        private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

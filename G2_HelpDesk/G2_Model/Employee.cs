@@ -15,6 +15,10 @@ namespace G2_Model
         {
             this.Branch = branch;
         }
+        public Employee(string firstname, string lastname, string phonenumber, string email) : base(firstname, lastname, phonenumber, email)
+        {
+
+        }
         public Employee(string id, string firstname, string lastname, string phonenumber, string email, Branch branch) : base(id, firstname, lastname, phonenumber, email)
         {
             this.Branch = branch;
@@ -31,6 +35,7 @@ namespace G2_Model
 
             return lst;
         }
+        
     }
 }
  
