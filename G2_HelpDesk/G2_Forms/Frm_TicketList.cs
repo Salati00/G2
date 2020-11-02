@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace G2_Forms
 {
-    public partial class Frm_TicketsList : Form
+    public partial class Frm_TicketList : Form
     {
-        public Frm_TicketsList()
+        public Frm_TicketList()
         {
             InitializeComponent();
         }

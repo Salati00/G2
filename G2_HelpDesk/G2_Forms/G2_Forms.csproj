@@ -167,11 +167,11 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_TicketsList.cs">
+    <Compile Include="Frm_TicketList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_TicketsList.Designer.cs">
-      <DependentUpon>Frm_TicketsList.cs</DependentUpon>
+    <Compile Include="Frm_TicketList.Designer.cs">
+      <DependentUpon>Frm_TicketList.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -220,8 +220,8 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_TicketsList.resx">
-      <DependentUpon>Frm_TicketsList.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_TicketList.resx">
+      <DependentUpon>Frm_TicketList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>

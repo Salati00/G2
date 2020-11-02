@@ -8,19 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using G2_Logic;
+using G2_DAL;
 using G2_UserControls;
 
 namespace G2_Forms
 {
     public partial class Frm_EmployeeList : Form
     {
-        AdminLogic userDB;
+        UserDAO userDB;
 
         public Frm_EmployeeList()
         {
             InitializeComponent();
-            userDB = new AdminLogic();
+            userDB = new UserDAO();
         }
 
         private void EmployeeList_Load(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace G2_Forms
             Uc_Menu.Window = this;
             Uc_List.SetHeaders(Headers);
             Uc_List.SetMode(typeof(Person));
-            userDB.GetAllUsers().ForEach(x => Uc_List.AddElement(x.ToList()));
+            userDB.DbGetAllUsers().ForEach(x => Uc_List.AddElement(x.ToList()));
         }
     }
 }

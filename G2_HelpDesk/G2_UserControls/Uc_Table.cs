@@ -41,7 +41,6 @@ namespace G2_UserControls
             this.BorderStyle = BorderStyle.FixedSingle;
 
             this.elementList = new List<object>();
-            AddButton = Btn_Add;
 
             SetHeaders(Headers);
             this.AutoSize = true;
