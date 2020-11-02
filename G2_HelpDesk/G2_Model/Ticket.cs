@@ -14,10 +14,10 @@ namespace G2_Model
         private TicketTypes type;
         private TicketPriority priority;
         private string description;
-        private Person user;
+        private Admin user;
 
         public Ticket() { }
-        public Ticket(string _id, DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Person user)
+        public Ticket(string _id, DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Admin user)
         {
             this._Id = _id;
             this.ReportDate = reportDate;
@@ -27,7 +27,7 @@ namespace G2_Model
             this.Description = description;
             this.User = user;
         }
-        public Ticket(DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Person user)
+        public Ticket(DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Admin user)
         {
             this.ReportDate = reportDate;
             this.Subject = subject;
@@ -42,7 +42,7 @@ namespace G2_Model
         public TicketTypes Type { get => type; set => type = value; }
         public TicketPriority Priority { get => priority; set => priority = value; }
         public string Description { get => description; set => description = value; }
-        public Person User { get => user; set => user = value; }
+        public Admin User { get => user; set => user = value; }
 
         /// <summary>
         /// Method to get a list from the current object

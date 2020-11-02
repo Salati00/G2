@@ -19,13 +19,19 @@ namespace G2_Forms
     {
         public AddIncident()
         {
+            UserDAO userdao = new UserDAO();
+            List<Person> admins = userdao.DbGetAllUsers();
+            
 
-            Ticket incident = new Ticket();
             InitializeComponent();
             
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
-            
+            foreach (Admin a in admins)
+            {
+                cbUser.Items.Add(a.Firstname +" "+ a.Lastname);
+            }
+
         }
 
 
@@ -41,25 +47,33 @@ namespace G2_Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            UserDAO userdao = new UserDAO();
+            List<Person> admins = userdao.DbGetAllUsers();
             TicketDAO ticketDao = new TicketDAO();
+            
 
-            string id = txtID.Text;
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
             TicketTypes type = (TicketTypes)cbType.SelectedItem;
             Admin user = (Admin)cbUser.SelectedItem;
+
+            
+
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
             string deadline = txtDeadline.Text;
             string description = txtDescription.Text;
 
-            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user);
-            ticketDao.DbAddTicket(ticket);
+            foreach (Admin a in admins)
+            {
+                if (user._id == a._id)
+                {
+                    G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, a);
+                    ticketDao.DbAddTicket(ticket);
+                }
+            }
+            
 
         }
 
-        private void cbDateReport_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
