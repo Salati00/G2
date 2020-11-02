@@ -64,8 +64,7 @@ namespace G2_Forms
 
         private void btn_Loginpage_Click(object sender, EventArgs e)
         {
-            LoginPage login = new LoginPage();
-            login.ShowDialog();
+            LoginPage.Instance.ShowDialog();
         }
     }
 }

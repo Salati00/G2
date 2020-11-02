@@ -26,6 +26,10 @@ namespace G2_UserControls
         private List<object> elementList;
         private Type type;
 
+        private Button AddButton;
+
+        public Button GetButton { get => AddButton;}
+
         /// <summary>
         /// Takes list of strings as headers for the table to be displayed
         /// </summary>
@@ -54,6 +58,14 @@ namespace G2_UserControls
             this.elementList = new List<object>();
 
             //SetHeaders(null);
+        }
+
+        public Uc_Table()
+        {
+            InitializeComponent();
+            this.AutoScroll = true;
+            this.BorderStyle = BorderStyle.FixedSingle;
+            this.elementList = new List<object>();
         }
 
         //Private methods
@@ -127,10 +139,9 @@ namespace G2_UserControls
             }
         }
 
-        public Uc_Table SetMode(int type)
+        public void SetMode(Type type)
         {
-
-            return this;
+            this.type = type;
         }
 
         //Events

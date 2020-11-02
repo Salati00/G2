@@ -41,7 +41,11 @@ namespace G2_Forms
         {
             AddIncident incident = new AddIncident();
             incident.ShowDialog();
-            this.Close();
+        }
+
+        private void Ticket_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Dashboard.GetInstance().Show();
         }
     }
 }

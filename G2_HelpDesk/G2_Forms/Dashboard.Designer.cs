@@ -74,6 +74,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "View Current Incidents";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_account
             // 
@@ -119,6 +120,7 @@
             this.Controls.Add(this.lbl_Username);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

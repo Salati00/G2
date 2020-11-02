@@ -13,11 +13,11 @@ using G2_UserControls;
 
 namespace G2_Forms
 {
-    public partial class EmployeeList : Form
+    public partial class Frm_EmployeeList : Form
     {
         UserDAO userDB;
 
-        public EmployeeList(Admin admin)
+        public Frm_EmployeeList()
         {
             InitializeComponent();
             userDB = new UserDAO();
@@ -31,10 +31,12 @@ namespace G2_Forms
             Headers.Add("Phone Number");
             Headers.Add("E-Mail");
             Headers.Add("UserName");
-            Headers.Add("Password");
+            Headers.Add("Password Hash");
 
-            UC_employeeList.SetHeaders(Headers);
-            userDB.DbGetAllUsers().ForEach(x => UC_employeeList.AddElement(x.ToList()));
+            Uc_Menu.Window = this;
+            Uc_List.SetHeaders(Headers);
+            Uc_List.SetMode(typeof(Person));
+            userDB.DbGetAllUsers().ForEach(x => Uc_List.AddElement(x.ToList()));
         }
     }
 }

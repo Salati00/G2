@@ -10,17 +10,13 @@ using System.Windows.Forms;
 
 namespace G2_Forms
 {
-    public partial class Frm_DataList : Form
+    public partial class Frm_TicketList : Form
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="type">0 = Ticket, 1 = User</param>
-        public Frm_DataList(int type)
+        public Frm_TicketList()
         {
             InitializeComponent();
 
-            Uc_TableMain.SetMode(type);
+            Uc_Menu.Window = this;
         }
     }
 }

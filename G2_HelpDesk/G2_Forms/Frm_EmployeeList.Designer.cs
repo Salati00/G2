@@ -1,7 +1,7 @@
 ﻿using G2_Model;
 namespace G2_Forms
 {
-    partial class EmployeeList
+    partial class Frm_EmployeeList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,34 +29,48 @@ namespace G2_Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.UC_employeeList = new G2_UserControls.Uc_Table(typeof(Person));
+            this.Uc_List = new G2_UserControls.Uc_Table();
+            this.Uc_Menu = new FrmComponent_MenuBar();
             this.SuspendLayout();
             // 
-            // UC_employeeList
+            // Uc_List
             // 
-            this.UC_employeeList.AutoScroll = true;
-            this.UC_employeeList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UC_employeeList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UC_employeeList.Location = new System.Drawing.Point(0, 0);
-            this.UC_employeeList.Name = "UC_employeeList";
-            this.UC_employeeList.Size = new System.Drawing.Size(800, 450);
-            this.UC_employeeList.TabIndex = 0;
+            this.Uc_List.AutoScroll = true;
+            this.Uc_List.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Uc_List.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Uc_List.Location = new System.Drawing.Point(0, 75);
+            this.Uc_List.Name = "Uc_List";
+            this.Uc_List.Size = new System.Drawing.Size(800, 375);
+            this.Uc_List.TabIndex = 0;
+            // 
+            // Uc_Menu
+            // 
+            this.Uc_Menu.AutoSize = true;
+            this.Uc_Menu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Uc_Menu.Location = new System.Drawing.Point(0, 0);
+            this.Uc_Menu.Name = "Uc_Menu";
+            this.Uc_Menu.Size = new System.Drawing.Size(800, 74);
+            this.Uc_Menu.TabIndex = 1;
+            //this.Uc_Menu.Window = null;
             // 
             // EmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.UC_employeeList);
+            this.Controls.Add(this.Uc_Menu);
+            this.Controls.Add(this.Uc_List);
             this.Name = "EmployeeList";
             this.Text = "EmployeeList";
             this.Load += new System.EventHandler(this.EmployeeList_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private G2_UserControls.Uc_Table UC_employeeList;
+        private G2_UserControls.Uc_Table Uc_List;
+        private FrmComponent_MenuBar Uc_Menu;
     }
 }

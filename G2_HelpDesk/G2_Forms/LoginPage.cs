@@ -16,11 +16,14 @@ namespace G2_Forms
     {
         AdminLogic user = new AdminLogic();
 
-        public LoginPage()
+        private static readonly Lazy<LoginPage> lazyInstance = new Lazy<LoginPage>(() => new LoginPage());
+
+        public static LoginPage Instance { get { return lazyInstance.Value; } }
+
+        private LoginPage()
         {
             InitializeComponent();
         }
-
 
         private void Login_Btn_Click(object sender, EventArgs e)
         {
@@ -36,17 +39,15 @@ namespace G2_Forms
             else
             {
                 lbl_incorectLogin.Visible = false;
+                Dashboard.GetInstance(UserLogin).Show();
                 this.Hide();
-                Dashboard LoginSucsess = new Dashboard(UserLogin);
-                LoginSucsess.ShowDialog();
-                this.Close();
-
             }
         }
 
-        private void LoginPage_Load(object sender, EventArgs e)
+        public void Clear()
         {
-
+            txt_username.Text = "";
+            txt_password.Text = "";
         }
     }
 }

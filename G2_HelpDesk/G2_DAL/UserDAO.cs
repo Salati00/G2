@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using G2_Model;
+using System.Security.Cryptography;
 
 
 namespace G2_DAL
 {
     public class UserDAO : BaseDAO
     {
+        SHA256 mySHA256 = SHA256.Create();
 
         public void DbAddUser(Admin user)
         {

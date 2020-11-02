@@ -143,17 +143,11 @@
     <Compile Include="AddUser.Designer.cs">
       <DependentUpon>AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeList.cs">
+    <Compile Include="Frm_EmployeeList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeList.Designer.cs">
-      <DependentUpon>EmployeeList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_DataList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_DataList.Designer.cs">
-      <DependentUpon>Frm_DataList.cs</DependentUpon>
+    <Compile Include="Frm_EmployeeList.Designer.cs">
+      <DependentUpon>Frm_EmployeeList.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Main.cs">
       <SubType>Form</SubType>
@@ -172,6 +166,12 @@
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TicketList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TicketList.Designer.cs">
+      <DependentUpon>Frm_TicketList.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -193,6 +193,12 @@
     <Compile Include="Ticket.Designer.cs">
       <DependentUpon>Ticket.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmComponent_MenuBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmComponent_MenuBar.Designer.cs">
+      <DependentUpon>FrmComponent_MenuBar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,11 +208,8 @@
     <EmbeddedResource Include="AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeList.resx">
-      <DependentUpon>EmployeeList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_DataList.resx">
-      <DependentUpon>Frm_DataList.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_EmployeeList.resx">
+      <DependentUpon>Frm_EmployeeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
@@ -216,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TicketList.resx">
+      <DependentUpon>Frm_TicketList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
@@ -234,6 +240,9 @@
     </Compile>
     <EmbeddedResource Include="Ticket.resx">
       <DependentUpon>Ticket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmComponent_MenuBar.resx">
+      <DependentUpon>FrmComponent_MenuBar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

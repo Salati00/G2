@@ -35,8 +35,7 @@ namespace G2_Forms
         private void Btn_Dashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Dashboard dashboard = new Dashboard(admin);
-            dashboard.ShowDialog();
+            Dashboard.GetInstance(admin).ShowDialog();
             this.Close();
         }
 
@@ -69,6 +68,11 @@ namespace G2_Forms
             txt_password.ReadOnly = false;
             txt_email.ReadOnly = false;
             txt_phonenumber.ReadOnly = false;
+        }
+
+        private void AccountInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Dashboard.GetInstance().Show();
         }
     }
 }

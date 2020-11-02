@@ -69,6 +69,7 @@
             this.Controls.Add(this.btnCreateIncident);
             this.Name = "Ticket";
             this.Text = "Ticket";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Ticket_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

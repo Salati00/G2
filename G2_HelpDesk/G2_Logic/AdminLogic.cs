@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using G2_DAL;
@@ -17,6 +18,7 @@ namespace G2_Logic
         }
         public void AddUser(Admin user)
         {
+            user.Password = sha256_hash(user.Password);
             db.DbAddUser(user);
         }
         public List<Person> GetAllUsers()
@@ -25,7 +27,7 @@ namespace G2_Logic
         }
         public Admin LoginUser(string username, string password)
         {
-            return db.DbLoginUser(username, password);
+            return db.DbLoginUser(username, sha256_hash(password));
         }
         public bool UsernameExists(string username)
         {
@@ -34,6 +36,16 @@ namespace G2_Logic
         public void DeleteUser(Admin user)
         {
             db.DbDeleteUser(user);
+        }
+
+        private static String sha256_hash(String value)
+        {
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                return String.Concat(hash
+                  .ComputeHash(Encoding.UTF8.GetBytes(value))
+                  .Select(item => item.ToString("x2")));
+            }
         }
     }
 }

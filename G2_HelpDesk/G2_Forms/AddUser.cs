@@ -101,9 +101,7 @@ namespace G2_Forms
 
         private void Btn_Dashboard_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Dashboard dashboard = new Dashboard(admin);
-            dashboard.ShowDialog();
+            Dashboard.GetInstance(admin).Show();
             this.Close();
         }
     }
