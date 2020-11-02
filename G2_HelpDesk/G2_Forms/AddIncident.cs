@@ -20,16 +20,16 @@ namespace G2_Forms
         public AddIncident()
         {
             UserDAO userdao = new UserDAO();
-            List<Person> admins = userdao.DbGetAllUsers();
+            List<Person> employees = userdao.DbGetAllUsers();
             
 
             InitializeComponent();
             
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
-            foreach (Admin a in admins)
+            foreach (Person employee in employees)
             {
-                cbUser.Items.Add(a.Firstname +" "+ a.Lastname);
+                cbUser.Items.Add(employee.Firstname +" "+ employee.Lastname);
             }
 
         }
@@ -63,15 +63,9 @@ namespace G2_Forms
             string deadline = txtDeadline.Text;
             string description = txtDescription.Text;
 
-            foreach (Admin a in admins)
-            {
-                if (user._id == a._id)
-                {
-                    G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, a);
-                    ticketDao.DbAddTicket(ticket);
-                }
-            }
-            
+            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user);
+            ticketDao.DbAddTicket(ticket);
+                
 
         }
 
