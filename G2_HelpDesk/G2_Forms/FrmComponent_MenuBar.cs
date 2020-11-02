@@ -26,13 +26,17 @@ namespace G2_Forms
             get { return window; }
             set 
             {
-                window = value;
-                window.FormClosed += Window_FormClosed; ;
+                if(value != null)
+                {
+                    window = value;
+                    window.FormClosed += Window_FormClosed;
+                }
             }
         }
 
         private void Window_FormClosed(object sender, FormClosedEventArgs e)
         {
+            window = target;
             if (target == null)
                 target = Dashboard.GetInstance();
             target.Show();

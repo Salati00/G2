@@ -44,7 +44,7 @@ namespace G2_Forms
 
         private void btn_CreateUser_Click(object sender, EventArgs e)
         {
-            AddUser newUser = new AddUser(admin);
+            AddUser newUser = new AddUser();
             newUser.Show();
             this.Hide();
         }
@@ -72,6 +72,7 @@ namespace G2_Forms
 
         private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
+            LoginPage.Instance.Clear();
             LoginPage.Instance.Show();
         }
 

@@ -21,7 +21,19 @@ namespace G2_Forms
         {
             InitializeComponent();
             userDB = new UserDAO();
+            Uc_Menu.Window = this;
+
+            Uc_List.GetButton.Text = "Add Employee";
+            Uc_List.GetButton.Show();
+            Uc_List.GetButton.Click += GetButton_Click;
         }
+
+        private void GetButton_Click(object sender, EventArgs e)
+        {
+            AddUser usr = new AddUser();
+            usr.ShowDialog();
+        }
+
 
         private void EmployeeList_Load(object sender, EventArgs e)
         {

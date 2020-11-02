@@ -51,7 +51,6 @@
             this.Btn_Add.Text = "Add new to db";
             this.Btn_Add.UseVisualStyleBackColor = true;
             this.Btn_Add.Visible = false;
-            this.Btn_Add.Click += new System.EventHandler(this.Btn_Add_Click);
             // 
             // Tmr_Filter
             // 

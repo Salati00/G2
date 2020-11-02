@@ -26,9 +26,7 @@ namespace G2_UserControls
         private List<object> elementList;
         private Type type;
 
-        private Button AddButton;
-
-        public Button GetButton { get => AddButton;}
+        public Button GetButton { get => Btn_Add; }
 
         /// <summary>
         /// Takes list of strings as headers for the table to be displayed
@@ -41,7 +39,6 @@ namespace G2_UserControls
             this.BorderStyle = BorderStyle.FixedSingle;
 
             this.elementList = new List<object>();
-
             SetHeaders(Headers);
             this.AutoSize = true;
         }
@@ -163,11 +160,6 @@ namespace G2_UserControls
 
             //MessageBox.Show("Retrieve data again");
             this.UpdateTable();
-        }
-
-        private void Btn_Add_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

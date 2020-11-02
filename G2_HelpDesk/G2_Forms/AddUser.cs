@@ -15,10 +15,8 @@ namespace G2_Forms
 {
     public partial class AddUser : Form
     {
-        Admin admin;
-        public AddUser(Admin admin)
+        public AddUser()
         {
-            this.admin = admin;
             InitializeComponent();
             PopulateCombobox();
 
@@ -101,7 +99,7 @@ namespace G2_Forms
 
         private void Btn_Dashboard_Click(object sender, EventArgs e)
         {
-            Dashboard.GetInstance(admin).Show();
+            Dashboard.GetInstance().Show();
             this.Close();
         }
     }
