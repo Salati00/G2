@@ -29,7 +29,7 @@ namespace G2_Forms
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
             foreach (Person employee in employees)
             {
-                cbUser.Items.Add(employee._id);
+                cbUser.Items.Add(employee.Firstname);
             }
 
         }
@@ -55,14 +55,20 @@ namespace G2_Forms
             string subject = txtSubject.Text;
             TicketTypes type = (TicketTypes)cbType.SelectedItem;
             Employee user = (Employee)cbUser.SelectedValue;
-            
-
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
             int deadline = int.Parse(txtDeadline.Text);
             string description = txtDescription.Text;
+            
+            foreach (Person emp in users)
+            {
+                if (emp.Firstname == cbUser.SelectedItem)
+                {
+                    G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, emp, deadline);
+                    ticketDao.DbAddTicket(ticket);
+                }
+            }
 
-            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user, deadline);
-            ticketDao.DbAddTicket(ticket);
+           
             
         }
 
