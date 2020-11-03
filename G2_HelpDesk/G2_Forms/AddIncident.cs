@@ -58,22 +58,12 @@ namespace G2_Forms
             
 
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
-            string deadline = txtDeadline.Text;
+            int deadline = int.Parse(txtDeadline.Text);
             string description = txtDescription.Text;
 
-            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user); //Needs Branch
+            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user, deadline);
             ticketDao.DbAddTicket(ticket);
-                
-            foreach (Employee a in users)
-            {
-                if (user._id == a._id)
-                {
-                    ticket = new G2_Model.Ticket(date, subject, type, priority, description, a); //Not sure if this part of code is here because of my stashed code, but this also needs Branch
-                    ticketDao.DbAddTicket(ticket);
-                }
-            }
-           
-
+            
         }
 
         private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
