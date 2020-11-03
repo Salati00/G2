@@ -9,6 +9,7 @@ namespace G2_Model
     public enum TicketTypes
     {
         Empty,
-        Technical
+        Technical,
+        Software
     }
 }
