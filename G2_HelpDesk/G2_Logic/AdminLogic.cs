@@ -16,10 +16,14 @@ namespace G2_Logic
         {
             db.ConnString();
         }
-        public void AddUser(Admin user)
+        public void AddAdmin(Admin user)
         {
             user.Password = sha256_hash(user.Password);
-            db.DbAddUser(user);
+            db.DbAddAdmin(user);
+        }
+        public void AddEmployee(Employee employee)
+        {
+            db.DbAddEmployee(employee);
         }
         public List<Person> GetAllUsers()
         {
@@ -36,6 +40,18 @@ namespace G2_Logic
         public void DeleteUser(Admin user)
         {
             db.DbDeleteUser(user);
+        }
+        public int GetAmountOfTickets(Person person)
+        {
+            TicketLogic ticketDB = new TicketLogic();
+            List<Ticket> tickets = ticketDB.GetAllTickets();
+            int count = 0;
+            foreach (var item in tickets)
+            {
+                if (item.User._id == person._id)
+                    count++;
+            }
+            return count;
         }
 
         private static String sha256_hash(String value)

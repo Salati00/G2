@@ -35,16 +35,15 @@ namespace G2_Forms
         private void Frm_TicketList_Load(object sender, EventArgs e)
         {
             List<string> Headers = new List<string>();
-            /*Headers.Add("Name");
-            Headers.Add("Surname");
-            Headers.Add("Phone Number");
-            Headers.Add("E-Mail");
-            Headers.Add("UserName");
-            Headers.Add("Password Hash");*/
+            Headers.Add("Date");
+            Headers.Add("Subject");
+            Headers.Add("Type");
+            Headers.Add("Priority");
+            Headers.Add("Description");
 
             Uc_Menu.Window = this;
             Uc_List.SetHeaders(Headers);
-            Uc_List.SetMode(typeof(Person));
+            Uc_List.SetMode(typeof(Ticket));
             ticketDB.GetAllTickets().ForEach(x => Uc_List.AddElement(x));
         }
     }

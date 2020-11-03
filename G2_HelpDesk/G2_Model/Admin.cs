@@ -37,9 +37,9 @@ namespace G2_Model
 
         public override List<object> ToList()
         {
-            List<object> lst = base.ToList();
+            List<object> lst = base.ToList();/*
             lst.Add(Username.ToString());
-            lst.Add(Password.ToString());
+            lst.Add(Password.ToString());*/
 
             return lst;
         }

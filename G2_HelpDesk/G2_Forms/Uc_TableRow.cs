@@ -51,8 +51,36 @@ namespace G2_Forms
 
                 x += DELTA_X;
             }
+            Person PersonObject = this.item as Person;
+            if(PersonObject != null)
+            {
+                G2_Logic.AdminLogic logic = new G2_Logic.AdminLogic();
+                Label l = new Label();
+                l.Text = logic.GetAmountOfTickets(PersonObject).ToString();
+                l.Visible = true;
+                l.Show();
+                l.Top = y;
+                l.Left = x;
+                this.Controls.Add(l);
+            }
+            else
+            {
+                G2_Model.Ticket TicketObject = this.item as G2_Model.Ticket;
+                if(TicketObject != null)
+                {
+                    Label l = new Label();
+                    l.Text = TicketObject.User.GetFullName();
+                    l.Visible = true;
+                    l.Show();
+                    l.Top = y;
+                    l.Left = x;
+                    this.Controls.Add(l);
+                }
+            }
+
             if (editable)
             {
+                x += DELTA_X;
                 Button b = new Button();
                 b.Text = "Edit";
                 b.Visible = true;
