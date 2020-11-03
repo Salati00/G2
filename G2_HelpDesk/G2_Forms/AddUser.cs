@@ -55,7 +55,7 @@ namespace G2_Forms
                 if(cBoxType.GetItemText(cBoxType.SelectedItem) == UserType.Admin.ToString())
                 {
                     Admin newUser = new Admin(firstname, lastname, username, password, phonenumber, email);
-                    AddAdminLogic.AddUser(newUser);
+                    AddAdminLogic.AddAdmin(newUser);
                 }
                 else
                 {

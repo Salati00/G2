@@ -16,10 +16,14 @@ namespace G2_Logic
         {
             db.ConnString();
         }
-        public void AddUser(Admin user)
+        public void AddAdmin(Admin user)
         {
             user.Password = sha256_hash(user.Password);
-            db.DbAddUser(user);
+            db.DbAddAdmin(user);
+        }
+        public void AddEmployee(Employee employee)
+        {
+            db.DbAddEmployee(employee);
         }
         public List<Person> GetAllUsers()
         {
