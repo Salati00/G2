@@ -106,7 +106,8 @@ namespace G2_Forms
 
         private void B_Ticket_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Frm_TransferTicket transferForm = new Frm_TransferTicket((G2_Model.Ticket)item);
+            transferForm.ShowDialog();
         }
 
         private void B_User_Click(object sender, EventArgs e)

@@ -55,7 +55,7 @@
             // 
             // Tmr_Filter
             // 
-            this.Tmr_Filter.Interval = 250;
+            this.Tmr_Filter.Interval = 1;
             this.Tmr_Filter.Tick += new System.EventHandler(this.Tmr_Filter_Tick);
             // 
             // Chk_Sort

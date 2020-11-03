@@ -17,7 +17,7 @@ namespace G2_Logic
         }
         public List<Employee> GetAllEmployees()
         {
-            return db.GetAllEmployees();
+            return db.DbGetAllEmployees();
         }
     }
 }
