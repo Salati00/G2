@@ -15,7 +15,7 @@ namespace G2_DAL
     {
         SHA256 mySHA256 = SHA256.Create();
 
-        public void DbAddUser(Admin user)
+        public void DbAddAdmin(Admin user)
         {
             var document = new BsonDocument {
                 { "Firstname", user.Firstname },
@@ -26,7 +26,17 @@ namespace G2_DAL
                 { "Email", user.Email} };
             collectionUser.InsertOne(document);
         }
-        public void DbDeleteUser(Admin user) //not tested
+        public void DbAddEmployee(Employee user)
+        {
+            var document = new BsonDocument {
+                { "Firstname", user.Firstname },
+                { "Lastname", user.Lastname },
+                { "PhoneNumber", user.PhoneNumber},
+                { "Email", user.Email},
+                { "Branch", user.Branch}};
+            collectionUser.InsertOne(document);
+        }
+        public void DbDeleteUser(Admin user)
         {
             collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
         }
@@ -35,9 +45,16 @@ namespace G2_DAL
             List<Person> users = new List<Person>();
             var docs = collectionUser.Find(Builders<BsonDocument>.Filter.Empty).ToList();
             foreach (BsonDocument doc in docs)
-            {
-                users.Add(GetUser(doc));
-            }
+                if (doc.Contains("Username"))
+                {
+                    {
+                        users.Add(GetAdmin(doc));
+                    }
+                }
+                else
+                {
+                    users.Add(GetEmployee(doc));
+                }
             return users;
         }
         public bool DbUsernameExists(string username)
@@ -56,7 +73,7 @@ namespace G2_DAL
             var filterPass = Builders<BsonDocument>.Filter.Eq("Password", password);
             var filter = Builders<BsonDocument>.Filter.And(filterUser, filterPass);
             var result = collectionUser.Find(filter).FirstOrDefault();
-            if(result > 0)
+            if (result > 0)
             {
                 return new Admin(
                     result.GetValue("_id", new BsonString(string.Empty)).ToString(),

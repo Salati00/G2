@@ -20,6 +20,5 @@ namespace G2_Forms
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(LoginPage.Instance);
         }
-
     }
 }

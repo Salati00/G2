@@ -14,10 +14,11 @@ namespace G2_Model
         private TicketTypes type;
         private TicketPriority priority;
         private string description;
-        private Admin user;
+        private Employee user;
+        private int deadline; //in days
 
         public Ticket() { }
-        public Ticket(string _id, DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Admin user)
+        public Ticket(string _id, DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Employee user, int deadline)
         {
             this._Id = _id;
             this.ReportDate = reportDate;
@@ -26,8 +27,9 @@ namespace G2_Model
             this.Priority = priority;
             this.Description = description;
             this.User = user;
+            this.Deadline = deadline;
         }
-        public Ticket(DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Admin user)
+        public Ticket(DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Employee user, int deadline)
         {
             this.ReportDate = reportDate;
             this.Subject = subject;
@@ -35,6 +37,7 @@ namespace G2_Model
             this.Priority = priority;
             this.Description = description;
             this.User = user;
+            this.Deadline = deadline;
         }
         public string _Id { get => _id; set => _id = value; }
         public DateTime ReportDate { get => reportDate; set => reportDate = value; }
@@ -42,7 +45,8 @@ namespace G2_Model
         public TicketTypes Type { get => type; set => type = value; }
         public TicketPriority Priority { get => priority; set => priority = value; }
         public string Description { get => description; set => description = value; }
-        public Admin User { get => user; set => user = value; }
+        public Employee User { get => user; set => user = value; }
+        public int Deadline { get => deadline; set => deadline = value; }
 
         /// <summary>
         /// Method to get a list from the current object

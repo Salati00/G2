@@ -20,20 +20,19 @@ namespace G2_Forms
         public AddIncident()
         {
             UserDAO userdao = new UserDAO();
-            List<Person> admins = userdao.DbGetAllUsers();
+            List<Person> employees = userdao.DbGetAllUsers();
             
 
             InitializeComponent();
             
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
-            foreach (Admin a in admins)
+            foreach (Person employee in employees)
             {
-                cbUser.Items.Add(a.Firstname +" "+ a.Lastname);
+                cbUser.Items.Add(employee._id);
             }
 
         }
-
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -48,32 +47,28 @@ namespace G2_Forms
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             UserDAO userdao = new UserDAO();
-            List<Person> admins = userdao.DbGetAllUsers();
+            List<Person> users = userdao.DbGetAllUsers();
             TicketDAO ticketDao = new TicketDAO();
             
 
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
             TicketTypes type = (TicketTypes)cbType.SelectedItem;
-            Admin user = (Admin)cbUser.SelectedItem;
-
+            Employee user = (Employee)cbUser.SelectedValue;
             
 
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
-            string deadline = txtDeadline.Text;
+            int deadline = int.Parse(txtDeadline.Text);
             string description = txtDescription.Text;
 
-            foreach (Admin a in admins)
-            {
-                if (user._id == a._id)
-                {
-                    G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, a);
-                    ticketDao.DbAddTicket(ticket);
-                }
-            }
+            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user, deadline);
+            ticketDao.DbAddTicket(ticket);
             
-
         }
 
+        private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -123,6 +123,7 @@
             this.cbUser.Name = "cbUser";
             this.cbUser.Size = new System.Drawing.Size(221, 21);
             this.cbUser.TabIndex = 10;
+            this.cbUser.SelectedIndexChanged += new System.EventHandler(this.cbUser_SelectedIndexChanged);
             // 
             // cbPriority
             // 

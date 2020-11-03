@@ -27,7 +27,7 @@ namespace G2_DAL
                 ConnectionEstablished = true;
             }
         }
-        public Admin GetUser(BsonDocument doc)
+        public Admin GetAdmin(BsonDocument doc)
         {
             Admin user = new Admin(
                     doc.GetValue("_id", new BsonString(string.Empty)).ToString(),
@@ -37,6 +37,17 @@ namespace G2_DAL
                     doc.GetValue("Password", new BsonString(string.Empty)).ToString(),
                     doc.GetValue("PhoneNumber", new BsonString(string.Empty)).ToString(),
                     doc.GetValue("Email", new BsonString(string.Empty)).ToString());
+            return user;
+        }
+        public Employee GetEmployee(BsonDocument doc)
+        {
+            Employee user = new Employee(
+                    doc.GetValue("_id", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Firstname", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Lastname", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("PhoneNumber", new BsonString(string.Empty)).ToString(),
+                    doc.GetValue("Email", new BsonString(string.Empty)).ToString(),
+                    (Branch)(doc.GetValue("Branch", new BsonString(string.Empty)).ToInt32()));
             return user;
         }
     }
