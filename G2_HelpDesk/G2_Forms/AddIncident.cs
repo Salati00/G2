@@ -45,7 +45,7 @@ namespace G2_Forms
 
             G2_Model.Ticket t = new G2_Model.Ticket()
             {
-                ReportDate = BTD_reportedDate.Value,
+                ReportDate = DTP_reportedDate.Value,
                 Subject = txtSubject.Text,
                 Type = (TicketTypes)cbType.SelectedItem,
                 Priority = (TicketPriority)cbPriority.SelectedItem,
