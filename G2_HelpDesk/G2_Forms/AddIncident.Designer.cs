@@ -43,9 +43,9 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtDeadline = new System.Windows.Forms.TextBox();
             this.DTP_reportedDate = new System.Windows.Forms.DateTimePicker();
-            this.uc_MenuBar1 = new G2_Forms.Uc_MenuBar();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSubject = new System.Windows.Forms.TextBox();
+            this.uc_MenuBar1 = new G2_Forms.Uc_MenuBar();
             this.SuspendLayout();
             // 
             // label2
@@ -181,15 +181,6 @@
             this.DTP_reportedDate.Size = new System.Drawing.Size(221, 20);
             this.DTP_reportedDate.TabIndex = 22;
             // 
-            // uc_MenuBar1
-            // 
-            this.uc_MenuBar1.AutoSize = true;
-            this.uc_MenuBar1.Location = new System.Drawing.Point(2, -1);
-            this.uc_MenuBar1.Name = "uc_MenuBar1";
-            this.uc_MenuBar1.Size = new System.Drawing.Size(800, 74);
-            this.uc_MenuBar1.TabIndex = 21;
-            this.uc_MenuBar1.Window = null;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -205,6 +196,15 @@
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(221, 20);
             this.txtSubject.TabIndex = 24;
+            // 
+            // uc_MenuBar1
+            // 
+            this.uc_MenuBar1.AutoSize = true;
+            this.uc_MenuBar1.Location = new System.Drawing.Point(710, 12);
+            this.uc_MenuBar1.Name = "uc_MenuBar1";
+            this.uc_MenuBar1.Size = new System.Drawing.Size(800, 74);
+            this.uc_MenuBar1.TabIndex = 21;
+            this.uc_MenuBar1.Window = null;
             // 
             // AddIncident
             // 
