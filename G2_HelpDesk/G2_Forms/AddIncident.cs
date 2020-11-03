@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using G2_Model;
 using G2_DAL;
+using G2_Logic;
 
 
 
@@ -17,48 +18,26 @@ namespace G2_Forms
 {
     public partial class AddIncident : Form
     {
-        UserDAO userdao;
-        List<Person> employees;
-        TicketDAO ticketdao;
         G2_Model.Ticket ticket;
+        TicketLogic ticketlogic;
+        PersonLogic personlogic;
         public AddIncident()
         {
             InitializeComponent();
-
-            userdao = new UserDAO();
-            employees = new List<Person>();
-            employees = userdao.DbGetAllUsers();
-            ticketdao = new TicketDAO();
-
-
+            personlogic = new PersonLogic();
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
-
-            foreach (Person p in employees)
+            foreach (Person e in personlogic.GetAllUsers())
             {
-                cbUser.Items.Add(p.Firstname);
+                cbUser.Items.Add(new ComboBoxItem(e.Firstname + " " + e.Lastname, e));
             }
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void AddIncident_Load(object sender, EventArgs e)
-        {
-
-        }
-        public class ComboBoxItem
-        {
-            public string Text { get; set; }
-            public Employee Value { get; set; }
-
-            public override string ToString()
-            {
-                return Text;
-            }
+            Frm_TicketList ticketList = new Frm_TicketList();
+            ticketList.ShowDialog();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -66,26 +45,33 @@ namespace G2_Forms
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
             TicketTypes type = (TicketTypes)cbType.SelectedItem;
-            Employee user = (Employee)cbUser.SelectedValue;
+            Person user = (cbUser.SelectedItem as ComboBoxItem).user;
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
             int deadline = int.Parse(txtDeadline.Text);
             string description = txtDescription.Text;
 
-
-            foreach (Person emp in employees)
-            {
-                if (emp.Firstname == cbUser.SelectedItem)
-                {
-                    ticket = new G2_Model.Ticket(date, subject, type, priority, description, emp, deadline);
-                    ticketdao.DbAddTicket(ticket);
-                }
-            }
-
-
+            ticket = new G2_Model.Ticket(date, subject, type, priority, description, user, deadline);
+            ticketlogic.AddTicket(ticket);
+            this.Close();
+            Frm_TicketList ticketList = new Frm_TicketList();
+            ticketList.ShowDialog();
         }
 
-        private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
+        public class ComboBoxItem : object
         {
+            public string name;
+            public Person user;
+
+            public ComboBoxItem(string name, Person user)
+            {
+                this.name = name;
+                this.user = user;
+            }
+
+            public override string ToString()
+            {
+                return name;
+            }
         }
     }
 }

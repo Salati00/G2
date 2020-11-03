@@ -123,7 +123,6 @@
             this.cbUser.Name = "cbUser";
             this.cbUser.Size = new System.Drawing.Size(221, 21);
             this.cbUser.TabIndex = 10;
-            this.cbUser.SelectedIndexChanged += new System.EventHandler(this.cbUser_SelectedIndexChanged);
             // 
             // cbPriority
             // 
@@ -202,7 +201,6 @@
             this.Controls.Add(this.label2);
             this.Name = "AddIncident";
             this.Text = "AddIncident";
-            this.Load += new System.EventHandler(this.AddIncident_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
