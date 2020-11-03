@@ -52,6 +52,7 @@ namespace G2_Forms
 
             ticket = new G2_Model.Ticket(date, subject, type, priority, description, user, deadline);
             ticketlogic.AddTicket(ticket);
+
             this.Close();
             Frm_TicketList ticketList = new Frm_TicketList();
             ticketList.ShowDialog();
