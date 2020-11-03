@@ -43,6 +43,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.txtDeadline = new System.Windows.Forms.TextBox();
+            this.uc_MenuBar1 = new G2_Forms.Uc_MenuBar();
+            this.BTD_reportedDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label2
@@ -134,7 +136,7 @@
             // 
             // txtSubject
             // 
-            this.txtSubject.Location = new System.Drawing.Point(275, 141);
+            this.txtSubject.Location = new System.Drawing.Point(300, 46);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(221, 20);
             this.txtSubject.TabIndex = 13;
@@ -144,7 +146,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.SystemColors.Window;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 40);
+            this.label8.Location = new System.Drawing.Point(12, 91);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label8.Size = new System.Drawing.Size(285, 25);
@@ -178,12 +180,30 @@
             this.txtDeadline.Size = new System.Drawing.Size(221, 20);
             this.txtDeadline.TabIndex = 19;
             // 
+            // uc_MenuBar1
+            // 
+            this.uc_MenuBar1.AutoSize = true;
+            this.uc_MenuBar1.Location = new System.Drawing.Point(707, 30);
+            this.uc_MenuBar1.Name = "uc_MenuBar1";
+            this.uc_MenuBar1.Size = new System.Drawing.Size(800, 74);
+            this.uc_MenuBar1.TabIndex = 21;
+            this.uc_MenuBar1.Window = null;
+            // 
+            // BTD_reportedDate
+            // 
+            this.BTD_reportedDate.Location = new System.Drawing.Point(275, 141);
+            this.BTD_reportedDate.Name = "BTD_reportedDate";
+            this.BTD_reportedDate.Size = new System.Drawing.Size(221, 20);
+            this.BTD_reportedDate.TabIndex = 22;
+            // 
             // AddIncident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(772, 666);
+            this.ClientSize = new System.Drawing.Size(803, 666);
+            this.Controls.Add(this.BTD_reportedDate);
+            this.Controls.Add(this.uc_MenuBar1);
             this.Controls.Add(this.txtDeadline);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnCancel);
@@ -222,5 +242,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TextBox txtDeadline;
+        private Uc_MenuBar uc_MenuBar1;
+        private System.Windows.Forms.DateTimePicker BTD_reportedDate;
     }
 }
