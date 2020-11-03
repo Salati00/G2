@@ -18,7 +18,6 @@ namespace G2_Forms
 {
     public partial class AddIncident : Form
     {
-        G2_Model.Ticket ticket;
         TicketLogic ticketlogic;
         TransferTicketLogic ticketLogic;
         public AddIncident()
@@ -42,16 +41,20 @@ namespace G2_Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            DateTime date = DateTime.Now;
-            string subject = txtSubject.Text;
-            TicketTypes type = (TicketTypes)cbType.SelectedItem;
-            Employee user = (cbUser.SelectedItem as ComboBoxItem).user;
-            TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
-            int deadline = int.Parse(txtDeadline.Text);
-            string description = txtDescription.Text;
+            ticketlogic = new TicketLogic();
 
-            ticket = new G2_Model.Ticket(date, subject, type, priority, description, user, deadline);
-            ticketlogic.AddTicket(ticket);
+            G2_Model.Ticket t = new G2_Model.Ticket()
+            {
+                ReportDate = DateTime.Now,
+                Subject = txtSubject.Text,
+                Type = (TicketTypes)cbType.SelectedItem,
+                Priority = (TicketPriority)cbPriority.SelectedItem,
+                Description = txtDescription.Text,
+                User = (cbUser.SelectedItem as ComboBoxItem).user,
+                Deadline = int.Parse(txtDeadline.Text)
+            };
+            
+            ticketlogic.AddTicket(t);
 
             this.Close();
             Frm_TicketList ticketList = new Frm_TicketList();

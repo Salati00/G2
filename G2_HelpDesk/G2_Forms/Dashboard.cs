@@ -80,7 +80,7 @@ namespace G2_Forms
         {
             Frm_TicketList tickets = new Frm_TicketList();
             tickets.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
