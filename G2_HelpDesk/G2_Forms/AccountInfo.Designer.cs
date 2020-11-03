@@ -36,13 +36,12 @@
             this.txt_password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_username = new System.Windows.Forms.Label();
+            this.lbl_password = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_editAccount = new System.Windows.Forms.Button();
             this.Btn_Confirm = new System.Windows.Forms.Button();
-            this.btn_Dashboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_firstname
@@ -63,7 +62,7 @@
             // 
             // txt_username
             // 
-            this.txt_username.Location = new System.Drawing.Point(62, 182);
+            this.txt_username.Location = new System.Drawing.Point(62, 279);
             this.txt_username.Name = "txt_username";
             this.txt_username.ReadOnly = true;
             this.txt_username.Size = new System.Drawing.Size(304, 20);
@@ -71,7 +70,7 @@
             // 
             // txt_phonenumber
             // 
-            this.txt_phonenumber.Location = new System.Drawing.Point(62, 336);
+            this.txt_phonenumber.Location = new System.Drawing.Point(62, 230);
             this.txt_phonenumber.Name = "txt_phonenumber";
             this.txt_phonenumber.ReadOnly = true;
             this.txt_phonenumber.Size = new System.Drawing.Size(304, 20);
@@ -79,7 +78,7 @@
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(62, 287);
+            this.txt_email.Location = new System.Drawing.Point(62, 181);
             this.txt_email.Name = "txt_email";
             this.txt_email.ReadOnly = true;
             this.txt_email.Size = new System.Drawing.Size(304, 20);
@@ -87,7 +86,7 @@
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(62, 238);
+            this.txt_password.Location = new System.Drawing.Point(62, 335);
             this.txt_password.Name = "txt_password";
             this.txt_password.ReadOnly = true;
             this.txt_password.Size = new System.Drawing.Size(304, 20);
@@ -111,28 +110,28 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Lastname";
             // 
-            // label3
+            // lbl_username
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 166);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Username";
+            this.lbl_username.AutoSize = true;
+            this.lbl_username.Location = new System.Drawing.Point(59, 263);
+            this.lbl_username.Name = "lbl_username";
+            this.lbl_username.Size = new System.Drawing.Size(55, 13);
+            this.lbl_username.TabIndex = 8;
+            this.lbl_username.Text = "Username";
             // 
-            // label4
+            // lbl_password
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 222);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Password";
+            this.lbl_password.AutoSize = true;
+            this.lbl_password.Location = new System.Drawing.Point(59, 319);
+            this.lbl_password.Name = "lbl_password";
+            this.lbl_password.Size = new System.Drawing.Size(53, 13);
+            this.lbl_password.TabIndex = 9;
+            this.lbl_password.Text = "Password";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(59, 271);
+            this.label5.Location = new System.Drawing.Point(59, 165);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 10;
@@ -141,7 +140,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(59, 320);
+            this.label6.Location = new System.Drawing.Point(59, 214);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 13);
             this.label6.TabIndex = 11;
@@ -167,28 +166,17 @@
             this.Btn_Confirm.UseVisualStyleBackColor = true;
             this.Btn_Confirm.Click += new System.EventHandler(this.Btn_Confirm_Click);
             // 
-            // btn_Dashboard
-            // 
-            this.btn_Dashboard.Location = new System.Drawing.Point(701, 12);
-            this.btn_Dashboard.Name = "btn_Dashboard";
-            this.btn_Dashboard.Size = new System.Drawing.Size(75, 23);
-            this.btn_Dashboard.TabIndex = 14;
-            this.btn_Dashboard.Text = "Dashboard";
-            this.btn_Dashboard.UseVisualStyleBackColor = true;
-            this.btn_Dashboard.Click += new System.EventHandler(this.Btn_Dashboard_Click);
-            // 
             // AccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btn_Dashboard);
             this.Controls.Add(this.Btn_Confirm);
             this.Controls.Add(this.btn_editAccount);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_password);
+            this.Controls.Add(this.lbl_username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_password);
@@ -216,12 +204,11 @@
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_username;
+        private System.Windows.Forms.Label lbl_password;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_editAccount;
         private System.Windows.Forms.Button Btn_Confirm;
-        private System.Windows.Forms.Button btn_Dashboard;
     }
 }

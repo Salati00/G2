@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.ComponentModel.Design;
 using G2_Model;
+using MongoDB.Driver.Core.Authentication;
 
 namespace G2_Forms
 {
@@ -96,8 +97,11 @@ namespace G2_Forms
             //for seyi, read and delete this
             //Cast item to either Person, admin, user or Incident or whatever and then you can do whatever you want with it, open your new form and pass the object
 
-            Form newForm = new Form();
-            newForm.ShowDialog();
+            //Employee p = (Admin)item;
+
+            AccountInfo account = new AccountInfo(null, null);
+            account.ShowDialog();
+            
         }
 
         //Public Methods

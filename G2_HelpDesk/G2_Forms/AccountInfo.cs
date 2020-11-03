@@ -16,27 +16,33 @@ namespace G2_Forms
     public partial class AccountInfo : Form
     {
         Admin admin;
-        public AccountInfo(Admin admin)
+        Employee employee;
+        public AccountInfo(Admin admin,Employee employee)
         {
             InitializeComponent();
             this.admin = admin;
+            this.employee = employee;
         }
 
         private void AccountInfo_Load(object sender, EventArgs e)
         {
-            txt_firstname.Text = admin.Firstname;
-            txt_lastname.Text = admin.Lastname;
-            txt_username.Text = admin.Username;
-            txt_password.Text = admin.Password;
-            txt_email.Text = admin.Email;
-            txt_phonenumber.Text = admin.PhoneNumber;
-        }
-
-        private void Btn_Dashboard_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Dashboard.GetInstance(admin).ShowDialog();
-            this.Close();
+            if(employee == null)
+            {
+                txt_firstname.Text = admin.Firstname;
+                txt_lastname.Text = admin.Lastname;
+                txt_username.Text = admin.Username;
+                txt_password.Text = admin.Password;
+                txt_email.Text = admin.Email;
+                txt_phonenumber.Text = admin.PhoneNumber;
+            }
+            else if (admin == null)
+            {
+                lbl_username.Visible = false;
+                lbl_password.Visible = false;
+                txt_username.Visible = false;
+                txt_password.Visible = false;
+            }
+            
         }
 
         private void Btn_editAccount_Click(object sender, EventArgs e)
