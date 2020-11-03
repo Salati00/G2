@@ -20,14 +20,14 @@ namespace G2_Forms
     {
         G2_Model.Ticket ticket;
         TicketLogic ticketlogic;
-        PersonLogic personlogic;
+        TransferTicketLogic ticketLogic;
         public AddIncident()
         {
             InitializeComponent();
-            personlogic = new PersonLogic();
+            ticketLogic = new TransferTicketLogic();
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
-            foreach (Person e in personlogic.GetAllUsers())
+            foreach (Employee e in ticketLogic.GetAllEmployees())
             {
                 cbUser.Items.Add(new ComboBoxItem(e.Firstname + " " + e.Lastname, e));
             }
@@ -45,7 +45,7 @@ namespace G2_Forms
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
             TicketTypes type = (TicketTypes)cbType.SelectedItem;
-            Person user = (cbUser.SelectedItem as ComboBoxItem).user;
+            Employee user = (cbUser.SelectedItem as ComboBoxItem).user;
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
             int deadline = int.Parse(txtDeadline.Text);
             string description = txtDescription.Text;
@@ -61,9 +61,9 @@ namespace G2_Forms
         public class ComboBoxItem : object
         {
             public string name;
-            public Person user;
+            public Employee user;
 
-            public ComboBoxItem(string name, Person user)
+            public ComboBoxItem(string name, Employee user)
             {
                 this.name = name;
                 this.user = user;
