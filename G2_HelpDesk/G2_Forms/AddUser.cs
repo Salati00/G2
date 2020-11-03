@@ -29,11 +29,8 @@ namespace G2_Forms
             cBoxType.Items.Add(UserType.Employee);
             cBoxType.Items.Add(UserType.Admin);
 
-            cBoxBranch.Items.Add(Branch.Amsterdam);
-            cBoxBranch.Items.Add(Branch.Denhagg);
-            cBoxBranch.Items.Add(Branch.Eindhoven);
-            cBoxBranch.Items.Add(Branch.Haarlem);
-            cBoxBranch.Items.Add(Branch.Venlo);
+            cBoxBranch.DataSource = Enum.GetValues(typeof(Branch));
+
         }
 
         private void CreateNewUser_btn_Click(object sender, EventArgs e)
@@ -56,13 +53,12 @@ namespace G2_Forms
                 {
                     Admin newUser = new Admin(firstname, lastname, username, password, phonenumber, email);
                     AddAdminLogic.AddAdmin(newUser);
+
                 }
                 else
                 {
-                    Branch branch;
-                    Enum.TryParse<Branch>(cBoxBranch.SelectedValue.ToString(), out branch);
+                    Branch branch = (Branch)cBoxBranch.SelectedItem;
                     Employee employee = new Employee(firstname, lastname, phonenumber,email, branch);
-                    //AddAdminLogic.AddUser(employee);
                 }
             }
         }
