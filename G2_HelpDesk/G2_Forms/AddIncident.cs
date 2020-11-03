@@ -17,19 +17,26 @@ namespace G2_Forms
 {
     public partial class AddIncident : Form
     {
+        UserDAO userdao;
+        List<Person> employees;
+        TicketDAO ticketdao;
+        G2_Model.Ticket ticket;
         public AddIncident()
         {
-            UserDAO userdao = new UserDAO();
-            List<Person> employees = userdao.DbGetAllUsers();
-            
-
             InitializeComponent();
-            
+
+            userdao = new UserDAO();
+            employees = new List<Person>();
+            employees = userdao.DbGetAllUsers();
+            ticketdao = new TicketDAO();
+
+
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
-            foreach (Person employee in employees)
+
+            foreach (Person p in employees)
             {
-                cbUser.Items.Add(employee.Firstname);
+                cbUser.Items.Add(p.Firstname);
             }
 
         }
@@ -43,14 +50,19 @@ namespace G2_Forms
         {
 
         }
+        public class ComboBoxItem
+        {
+            public string Text { get; set; }
+            public Employee Value { get; set; }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            UserDAO userdao = new UserDAO();
-            List<Person> users = userdao.DbGetAllUsers();
-            TicketDAO ticketDao = new TicketDAO();
-            
-
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
             TicketTypes type = (TicketTypes)cbType.SelectedItem;
@@ -58,23 +70,22 @@ namespace G2_Forms
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
             int deadline = int.Parse(txtDeadline.Text);
             string description = txtDescription.Text;
-            
-            foreach (Person emp in users)
+
+
+            foreach (Person emp in employees)
             {
                 if (emp.Firstname == cbUser.SelectedItem)
                 {
-                    G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, emp, deadline);
-                    ticketDao.DbAddTicket(ticket);
+                    ticket = new G2_Model.Ticket(date, subject, type, priority, description, emp, deadline);
+                    ticketdao.DbAddTicket(ticket);
                 }
             }
 
-           
-            
+
         }
 
         private void cbUser_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
