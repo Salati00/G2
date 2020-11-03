@@ -18,16 +18,15 @@ namespace G2_Forms
 {
     public partial class AddIncident : Form
     {
-        G2_Model.Ticket ticket;
         TicketLogic ticketlogic;
-        PersonLogic personlogic;
+        TransferTicketLogic ticketLogic;
         public AddIncident()
         {
             InitializeComponent();
-            personlogic = new PersonLogic();
+            ticketLogic = new TransferTicketLogic();
             cbType.DataSource = Enum.GetValues(typeof(TicketTypes));
             cbPriority.DataSource = Enum.GetValues(typeof(TicketPriority));
-            foreach (Person e in personlogic.GetAllUsers())
+            foreach (Employee e in ticketLogic.GetAllEmployees())
             {
                 cbUser.Items.Add(new ComboBoxItem(e.Firstname + " " + e.Lastname, e));
             }
@@ -42,16 +41,20 @@ namespace G2_Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            DateTime date = DateTime.Now;
-            string subject = txtSubject.Text;
-            TicketTypes type = (TicketTypes)cbType.SelectedItem;
-            Person user = (cbUser.SelectedItem as ComboBoxItem).user;
-            TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
-            int deadline = int.Parse(txtDeadline.Text);
-            string description = txtDescription.Text;
+            ticketlogic = new TicketLogic();
 
-            ticket = new G2_Model.Ticket(date, subject, type, priority, description, user, deadline);
-            ticketlogic.AddTicket(ticket);
+            G2_Model.Ticket t = new G2_Model.Ticket()
+            {
+                ReportDate = DTP_reportedDate.Value,
+                Subject = txtSubject.Text,
+                Type = (TicketTypes)cbType.SelectedItem,
+                Priority = (TicketPriority)cbPriority.SelectedItem,
+                Description = txtDescription.Text,
+                User = (cbUser.SelectedItem as ComboBoxItem).user,
+                Deadline = int.Parse(txtDeadline.Text)
+            };
+            
+            ticketlogic.AddTicket(t);
 
             this.Close();
             Frm_TicketList ticketList = new Frm_TicketList();
@@ -61,9 +64,9 @@ namespace G2_Forms
         public class ComboBoxItem : object
         {
             public string name;
-            public Person user;
+            public Employee user;
 
-            public ComboBoxItem(string name, Person user)
+            public ComboBoxItem(string name, Employee user)
             {
                 this.name = name;
                 this.user = user;

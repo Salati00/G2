@@ -33,7 +33,7 @@ namespace G2_DAL
             foreach (BsonDocument doc in result)
             {
                 //Person user = new Person();
-                Person user = new Employee();
+                Person user = new Employee(); 
                 BsonArray userDocs = doc.GetValue("User").AsBsonArray;
                 foreach (BsonDocument userDoc in userDocs)
                 {

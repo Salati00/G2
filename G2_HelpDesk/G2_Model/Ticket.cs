@@ -29,7 +29,7 @@ namespace G2_Model
             this.User = user;
             this.Deadline = deadline;
         }
-        public Ticket(DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Person user, int deadline)
+        public Ticket(DateTime reportDate, string subject, TicketTypes type, TicketPriority priority, string description, Employee user, int deadline)
         {
             this.ReportDate = reportDate;
             this.Subject = subject;
