@@ -53,7 +53,6 @@ namespace G2_Forms
                 {
                     Admin newUser = new Admin(firstname, lastname, username, password, phonenumber, email);
                     AddAdminLogic.AddAdmin(newUser);
-
                 }
                 else
                 {

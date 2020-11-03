@@ -52,8 +52,7 @@ namespace G2_Forms
         private void btn_account_Click(object sender, EventArgs e)
         {
             AccountInfo account = new AccountInfo(admin,null);
-            account.Show();
-            this.Hide();
+            account.ShowDialog();
         }
 
         /*private void button1_Click(object sender, EventArgs e)

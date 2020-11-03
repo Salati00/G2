@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDAO.cs" />
+    <Compile Include="EditUserDAO.cs" />
     <Compile Include="TicketDAO.cs" />
     <Compile Include="TransferTicketDAO.cs" />
     <Compile Include="UserDAO.cs" />

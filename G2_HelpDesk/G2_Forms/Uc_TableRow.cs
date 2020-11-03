@@ -115,9 +115,9 @@ namespace G2_Forms
             //for seyi, read and delete this
             //Cast item to either Person, admin, user or Incident or whatever and then you can do whatever you want with it, open your new form and pass the object
 
-            //Employee p = (Admin)item;
+            Person person = (Person)item;
 
-            AccountInfo account = new AccountInfo(null, null);
+            AccountInfo account = new AccountInfo(null, person);
             account.ShowDialog();
             
         }
