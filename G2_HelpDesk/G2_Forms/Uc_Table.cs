@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //using System.Timers;
 using System.Runtime.CompilerServices;
 using G2_Model;
+using G2_Logic;
 
 namespace G2_Forms
 {
@@ -110,15 +111,22 @@ namespace G2_Forms
             y = 70;
             x = 5;
 
-            foreach (var item in elementList)
+            List<object> shownElements = elementList;
+            if(this.type == typeof(Ticket) && Chk_Sort.Checked)
+            {
+                SortingTicketFunctionalityLogic.SortTickets(shownElements);
+            }
+            foreach (var item in shownElements)
             {
                 if(this.type == typeof(Person))
                 {
-                    if(Txt_Filter.Text == "" || ((List<object>)item)[3].ToString().Contains(Txt_Filter.Text))
+                    Txt_Filter.Show();
+                    if (Txt_Filter.Text == "" || ((List<object>)item)[3].ToString().Contains(Txt_Filter.Text))
                         AddRow((IListable)item);
                 }
-                else
+                else if(this.type == typeof(Ticket))
                 {
+                    Txt_Filter.Hide();
                     AddRow((IListable)item);
                 }
             }
@@ -153,6 +161,16 @@ namespace G2_Forms
         public void SetMode(Type type)
         {
             this.type = type;
+            if (this.type == typeof(Person))
+            {
+                Txt_Filter.Show();
+                Chk_Sort.Hide();
+            }
+            else if (this.type == typeof(Ticket))
+            {
+                Txt_Filter.Hide();
+                Chk_Sort.Show();
+            }
         }
 
         //Events
@@ -165,7 +183,6 @@ namespace G2_Forms
             Tmr_Filter.Start();
         }
 
-
         private void Tmr_Filter_Tick(object sender, EventArgs e)
         {
             ((Timer)sender).Stop();
@@ -173,6 +190,11 @@ namespace G2_Forms
             
 
             //MessageBox.Show("Retrieve data again");
+            this.UpdateTable();
+        }
+
+        private void Chk_Sort_CheckedChanged(object sender, EventArgs e)
+        {
             this.UpdateTable();
         }
     }
