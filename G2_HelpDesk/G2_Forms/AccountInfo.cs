@@ -10,41 +10,62 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using G2_Model;
+using G2_Logic;
 
 namespace G2_Forms
 {
     public partial class AccountInfo : Form
     {
         Admin admin;
-        Employee employee;
-        public AccountInfo(Admin admin,Employee employee)
+        Person person;
+        EditUserLogic updateUser = new EditUserLogic();
+        public AccountInfo(Admin admin,Person person)
         {
             InitializeComponent();
             this.admin = admin;
-            this.employee = employee;
+            this.person = person;
+            
         }
 
         private void AccountInfo_Load(object sender, EventArgs e)
         {
-            if(employee == null)
+            if(person == null)
             {
-                txt_firstname.Text = admin.Firstname;
-                txt_lastname.Text = admin.Lastname;
-                txt_username.Text = admin.Username;
-                txt_password.Text = admin.Password;
-                txt_email.Text = admin.Email;
-                txt_phonenumber.Text = admin.PhoneNumber;
+                PlaceAdmin(admin);
             }
             else if (admin == null)
             {
-                lbl_username.Visible = false;
-                lbl_password.Visible = false;
-                txt_username.Visible = false;
-                txt_password.Visible = false;
+                HideAdminInfo();
+                PlaceEmployee(person);
             }
-            
         }
 
+        public void PlaceEmployee(Person employee)
+        {
+            txt_firstname.Text = employee.Firstname;
+            txt_lastname.Text = employee.Lastname;
+            txt_email.Text = employee.Email;
+            txt_phonenumber.Text = employee.PhoneNumber;
+        }
+
+        public void HideAdminInfo()
+        {
+            lbl_username.Visible = false;
+            lbl_password.Visible = false;
+            txt_username.Visible = false;
+            txt_password.Visible = false;
+        }
+
+        private void PlaceAdmin(Admin admin)
+        {
+            txt_firstname.Text = admin.Firstname;
+            txt_lastname.Text = admin.Lastname;
+            txt_username.Text = admin.Username;
+            txt_email.Text = admin.Email;
+            txt_phonenumber.Text = admin.PhoneNumber;
+            btn_Delete.Visible = false;
+
+        }
         private void Btn_editAccount_Click(object sender, EventArgs e)
         {
             EnableTextBox();
@@ -52,8 +73,50 @@ namespace G2_Forms
 
         private void Btn_Confirm_Click(object sender, EventArgs e)
         {
-            //Edit user using dao
+            if (person == null)
+            {
+                EditAdmin();
+            }
+            else if (admin == null)
+            {
+                editPerson();
+            }
             DiasableTextBox();
+            this.Close();
+
+        }
+
+        public void editPerson()
+        {
+            string firstname = txt_firstname.Text;
+            string lastname = txt_lastname.Text;
+            string email = txt_email.Text;
+            string phonenumber = txt_phonenumber.Text;
+            Person Newperson = new Person(person._id, firstname, lastname, phonenumber, email);
+
+            updateUser.EditEmployee(Newperson);
+        }
+
+        public void EditAdmin()
+        {
+            string password;
+            string firstname = txt_firstname.Text;
+            string lastname = txt_lastname.Text;
+            string username = txt_username.Text;
+            if (String.IsNullOrEmpty(txt_password.Text))
+            {
+                password = null;
+            }
+            else
+            {
+                password = txt_password.Text;
+
+            }
+            string email = txt_email.Text;
+            string phonenumber = txt_phonenumber.Text;
+            Admin newAdmin = new Admin(admin._id, firstname, lastname,username,password, phonenumber, email);
+
+            updateUser.EditAdmin(newAdmin);
         }
 
         private void DiasableTextBox()
@@ -76,9 +139,10 @@ namespace G2_Forms
             txt_phonenumber.ReadOnly = false;
         }
 
-        private void AccountInfo_FormClosed(object sender, FormClosedEventArgs e)
+        private void btn_Delete_Click(object sender, EventArgs e)
         {
-            Dashboard.GetInstance().Show();
+            updateUser.DeletePerson(person);
+            this.Close();
         }
     }
 }
