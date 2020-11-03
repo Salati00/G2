@@ -54,7 +54,7 @@ namespace G2_Forms
             Person PersonObject = this.item as Person;
             if(PersonObject != null)
             {
-                G2_Logic.AdminLogic logic = new G2_Logic.AdminLogic();
+                G2_Logic.PersonLogic logic = new G2_Logic.PersonLogic();
                 Label l = new Label();
                 l.Text = logic.GetAmountOfTickets(PersonObject).ToString();
                 l.Visible = true;

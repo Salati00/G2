@@ -40,6 +40,7 @@ namespace G2_DAL
         {
             collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
         }
+
         public List<Person> DbGetAllUsers()
         {
             List<Person> users = new List<Person>();

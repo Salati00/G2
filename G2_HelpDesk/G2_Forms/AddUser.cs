@@ -22,7 +22,7 @@ namespace G2_Forms
 
         }
 
-        AdminLogic AddAdminLogic = new AdminLogic();
+        PersonLogic AddAdminLogic = new PersonLogic();
 
         private void PopulateCombobox()
         {

@@ -9,10 +9,10 @@ using G2_Model;
 
 namespace G2_Logic
 {
-    public class AdminLogic
+    public class PersonLogic
     {
         UserDAO db = new UserDAO();
-        public AdminLogic()
+        public PersonLogic()
         {
             db.ConnString();
         }

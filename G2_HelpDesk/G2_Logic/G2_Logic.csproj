@@ -43,8 +43,9 @@
   <ItemGroup>
     <Compile Include="SortingTicketFunctionalityLogic.cs" />
     <Compile Include="TicketLogic.cs" />
-    <Compile Include="AdminLogic.cs" />
+    <Compile Include="PersonLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransferTicketLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\G2_DAL\G2_DAL.csproj">

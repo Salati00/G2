@@ -14,12 +14,12 @@ namespace G2_Forms
 {
     public partial class Frm_EmployeeList : Form
     {
-        AdminLogic userDB;
+        PersonLogic userDB;
 
         public Frm_EmployeeList()
         {
             InitializeComponent();
-            userDB = new AdminLogic();
+            userDB = new PersonLogic();
             Uc_Menu.Window = this;
 
             Uc_List.GetButton.Text = "Add Employee";

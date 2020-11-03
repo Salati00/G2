@@ -106,6 +106,7 @@
   <ItemGroup>
     <Compile Include="BaseDAO.cs" />
     <Compile Include="TicketDAO.cs" />
+    <Compile Include="TransferTicketDAO.cs" />
     <Compile Include="UserDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

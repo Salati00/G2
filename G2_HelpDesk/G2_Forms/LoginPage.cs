@@ -14,7 +14,7 @@ namespace G2_Forms
 {
     public partial class LoginPage : Form
     {
-        AdminLogic user = new AdminLogic();
+        PersonLogic user = new PersonLogic();
 
         private static readonly Lazy<LoginPage> lazyInstance = new Lazy<LoginPage>(() => new LoginPage());
 
