@@ -47,23 +47,32 @@ namespace G2_Forms
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             UserDAO userdao = new UserDAO();
-            List<Person> admins = userdao.DbGetAllUsers();
+            List<Person> users = userdao.DbGetAllUsers();
             TicketDAO ticketDao = new TicketDAO();
             
 
             DateTime date = DateTime.Now;
             string subject = txtSubject.Text;
             TicketTypes type = (TicketTypes)cbType.SelectedItem;
-            Admin user = (Admin)cbUser.SelectedValue;
+            Employee user = (Employee)cbUser.SelectedValue;
             
 
             TicketPriority priority = (TicketPriority)cbPriority.SelectedItem;
             string deadline = txtDeadline.Text;
             string description = txtDescription.Text;
 
-            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user);
+            G2_Model.Ticket ticket = new G2_Model.Ticket(date, subject, type, priority, description, user); //Needs Branch
             ticketDao.DbAddTicket(ticket);
                 
+            foreach (Employee a in users)
+            {
+                if (user._id == a._id)
+                {
+                    ticket = new G2_Model.Ticket(date, subject, type, priority, description, a); //Not sure if this part of code is here because of my stashed code, but this also needs Branch
+                    ticketDao.DbAddTicket(ticket);
+                }
+            }
+           
 
         }
 
