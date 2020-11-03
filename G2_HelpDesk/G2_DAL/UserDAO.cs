@@ -45,6 +45,7 @@ namespace G2_DAL
             List<Person> users = new List<Person>();
             var docs = collectionUser.Find(Builders<BsonDocument>.Filter.Empty).ToList();
             foreach (BsonDocument doc in docs)
+            {
                 if (doc.Contains("Username"))
                 {
                     {
@@ -55,6 +56,7 @@ namespace G2_DAL
                 {
                     users.Add(GetEmployee(doc));
                 }
+            }
             return users;
         }
         public bool DbUsernameExists(string username)

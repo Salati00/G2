@@ -19,7 +19,7 @@ namespace G2_DAL
                 { "Type", ticket.Type},
                 { "Priority", ticket.Priority},
                 { "Description", ticket.Description},
-                { "Deadline", ticket.Description},
+                { "Deadline", ticket.Deadline},
                 { "User_id", ObjectId.Parse(ticket.User._id)} };
             collectionTicket.InsertOne(document);
         }
@@ -33,7 +33,7 @@ namespace G2_DAL
             foreach (BsonDocument doc in result)
             {
                 //Person user = new Person();
-                Employee user = new Employee();
+                Person user = new Employee();
                 BsonArray userDocs = doc.GetValue("User").AsBsonArray;
                 foreach (BsonDocument userDoc in userDocs)
                 {
@@ -47,7 +47,7 @@ namespace G2_DAL
                     (TicketPriority)(doc.GetValue("Priority", new BsonString(string.Empty)).ToInt32()),
                     doc.GetValue("Description", new BsonString(string.Empty)).ToString(),
                     user,
-                    (int)(doc.GetValue("Deadline", new BsonString(string.Empty)).ToInt32()
+                    (doc.GetValue("Deadline", new BsonString(string.Empty)).ToInt32()
                     ));
                 tickets.Add(ticket);
             }
