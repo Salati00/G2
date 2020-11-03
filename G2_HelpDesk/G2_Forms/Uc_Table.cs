@@ -72,11 +72,11 @@ namespace G2_Forms
             Uc_TableRow r;
             if(type == typeof(Person))
             {
-                r = new Uc_TableRow(item, true);
+                r = new Uc_TableRow(item, 1);
             }
             else
             {
-                r = new Uc_TableRow(item);
+                r = new Uc_TableRow(item, 2);
             }
             r.Top = y;
             r.Left = x;
@@ -85,11 +85,6 @@ namespace G2_Forms
             this.Controls.Add(r);
 
             y += DELTA_Y;
-        }
-
-        private void GetButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         //Public methods

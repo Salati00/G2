@@ -18,14 +18,14 @@ namespace G2_Forms
         private IListable item;
         private int x, y;
         private const int DELTA_X = 120;
-        private bool editable;
+        private int editable;
 
         /// <summary>
         /// Takes one object and interprets it as a list to populate the fields to be displayed
         /// </summary>
         /// <param name="Items">List of objects to be displayed</param>
         /// <param name="addEdit">Boolean that decides whether a button will be shown at the end of every item</param>
-        public Uc_TableRow(IListable _item, bool addEdit = false)
+        public Uc_TableRow(IListable _item, int addEdit = 0)
         {
             InitializeComponent();
             item = _item;
@@ -78,7 +78,7 @@ namespace G2_Forms
                 }
             }
 
-            if (editable)
+            if (editable == 1)
             {
                 x += DELTA_X;
                 Button b = new Button();
@@ -87,12 +87,29 @@ namespace G2_Forms
                 b.Show();
                 b.Top = y;
                 b.Left = x;
-                b.Click += B_Click;
+                b.Click += B_User_Click;
+                this.Controls.Add(b);
+            }
+            else if (editable == 2)
+            {
+                x += DELTA_X;
+                Button b = new Button();
+                b.Text = "Transfer";
+                b.Visible = true;
+                b.Show();
+                b.Top = y;
+                b.Left = x;
+                b.Click += B_Ticket_Click;
                 this.Controls.Add(b);
             }
         }
 
-        private void B_Click(object sender, EventArgs e)
+        private void B_Ticket_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void B_User_Click(object sender, EventArgs e)
         {
             //for seyi, read and delete this
             //Cast item to either Person, admin, user or Incident or whatever and then you can do whatever you want with it, open your new form and pass the object
