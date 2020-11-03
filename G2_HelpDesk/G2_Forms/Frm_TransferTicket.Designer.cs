@@ -88,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 100);
+            this.label1.Location = new System.Drawing.Point(23, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 5;
@@ -98,7 +98,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 124);
+            this.label2.Location = new System.Drawing.Point(23, 124);
+            this.label2.MinimumSize = new System.Drawing.Size(125, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 17);
             this.label2.TabIndex = 6;
@@ -108,7 +109,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 148);
+            this.label3.Location = new System.Drawing.Point(23, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 17);
             this.label3.TabIndex = 7;
@@ -118,7 +119,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 174);
+            this.label4.Location = new System.Drawing.Point(23, 174);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 17);
             this.label4.TabIndex = 8;
@@ -136,38 +137,38 @@
             // 
             // ticket_subject
             // 
-            this.ticket_subject.AutoSize = true;
+            this.ticket_subject.AutoEllipsis = true;
             this.ticket_subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticket_subject.Location = new System.Drawing.Point(143, 100);
+            this.ticket_subject.Location = new System.Drawing.Point(152, 100);
             this.ticket_subject.Name = "ticket_subject";
-            this.ticket_subject.Size = new System.Drawing.Size(0, 17);
+            this.ticket_subject.Size = new System.Drawing.Size(125, 17);
             this.ticket_subject.TabIndex = 10;
             // 
             // ticket_description
             // 
-            this.ticket_description.AutoSize = true;
+            this.ticket_description.AutoEllipsis = true;
             this.ticket_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticket_description.Location = new System.Drawing.Point(143, 124);
+            this.ticket_description.Location = new System.Drawing.Point(154, 124);
             this.ticket_description.Name = "ticket_description";
-            this.ticket_description.Size = new System.Drawing.Size(0, 17);
+            this.ticket_description.Size = new System.Drawing.Size(125, 17);
             this.ticket_description.TabIndex = 11;
             // 
             // deadline
             // 
-            this.deadline.AutoSize = true;
+            this.deadline.AutoEllipsis = true;
             this.deadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deadline.Location = new System.Drawing.Point(143, 148);
+            this.deadline.Location = new System.Drawing.Point(154, 148);
             this.deadline.Name = "deadline";
-            this.deadline.Size = new System.Drawing.Size(0, 17);
+            this.deadline.Size = new System.Drawing.Size(125, 17);
             this.deadline.TabIndex = 12;
             // 
             // transferFrom
             // 
-            this.transferFrom.AutoSize = true;
+            this.transferFrom.AutoEllipsis = true;
             this.transferFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transferFrom.Location = new System.Drawing.Point(143, 174);
+            this.transferFrom.Location = new System.Drawing.Point(154, 174);
             this.transferFrom.Name = "transferFrom";
-            this.transferFrom.Size = new System.Drawing.Size(0, 17);
+            this.transferFrom.Size = new System.Drawing.Size(125, 17);
             this.transferFrom.TabIndex = 13;
             // 
             // transfer_to
