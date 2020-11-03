@@ -19,20 +19,6 @@ namespace G2_DAL
             var update = Builders<BsonDocument>.Update.Set("User_id", toId);
             collectionTicket.UpdateOne(filter, update);
         }
-        public List<Employee> DbGetAllEmployees()
-        {
-            List<Employee> employees = new List<Employee>();
-            var docs = collectionUser.Find(Builders<BsonDocument>.Filter.Empty).ToList();
-            foreach (BsonDocument doc in docs)
-            {
-                if (!doc.Contains("Username"))
-                {
-                    {
-                        employees.Add(GetEmployee(doc));
-                    }
-                }
-            }
-            return employees;
-        }
+        
     }
 }

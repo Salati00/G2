@@ -49,9 +49,7 @@ namespace G2_DAL
             {
                 if (doc.Contains("Username"))
                 {
-                    {
-                        users.Add(GetAdmin(doc));
-                    }
+                    users.Add(GetAdmin(doc));
                 }
                 else
                 {

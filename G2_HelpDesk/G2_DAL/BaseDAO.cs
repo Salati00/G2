@@ -50,5 +50,20 @@ namespace G2_DAL
                     (Branch)(doc.GetValue("Branch", new BsonString(string.Empty)).ToInt32()));
             return user;
         }
+        public List<Employee> DbGetAllEmployees()
+        {
+            List<Employee> employees = new List<Employee>();
+            var docs = collectionUser.Find(Builders<BsonDocument>.Filter.Empty).ToList();
+            foreach (BsonDocument doc in docs)
+            {
+                if (!doc.Contains("Username"))
+                {
+                    {
+                        employees.Add(GetEmployee(doc));
+                    }
+                }
+            }
+            return employees;
+        }
     }
 }
