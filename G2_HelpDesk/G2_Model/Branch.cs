@@ -11,7 +11,7 @@ namespace G2_Model
         Haarlem,
         Amsterdam,
         Venlo,
-        Denhagg,
+        Denhaag,
         Eindhoven
     }
 }
