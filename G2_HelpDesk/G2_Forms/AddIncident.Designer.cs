@@ -41,10 +41,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.txtDeadline = new System.Windows.Forms.TextBox();
             this.DTP_reportedDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSubject = new System.Windows.Forms.TextBox();
+            this.DTP_Deadline = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label2
@@ -166,13 +166,6 @@
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
-            // txtDeadline
-            // 
-            this.txtDeadline.Location = new System.Drawing.Point(306, 278);
-            this.txtDeadline.Name = "txtDeadline";
-            this.txtDeadline.Size = new System.Drawing.Size(221, 20);
-            this.txtDeadline.TabIndex = 19;
-            // 
             // DTP_reportedDate
             // 
             this.DTP_reportedDate.Location = new System.Drawing.Point(306, 87);
@@ -196,16 +189,23 @@
             this.txtSubject.Size = new System.Drawing.Size(221, 20);
             this.txtSubject.TabIndex = 24;
             // 
+            // DTP_Deadline
+            // 
+            this.DTP_Deadline.Location = new System.Drawing.Point(306, 275);
+            this.DTP_Deadline.Name = "DTP_Deadline";
+            this.DTP_Deadline.Size = new System.Drawing.Size(221, 20);
+            this.DTP_Deadline.TabIndex = 25;
+            // 
             // AddIncident
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(803, 578);
+            this.Controls.Add(this.DTP_Deadline);
             this.Controls.Add(this.txtSubject);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DTP_reportedDate);
-            this.Controls.Add(this.txtDeadline);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label8);
@@ -240,9 +240,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.TextBox txtDeadline;
         private System.Windows.Forms.DateTimePicker DTP_reportedDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSubject;
+        private System.Windows.Forms.DateTimePicker DTP_Deadline;
     }
 }
