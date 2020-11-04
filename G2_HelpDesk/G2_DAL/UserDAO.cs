@@ -36,9 +36,10 @@ namespace G2_DAL
                 { "Branch", user.Branch}};
             collectionUser.InsertOne(document);
         }
-        public void DbDeleteUser(Admin user)
+        public void DbDeleteUser(Person user)
         {
             collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
+            collectionTicket.DeleteOne(Builders<BsonDocument>.Filter.Eq("User_id", user._id));
         }
 
         public List<Person> DbGetAllUsers()
