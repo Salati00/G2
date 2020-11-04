@@ -23,7 +23,7 @@ namespace G2_DAL
                 { "User_id", ObjectId.Parse(ticket.User._id)} };
             collectionTicket.InsertOne(document);
         }
-        public List<Ticket> DbGetAllTickets() //METHOD NEEDS FIXING
+        public List<Ticket> DbGetAllTickets()
         {
             List<Ticket> tickets = new List<Ticket>();
             Ticket ticket;
