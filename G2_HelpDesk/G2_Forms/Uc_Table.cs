@@ -126,7 +126,7 @@ namespace G2_Forms
                 if(this.type == typeof(Person))
                 {
                     Txt_Filter.Show();
-                    if (Txt_Filter.Text == "" || ((List<object>)item)[3].ToString().Contains(Txt_Filter.Text))
+                    if (Txt_Filter.Text == "" || ((Person)item).Email.Contains(Txt_Filter.Text))
                         AddRow((IListable)item);
                 }
                 else if(this.type == typeof(Ticket))
