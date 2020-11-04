@@ -49,7 +49,7 @@ namespace G2_Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Overview overview = new Overview();
+            Frm_TicketOverview overview = new Frm_TicketOverview();
             overview.ShowDialog();
             this.Hide();
         }

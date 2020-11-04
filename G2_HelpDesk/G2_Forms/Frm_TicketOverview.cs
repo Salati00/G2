@@ -14,12 +14,12 @@ using G2_Logic;
 namespace G2_Forms
 {
     
-    public partial class Overview : Form
+    public partial class Frm_TicketOverview : Form
     {
         TicketLogic ticketLogic;
         int ticketCount;
         List<G2_Model.Ticket> tickets;
-        public Overview()
+        public Frm_TicketOverview()
         {
             InitializeComponent();
             ticketLogic = new TicketLogic();
@@ -35,9 +35,5 @@ namespace G2_Forms
 
         }
 
-        private void Overview_Load(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

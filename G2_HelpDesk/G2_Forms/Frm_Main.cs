@@ -46,7 +46,7 @@ namespace G2_Forms
 
         private void btn_Overview_Click(object sender, EventArgs e)
         {
-            Overview o = new Overview();
+            Frm_TicketOverview o = new Frm_TicketOverview();
             o.ShowDialog();
         }
 
