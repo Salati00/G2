@@ -101,7 +101,23 @@ namespace G2_Forms
                 b.Left = x;
                 b.Click += B_Ticket_Click;
                 this.Controls.Add(b);
+
+                x += DELTA_X;
+                Button btn_EditTicket = new Button();
+                btn_EditTicket.Text = "Edit";
+                btn_EditTicket.Visible = true;
+                btn_EditTicket.Show();
+                btn_EditTicket.Top = y;
+                btn_EditTicket.Left = x;
+                btn_EditTicket.Click += Btn_EditTicket_Click; ;
+                this.Controls.Add(btn_EditTicket);
             }
+        }
+
+        private void Btn_EditTicket_Click(object sender, EventArgs e)
+        {
+            //For Erjano
+            throw new NotImplementedException();
         }
 
         private void B_Ticket_Click(object sender, EventArgs e)
