@@ -35,8 +35,6 @@ namespace G2_Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            Frm_TicketList ticketList = new Frm_TicketList();
-            ticketList.ShowDialog();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
