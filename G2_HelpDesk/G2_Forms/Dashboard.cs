@@ -41,26 +41,12 @@ namespace G2_Forms
             LoginPage.Instance.Show();
             this.Hide();
         }
-        
-        /*private void btn_CreateUser_Click(object sender, EventArgs e)
-        {
-            AddUser newUser = new AddUser();
-            newUser.Show();
-            this.Hide();
-        }*/
 
         private void btn_account_Click(object sender, EventArgs e)
         {
             AccountInfo account = new AccountInfo(admin,null);
             account.ShowDialog();
         }
-
-        /*private void button1_Click(object sender, EventArgs e)
-        {
-            Ticket ticket = new Ticket();
-            ticket.Show();
-            this.Hide();
-        }*/
 
         private void btb_EmployeeList_Click(object sender, EventArgs e)
         {
@@ -79,7 +65,7 @@ namespace G2_Forms
         {
             Frm_TicketList tickets = new Frm_TicketList();
             tickets.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }
