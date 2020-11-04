@@ -18,6 +18,7 @@ namespace G2_Forms
     {
         TicketLogic ticketLogic;
         int ticketCount;
+        int ticketPastDeadline;
         List<G2_Model.Ticket> tickets;
         public Frm_TicketOverview()
         {
@@ -28,10 +29,15 @@ namespace G2_Forms
             foreach (G2_Model.Ticket ticket in tickets)
             {
                 ticketCount++;
+                if (DateTime.Now > ticket.Deadline)
+                {
+                    ticketPastDeadline++;
+                }
 
             }
 
             lbl_itemCount.Text = ticketCount.ToString();
+            lbl_ticketPastDeadline.Text = ticketPastDeadline.ToString();
 
         }
 
