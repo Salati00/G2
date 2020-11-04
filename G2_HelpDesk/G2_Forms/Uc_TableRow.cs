@@ -108,6 +108,7 @@ namespace G2_Forms
         {
             Frm_TransferTicket transferForm = new Frm_TransferTicket((G2_Model.Ticket)item);
             transferForm.ShowDialog();
+            ((Uc_Table)this.Parent).UpdateTable();
         }
 
         private void B_User_Click(object sender, EventArgs e)

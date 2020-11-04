@@ -43,11 +43,11 @@ namespace G2_Forms
 
         private void btn_transfer_Click(object sender, EventArgs e)
         {
-            if (employee != null) //DOESNT WORKEDs
+            if (employee.Firstname != null)
             {
                 transferLogic.TransferTicket(ticket, employee);
+                Close();
             }
-            Close();
         }
         public class ComboBoxItem
         {
