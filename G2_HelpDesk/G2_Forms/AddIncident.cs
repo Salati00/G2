@@ -49,7 +49,7 @@ namespace G2_Forms
                 Priority = (TicketPriority)cbPriority.SelectedItem,
                 Description = txtDescription.Text,
                 User = (cbUser.SelectedItem as ComboBoxItem).user,
-                Deadline = int.Parse(txtDeadline.Text)
+                Deadline = DateTime.Now.AddDays(int.Parse(txtDeadline.Text))
             };
             
             ticketlogic.AddTicket(t);

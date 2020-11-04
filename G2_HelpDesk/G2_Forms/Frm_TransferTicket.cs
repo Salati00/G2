@@ -29,7 +29,7 @@ namespace G2_Forms
 
             ticket_description.Text = ticket.Description;
             ticket_subject.Text = ticket.Subject;
-            deadline.Text = $"{ticket.Deadline.ToString()} days";
+            deadline.Text = $"{(DateTime.Now - ticket.Deadline).ToString("dd")} days";
             transferFrom.Text = $"{ticket.User.Firstname} {ticket.User.Lastname}";
             foreach (Employee emp in employees)
             {

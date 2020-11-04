@@ -47,8 +47,7 @@ namespace G2_DAL
                     (TicketPriority)(doc.GetValue("Priority", new BsonString(string.Empty)).ToInt32()),
                     doc.GetValue("Description", new BsonString(string.Empty)).ToString(),
                     user,
-                    (doc.GetValue("Deadline", new BsonString(string.Empty)).ToInt32()
-                    ));
+                    (DateTime)(doc.GetValue("Deadline", new BsonString(string.Empty))));
                 tickets.Add(ticket);
             }
             return tickets;
