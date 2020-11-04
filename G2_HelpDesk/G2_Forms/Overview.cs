@@ -7,29 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MongoDB.Driver;
+using G2_Model;
+using G2_DAL;
+using G2_Logic;
 
 namespace G2_Forms
 {
+    
     public partial class Overview : Form
     {
+        TicketLogic ticketLogic;
+        int ticketCount;
+        List<G2_Model.Ticket> tickets;
         public Overview()
         {
             InitializeComponent();
+            ticketLogic = new TicketLogic();
+            tickets = new List<G2_Model.Ticket>();
+            tickets = ticketLogic.GetAllTickets();
+            foreach (G2_Model.Ticket ticket in tickets)
+            {
+                ticketCount++;
+
+            }
+
+            lbl_itemCount.Text = ticketCount.ToString();
+
         }
 
         private void Overview_Load(object sender, EventArgs e)
         {
-            var client = new MongoClient("mongodb+srv://dbUser:noww6w4agyqOhr4s@g2.kxnnm.azure.mongodb.net/g2Database?retryWrites=true&w=majority");
-            var database = client.GetDatabase("g2Database");
-            var dbList = client.ListDatabases().ToList();
-            int count = 0;
-            Console.WriteLine("The list of databases on this server is: ");
-            foreach (var db in dbList)
-            {
-                count++;
-            }
-            lbl_itemCount.Text = count.ToString();
+            
         }
     }
 }

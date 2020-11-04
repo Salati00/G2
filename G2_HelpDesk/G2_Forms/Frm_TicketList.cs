@@ -46,5 +46,12 @@ namespace G2_Forms
             Uc_List.SetMode(typeof(Ticket));
             ticketDB.GetAllTickets().ForEach(x => Uc_List.AddElement(x));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Overview overview = new Overview();
+            overview.ShowDialog();
+            this.Hide();
+        }
     }
 }
