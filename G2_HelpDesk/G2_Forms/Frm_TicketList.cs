@@ -30,6 +30,7 @@ namespace G2_Forms
         {
             AddIncident inc = new AddIncident();
             inc.ShowDialog();
+            this.RefreshTicketList();
         }
 
         private void Frm_TicketList_Load(object sender, EventArgs e)

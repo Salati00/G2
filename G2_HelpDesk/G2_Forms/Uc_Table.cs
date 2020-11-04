@@ -141,7 +141,11 @@ namespace G2_Forms
         public void ClearTable()
         {
             elementList = new List<object>();
-
+            this.Controls.OfType<Uc_TableRow>().ToList().ForEach(x => {
+                x.Remove();
+            });
+            y = 70;
+            x = 5;
         }
 
         public void SetHeaders(List<string> Headers)

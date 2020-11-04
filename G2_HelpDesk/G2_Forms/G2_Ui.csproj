@@ -149,18 +149,6 @@
     <Compile Include="Frm_EmployeeList.Designer.cs">
       <DependentUpon>Frm_EmployeeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Main.Designer.cs">
-      <DependentUpon>Frm_Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Test.Designer.cs">
-      <DependentUpon>Frm_Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,12 +181,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ticket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ticket.Designer.cs">
-      <DependentUpon>Ticket.cs</DependentUpon>
-    </Compile>
     <Compile Include="Uc_MenuBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,12 +211,6 @@
     <EmbeddedResource Include="Frm_EmployeeList.resx">
       <DependentUpon>Frm_EmployeeList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Main.resx">
-      <DependentUpon>Frm_Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Test.resx">
-      <DependentUpon>Frm_Test.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,9 +236,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Ticket.resx">
-      <DependentUpon>Ticket.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Uc_MenuBar.resx">
       <DependentUpon>Uc_MenuBar.cs</DependentUpon>
     </EmbeddedResource>
