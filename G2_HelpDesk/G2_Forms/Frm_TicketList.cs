@@ -49,7 +49,10 @@ namespace G2_Forms
 
         public void RefreshTicketList()
         {
-            ticketDB.GetAllTickets().ForEach(x => Uc_List.AddElement(x));
+            Uc_List.ClearTable();
+            ticketDB.GetAllTickets().ForEach(x => {
+                Uc_List.AddElement(x);
+                });
         }
 
         private void button1_Click(object sender, EventArgs e)

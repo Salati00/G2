@@ -95,7 +95,8 @@ namespace G2_Forms
         public void AddElement(IListable item)
         {
             elementList.Add(item);
-            AddRow((IListable)elementList.Last());
+            if(!Chk_Sort.Checked)
+                AddRow((IListable)elementList.Last());
         }
 
         /// <summary>
@@ -103,14 +104,15 @@ namespace G2_Forms
         /// </summary>
         public void UpdateTable()
         {
-            this.Controls.OfType<Uc_TableRow>().ToList().ForEach(x => { x.Remove(); });
+            this.Controls.OfType<Uc_TableRow>().ToList().ForEach(x => { 
+                x.Remove(); 
+            });
             y = 70;
             x = 5;
 
             Frm_TicketList f = this.Parent as Frm_TicketList;
             if (f != null)
             {
-                elementList = new List<object>();
                 f.RefreshTicketList();
             }
 
@@ -130,13 +132,15 @@ namespace G2_Forms
                 else if(this.type == typeof(Ticket))
                 {
                     Txt_Filter.Hide();
-                    AddRow((IListable)item);
+                    if(Chk_Sort.Checked)
+                        AddRow((IListable)item);
                 }
             }
         }
 
         public void ClearTable()
         {
+            elementList = new List<object>();
 
         }
 
