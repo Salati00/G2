@@ -97,6 +97,7 @@ namespace G2_Forms
             elementList.Add(item);
             AddRow((IListable)elementList.Last());
         }
+
         /// <summary>
         /// Forces Update of displayed elements
         /// </summary>
@@ -106,10 +107,17 @@ namespace G2_Forms
             y = 70;
             x = 5;
 
+            Frm_TicketList f = this.Parent as Frm_TicketList;
+            if (f != null)
+            {
+                elementList = new List<object>();
+                f.RefreshTicketList();
+            }
+
             List<object> shownElements = elementList;
             if(this.type == typeof(Ticket) && Chk_Sort.Checked)
             {
-                SortingTicketFunctionalityLogic.SortTickets(shownElements);
+                shownElements = SortingTicketFunctionalityLogic.SortTickets(shownElements);
             }
             foreach (var item in shownElements)
             {
@@ -125,6 +133,11 @@ namespace G2_Forms
                     AddRow((IListable)item);
                 }
             }
+        }
+
+        public void ClearTable()
+        {
+
         }
 
         public void SetHeaders(List<string> Headers)
