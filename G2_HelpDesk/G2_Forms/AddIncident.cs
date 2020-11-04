@@ -49,14 +49,12 @@ namespace G2_Forms
                 Priority = (TicketPriority)cbPriority.SelectedItem,
                 Description = txtDescription.Text,
                 User = (cbUser.SelectedItem as ComboBoxItem).user,
-                Deadline = DateTime.Now.AddDays(int.Parse(txtDeadline.Text))
+                Deadline = DTP_reportedDate.Value.AddDays(int.Parse(txtDeadline.Text))
             };
             
             ticketlogic.AddTicket(t);
 
             this.Close();
-            Frm_TicketList ticketList = new Frm_TicketList();
-            ticketList.ShowDialog();
         }
 
         public class ComboBoxItem : object
