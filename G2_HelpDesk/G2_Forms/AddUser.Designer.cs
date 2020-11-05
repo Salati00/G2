@@ -270,7 +270,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddUser";
-            this.Text = "-";
+            this.Text = "Add User";
             this.ResumeLayout(false);
             this.PerformLayout();
 

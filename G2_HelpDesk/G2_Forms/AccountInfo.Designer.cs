@@ -198,8 +198,7 @@
             this.Controls.Add(this.txt_lastname);
             this.Controls.Add(this.txt_firstname);
             this.Name = "AccountInfo";
-            this.Text = "AccountInfo";
-            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AccountInfo_FormClosed);
+            this.Text = "Account Info";
             this.Load += new System.EventHandler(this.AccountInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

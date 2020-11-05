@@ -10,6 +10,7 @@ namespace G2_Model
     {
         Empty,
         Urgent,
-        Normal
+        Normal,
+        Closed
     }
 }

@@ -29,8 +29,8 @@ namespace G2_Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.Uc_List = new Uc_Table();
-            this.Uc_Menu = new Uc_MenuBar();
+            this.Uc_List = new G2_Forms.Uc_Table();
+            this.Uc_Menu = new G2_Forms.Uc_MenuBar();
             this.SuspendLayout();
             // 
             // Uc_List
@@ -51,17 +51,17 @@ namespace G2_Forms
             this.Uc_Menu.Name = "Uc_Menu";
             this.Uc_Menu.Size = new System.Drawing.Size(800, 74);
             this.Uc_Menu.TabIndex = 1;
-            //this.Uc_Menu.Window = null;
+            this.Uc_Menu.Window = null;
             // 
-            // EmployeeList
+            // Frm_EmployeeList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Uc_Menu);
             this.Controls.Add(this.Uc_List);
-            this.Name = "EmployeeList";
-            this.Text = "EmployeeList";
+            this.Name = "Frm_EmployeeList";
+            this.Text = "Employee List";
             this.Load += new System.EventHandler(this.EmployeeList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

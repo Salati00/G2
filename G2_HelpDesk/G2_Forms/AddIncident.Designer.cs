@@ -220,7 +220,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "AddIncident";
-            this.Text = "AddIncident";
+            this.Text = "Add Incident";
             this.ResumeLayout(false);
             this.PerformLayout();
 
