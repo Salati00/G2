@@ -62,5 +62,10 @@ namespace G2_Forms
             overview.ShowDialog();
             this.Hide();
         }
+
+        private void Uc_Menu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

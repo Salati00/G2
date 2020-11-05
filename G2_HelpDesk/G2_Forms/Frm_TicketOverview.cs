@@ -13,11 +13,11 @@ using G2_Logic;
 
 namespace G2_Forms
 {
-    
     public partial class Frm_TicketOverview : Form
     {
         TicketLogic ticketLogic;
         int ticketCount;
+        int closedTicket;
         int ticketPastDeadline;
         List<G2_Model.Ticket> tickets;
         public Frm_TicketOverview()
@@ -28,18 +28,28 @@ namespace G2_Forms
             tickets = ticketLogic.GetAllTickets();
             foreach (G2_Model.Ticket ticket in tickets)
             {
-                ticketCount++;
-                if (DateTime.Now > ticket.Deadline)
+                if (ticket.Priority == TicketPriority.Closed)
+                {
+                    closedTicket++;
+                }
+                else if (DateTime.Now > ticket.Deadline)
                 {
                     ticketPastDeadline++;
                 }
-
+                else
+                {
+                    ticketCount++;
+                }
             }
-
+            lbl_ClosedTickets.Text = closedTicket.ToString();
             lbl_itemCount.Text = ticketCount.ToString();
             lbl_ticketPastDeadline.Text = ticketPastDeadline.ToString();
 
         }
 
+        private void BTN_Dashboard_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

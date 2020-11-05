@@ -41,6 +41,7 @@
             this.Uc_Menu.Size = new System.Drawing.Size(800, 74);
             this.Uc_Menu.TabIndex = 3;
             this.Uc_Menu.Window = null;
+            this.Uc_Menu.Load += new System.EventHandler(this.Uc_Menu_Load);
             // 
             // Uc_List
             // 

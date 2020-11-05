@@ -67,5 +67,11 @@ namespace G2_Forms
             tickets.Show();
             this.Hide();
         }
+
+        private void BTN_TicketStatus_Click(object sender, EventArgs e)
+        {
+            Frm_TicketOverview ticketOverview = new Frm_TicketOverview();
+            ticketOverview.ShowDialog();
+        }
     }
 }
