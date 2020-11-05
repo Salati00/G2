@@ -37,7 +37,7 @@ namespace G2_Logic
         {
             return db.DbUsernameExists(username);
         }
-        public void DeleteUser(Admin user)
+        public void DeleteUser(Person user)
         {
             db.DbDeleteUser(user);
         }
