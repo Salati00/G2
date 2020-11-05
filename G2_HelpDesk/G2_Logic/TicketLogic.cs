@@ -19,6 +19,14 @@ namespace G2_Logic
         {
             db.DbAddTicket(ticket);
         }
+        public void DeleteTicket(Ticket ticket)
+        {
+            db.DeleteTicket(ticket);
+        }
+        public void EditTicket(Ticket ticket)
+        {
+            db.DbUpdateTicket(ticket);
+        }
 
         public List<Ticket> GetAllTickets()
         {

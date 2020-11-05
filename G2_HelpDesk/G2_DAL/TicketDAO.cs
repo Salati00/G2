@@ -33,7 +33,7 @@ namespace G2_DAL
             foreach (BsonDocument doc in result)
             {
                 //Person user = new Person();
-                Person user = new Employee(); 
+                Person user = new Employee();
                 BsonArray userDocs = doc.GetValue("User").AsBsonArray;
                 foreach (BsonDocument userDoc in userDocs)
                 {
@@ -55,6 +55,21 @@ namespace G2_DAL
         public void DeleteTicket(Ticket ticket) //not tested
         {
             collectionTicket.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", ticket._Id));
+        }
+
+        public void DbUpdateTicket(Ticket ticket)
+        {
+            ObjectId Id = new ObjectId(ticket._Id);
+            var filter = Builders<BsonDocument>.Filter.Eq("_id", Id);
+            var update = Builders<BsonDocument>.Update.Set("ReportDate", ticket.ReportDate)
+                                                      .Set("Subject", ticket.Subject)
+                                                      .Set("Type", ticket.Type)
+                                                      .Set("Priority", ticket.Priority)
+                                                      .Set("Description", ticket.Description)
+                                                      .Set("Deadline", ticket.Deadline)
+                                                      .Set("User_id", ObjectId.Parse(ticket.User._id));
+
+            collectionTicket.UpdateOne(filter, update);
         }
     }
 }
