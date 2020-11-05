@@ -117,7 +117,11 @@ namespace G2_Forms
         private void Btn_EditTicket_Click(object sender, EventArgs e)
         {
             //For Erjano
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
+            Edit_Incident editIncident = new Edit_Incident((Ticket)item);
+            editIncident.ShowDialog();
+            ((Uc_Table)this.Parent).UpdateTable();
+
         }
 
         private void B_Ticket_Click(object sender, EventArgs e)
