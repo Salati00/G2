@@ -89,5 +89,10 @@ namespace G2_Forms
             ticketLogic.EditTicket(newTicket);
             this.Close();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
