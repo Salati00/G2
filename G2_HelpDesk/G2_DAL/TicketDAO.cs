@@ -54,7 +54,8 @@ namespace G2_DAL
         }
         public void DeleteTicket(Ticket ticket) //not tested
         {
-            collectionTicket.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", ticket._Id));
+            var deleteFilter = Builders<BsonDocument>.Filter.Eq("_id", ObjectId.Parse(ticket._Id));
+            collectionTicket.DeleteOne(deleteFilter);
         }
 
         public void DbUpdateTicket(Ticket ticket)
