@@ -39,7 +39,7 @@ namespace G2_DAL
         public void DbDeleteUser(Person user)
         {
             collectionUser.DeleteOne(Builders<BsonDocument>.Filter.Eq("_id", user._id));
-            collectionTicket.DeleteOne(Builders<BsonDocument>.Filter.Eq("User_id", user._id));
+            collectionTicket.DeleteMany(Builders<BsonDocument>.Filter.Eq("User_id", user._id));
         }
 
         public List<Person> DbGetAllUsers()
