@@ -35,6 +35,7 @@ namespace G2_Forms
 
         private void CreateNewUser_btn_Click(object sender, EventArgs e)
         {
+            
             string firstname = txt_firstname.Text;
             string lastname = txt_lastname.Text;
             string username = txt_lastname.Text;
@@ -43,24 +44,41 @@ namespace G2_Forms
             string phonenumber = txt_phoneNumber.Text;
             string email = txt_email.Text;
 
-            if(password != repeatPasss)
+            if(firstname == "" || lastname == "" || phonenumber == "" || email == "")
             {
-                MessageBox.Show("Make sure passowrd is the same.");
+                MessageBox.Show("Please enter all fields");
             }
             else
             {
-                if(cBoxType.GetItemText(cBoxType.SelectedItem) == UserType.Admin.ToString())
+                if (password != repeatPasss)
                 {
-                    Admin newUser = new Admin(firstname, lastname, username, password, phonenumber, email);
-                    AddAdminLogic.AddAdmin(newUser);
+                    MessageBox.Show("Make sure password is the same.");
                 }
                 else
                 {
-                    Branch branch = (Branch)cBoxBranch.SelectedItem;
-                    Employee employee = new Employee(firstname, lastname, phonenumber,email, branch);
+                    if (cBoxType.GetItemText(cBoxType.SelectedItem) == UserType.Admin.ToString())
+                    {
+                        if(username == "" || password == "" || repeatPasss == "")
+                        {
+                            MessageBox.Show("All admins need username and password");
+                        }
+                        else
+                        {
+                            Admin newUser = new Admin(firstname, lastname, username, password, phonenumber, email);
+                            AddAdminLogic.AddAdmin(newUser);
+                        }
+                    }
+                    else
+                    {
+                        Branch branch = (Branch)cBoxBranch.SelectedItem;
+                        Employee employee = new Employee(firstname, lastname, phonenumber, email, branch);
+                        AddAdminLogic.AddEmployee(employee);
+                    }
                 }
             }
         }
+
+            
 
         private void cBoxType_SelectedIndexChanged(object sender, EventArgs e)
         {

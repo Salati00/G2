@@ -25,7 +25,6 @@ namespace G2_Forms
             transferLogic = new TransferTicketLogic();
             this.ticket = ticket;
             employees = transferLogic.GetAllEmployees();
-            //cmb_selectUser.DropDownStyle = ComboBoxStyle.DropDownList;
 
             ticket_description.Text = ticket.Description;
             ticket_subject.Text = ticket.Subject;
