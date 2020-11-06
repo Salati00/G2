@@ -211,9 +211,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label9.Location = new System.Drawing.Point(209, 280);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 20);
+            this.label9.Size = new System.Drawing.Size(46, 20);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Role";
+            this.label9.Text = "Role:";
             // 
             // cBoxBranch
             // 
@@ -229,9 +229,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.Location = new System.Drawing.Point(205, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 20);
+            this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Branch";
+            this.label3.Text = "Branch:";
             // 
             // Btn_Dashboard
             // 
