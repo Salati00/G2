@@ -15,10 +15,10 @@ namespace G2_Forms
     public partial class Frm_TransferTicket : Form
     {
         TransferTicketLogic transferLogic;
-        G2_Model.Ticket ticket;
+        Ticket ticket;
         Employee employee;
         List<Employee> employees;
-        public Frm_TransferTicket(G2_Model.Ticket ticket)
+        public Frm_TransferTicket(Ticket ticket)
         {
             InitializeComponent();
             employee = new Employee();

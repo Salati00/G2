@@ -125,29 +125,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountInfo.cs">
+    <Compile Include="Frm_AccountInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountInfo.Designer.cs">
-      <DependentUpon>AccountInfo.cs</DependentUpon>
+    <Compile Include="Frm_AccountInfo.Designer.cs">
+      <DependentUpon>Frm_AccountInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddIncident.cs">
+    <Compile Include="Frm_AddIncident.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddIncident.Designer.cs">
-      <DependentUpon>AddIncident.cs</DependentUpon>
+    <Compile Include="Frm_AddIncident.Designer.cs">
+      <DependentUpon>Frm_AddIncident.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddUser.cs">
+    <Compile Include="Frm_AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddUser.Designer.cs">
-      <DependentUpon>AddUser.cs</DependentUpon>
+    <Compile Include="Frm_AddUser.Designer.cs">
+      <DependentUpon>Frm_AddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Edit_Incident.cs">
+    <Compile Include="Frm_Edit_Incident.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Edit_Incident.Designer.cs">
-      <DependentUpon>Edit_Incident.cs</DependentUpon>
+    <Compile Include="Frm_Edit_Incident.Designer.cs">
+      <DependentUpon>Frm_Edit_Incident.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_EmployeeList.cs">
       <SubType>Form</SubType>
@@ -155,11 +155,11 @@
     <Compile Include="Frm_EmployeeList.Designer.cs">
       <DependentUpon>Frm_EmployeeList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Frm_Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="Frm_Dashboard.Designer.cs">
+      <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_TicketList.cs">
       <SubType>Form</SubType>
@@ -173,11 +173,11 @@
     <Compile Include="Frm_TransferTicket.Designer.cs">
       <DependentUpon>Frm_TransferTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginPage.cs">
+    <Compile Include="Frm_LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginPage.Designer.cs">
-      <DependentUpon>LoginPage.cs</DependentUpon>
+    <Compile Include="Frm_LoginPage.Designer.cs">
+      <DependentUpon>Frm_LoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_TicketOverview.cs">
       <SubType>Form</SubType>
@@ -205,23 +205,23 @@
     <Compile Include="Uc_TableRow.Designer.cs">
       <DependentUpon>Uc_TableRow.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AccountInfo.resx">
-      <DependentUpon>AccountInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AccountInfo.resx">
+      <DependentUpon>Frm_AccountInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIncident.resx">
-      <DependentUpon>AddIncident.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AddIncident.resx">
+      <DependentUpon>Frm_AddIncident.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddUser.resx">
-      <DependentUpon>AddUser.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AddUser.resx">
+      <DependentUpon>Frm_AddUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Edit_Incident.resx">
-      <DependentUpon>Edit_Incident.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Edit_Incident.resx">
+      <DependentUpon>Frm_Edit_Incident.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_EmployeeList.resx">
       <DependentUpon>Frm_EmployeeList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Dashboard.resx">
+      <DependentUpon>Frm_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_TicketList.resx">
       <DependentUpon>Frm_TicketList.cs</DependentUpon>
@@ -229,8 +229,8 @@
     <EmbeddedResource Include="Frm_TransferTicket.resx">
       <DependentUpon>Frm_TransferTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginPage.resx">
-      <DependentUpon>LoginPage.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_LoginPage.resx">
+      <DependentUpon>Frm_LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_TicketOverview.resx">
       <DependentUpon>Frm_TicketOverview.cs</DependentUpon>

@@ -19,14 +19,14 @@ namespace G2_Forms
         int ticketCount;
         int closedTicket;
         int ticketPastDeadline;
-        List<G2_Model.Ticket> tickets;
+        List<Ticket> tickets;
         public Frm_TicketOverview()
         {
             InitializeComponent();
             ticketLogic = new TicketLogic();
-            tickets = new List<G2_Model.Ticket>();
+            tickets = new List<Ticket>();
             tickets = ticketLogic.GetAllTickets();
-            foreach (G2_Model.Ticket ticket in tickets)
+            foreach (Ticket ticket in tickets)
             {
                 if (ticket.Priority == TicketPriority.Closed)
                 {

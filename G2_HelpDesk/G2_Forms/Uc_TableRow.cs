@@ -65,7 +65,7 @@ namespace G2_Forms
             }
             else
             {
-                G2_Model.Ticket TicketObject = this.item as G2_Model.Ticket;
+                Ticket TicketObject = this.item as Ticket;
                 if(TicketObject != null)
                 {
                     Label l = new Label();
@@ -126,7 +126,7 @@ namespace G2_Forms
 
         private void B_Ticket_Click(object sender, EventArgs e)
         {
-            Frm_TransferTicket transferForm = new Frm_TransferTicket((G2_Model.Ticket)item);
+            Frm_TransferTicket transferForm = new Frm_TransferTicket((Ticket)item);
             transferForm.ShowDialog();
             ((Uc_Table)this.Parent).UpdateTable();
         }

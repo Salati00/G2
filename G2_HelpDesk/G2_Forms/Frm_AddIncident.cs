@@ -47,7 +47,7 @@ namespace G2_Forms
             }
             else
             {
-                G2_Model.Ticket t = new G2_Model.Ticket()
+                Ticket t = new Ticket()
                 {
                     ReportDate = DTP_reportedDate.Value,
                     Subject = txtSubject.Text,
