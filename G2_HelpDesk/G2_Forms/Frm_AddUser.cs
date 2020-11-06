@@ -112,10 +112,5 @@ namespace G2_Forms
             lblRepeatPassword.Show();
         }
 
-        private void Btn_Dashboard_Click(object sender, EventArgs e)
-        {
-            Dashboard.GetInstance().Show();
-            this.Close();
-        }
     }
 }
