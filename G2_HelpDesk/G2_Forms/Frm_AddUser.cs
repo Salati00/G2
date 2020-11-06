@@ -26,8 +26,7 @@ namespace G2_Forms
 
         private void PopulateCombobox()
         {
-            cBoxType.Items.Add(UserType.Employee);
-            cBoxType.Items.Add(UserType.Admin);
+            cBoxType.DataSource = Enum.GetValues(typeof(UserType));
 
             cBoxBranch.DataSource = Enum.GetValues(typeof(Branch));
 
