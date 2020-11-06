@@ -48,7 +48,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cBoxBranch = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.Btn_Dashboard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -233,22 +232,11 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Branch:";
             // 
-            // Btn_Dashboard
-            // 
-            this.Btn_Dashboard.Location = new System.Drawing.Point(715, 13);
-            this.Btn_Dashboard.Name = "Btn_Dashboard";
-            this.Btn_Dashboard.Size = new System.Drawing.Size(75, 23);
-            this.Btn_Dashboard.TabIndex = 20;
-            this.Btn_Dashboard.Text = "Dashboard";
-            this.Btn_Dashboard.UseVisualStyleBackColor = true;
-            this.Btn_Dashboard.Click += new System.EventHandler(this.Btn_Dashboard_Click);
-            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Btn_Dashboard);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cBoxBranch);
             this.Controls.Add(this.label9);
@@ -298,6 +286,5 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cBoxBranch;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button Btn_Dashboard;
     }
 }
