@@ -43,20 +43,6 @@ namespace G2_Forms
             SetHeaders(Headers);
             this.AutoSize = true;
         }
-        /// <summary>
-        /// FOR TESTING PURPOSES
-        /// </summary>
-        public Uc_Table(Type type = null)
-        {
-            this.type = type;
-
-            InitializeComponent();
-            this.AutoScroll = true;
-            this.BorderStyle = BorderStyle.FixedSingle;
-            this.elementList = new List<object>();
-
-            //SetHeaders(null);
-        }
 
         public Uc_Table()
         {
