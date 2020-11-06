@@ -41,20 +41,26 @@ namespace G2_Forms
         {
             ticketlogic = new TicketLogic();
 
-            G2_Model.Ticket t = new G2_Model.Ticket()
+            if (DTP_reportedDate.Value == null || txtSubject.Text == "" || cbType.SelectedIndex == 0 || cbPriority.SelectedIndex == 0 || txtDescription.Text == "" || DTP_Deadline.Value == null)
             {
-                ReportDate = DTP_reportedDate.Value,
-                Subject = txtSubject.Text,
-                Type = (TicketTypes)cbType.SelectedItem,
-                Priority = (TicketPriority)cbPriority.SelectedItem,
-                Description = txtDescription.Text,
-                User = (cbUser.SelectedItem as ComboBoxItem).user,
-                Deadline = DTP_Deadline.Value
-            };
-            
-            ticketlogic.AddTicket(t);
+                MessageBox.Show("Please fill in all the fields!!!");
+            }
+            else
+            {
+                G2_Model.Ticket t = new G2_Model.Ticket()
+                {
+                    ReportDate = DTP_reportedDate.Value,
+                    Subject = txtSubject.Text,
+                    Type = (TicketTypes)cbType.SelectedItem,
+                    Priority = (TicketPriority)cbPriority.SelectedItem,
+                    Description = txtDescription.Text,
+                    User = (cbUser.SelectedItem as ComboBoxItem).user,
+                    Deadline = DTP_Deadline.Value
+                };
+                ticketlogic.AddTicket(t);
+                this.Close();
+            }
 
-            this.Close();
         }
 
         public class ComboBoxItem : object
