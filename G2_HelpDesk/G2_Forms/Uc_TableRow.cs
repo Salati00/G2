@@ -116,8 +116,6 @@ namespace G2_Forms
 
         private void Btn_EditTicket_Click(object sender, EventArgs e)
         {
-            //For Erjano
-           // throw new NotImplementedException();
             Edit_Incident editIncident = new Edit_Incident((Ticket)item);
             editIncident.ShowDialog();
             ((Uc_Table)this.Parent).UpdateTable();
@@ -133,14 +131,10 @@ namespace G2_Forms
 
         private void B_User_Click(object sender, EventArgs e)
         {
-            //for seyi, read and delete this
-            //Cast item to either Person, admin, user or Incident or whatever and then you can do whatever you want with it, open your new form and pass the object
-
             Person person = (Person)item;
 
             AccountInfo account = new AccountInfo(null, person);
             account.ShowDialog();
-            
         }
 
         //Public Methods
