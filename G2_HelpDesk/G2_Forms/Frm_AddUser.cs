@@ -73,6 +73,7 @@ namespace G2_Forms
                         Branch branch = (Branch)cBoxBranch.SelectedItem;
                         Employee employee = new Employee(firstname, lastname, phonenumber, email, branch);
                         AddAdminLogic.AddEmployee(employee);
+                        this.Close();
                     }
                 }
             }
